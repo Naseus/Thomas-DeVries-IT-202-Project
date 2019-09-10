@@ -1,5 +1,5 @@
 <?
-database="";
+database="SS";
 username="";
 password="";
 host="";
