@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function queryParam(){
+		var params = new URLSearchParams(location.search);
+		console.log(params.has('page'));
+		if(params.has('page')){
+			var page = params.get('page');
+			var ele = document.getElementById(page);
+			if(ele){
+				let home = document.getElementById('home');
+				let about = document.getElementById('about');
+				home.style.display="none";
+				about.style.display = "block";
+				//ele.style.display = "block";
+			}
+		}
+		else{
+			console.log("ran");
+			let home = document.getElementById('home');
+			home.style.display = "block";
+		}
+	}
+</script>
+<style>
+article{ border: 2px solid black; border-radius: 10px; margin-left:auto; margin-right:auto; width: 60%;padding: 1%;}
+figure{ border: 1px solid blue; border-radius: 10px; margin-left: auto; margin-right:auto; width: 60%;padding: 1%;}
+img{margin-left: auto; margin-right:auto; width: 60%;padding: 1%; }
+</style>
+</head>
+<body onload="queryParam();">
+	<header>
+		<nav>
+			<a href="#" onclick = "queryParam();">Home</a> | 
+			<a href="#?page" onclick = "queryParam();">About</a> 
+		</nav>
+	</header>
+	<div id="home">
+		Welcome To My Cubing Project
+	</div>
+	<div id="about">
+		 <article>
+                        This Project sets out to help teach OLL and PLL.
+                        These are the most least intuitive steps of the CFOP speedsolving method.
+                        <figure>
+                        <figcaption><a href="https://ruwix.com/the-rubiks-cube/advanced-cfop-fridrich/">More details on CFOP.</a></figcaption>
+                        </figure>
+			Generaly OLL is shown using this format
+			<img src = "./OLL/sune.png" alt = "sune"/>
+			<figure>This shows how the yellow peices would look with the bottom side facing you</figure>
+			<br> and PLL is shown using this format<br>
+			<img src = "./PLL/ua_perm.png" alt = "UaPerm"/>
+			<figure>This shows how the colored edges should line up on the cube</figure>
+			
+                </article>
+
+	</div>
+	<footer></footer>
+</body>
+</html>
