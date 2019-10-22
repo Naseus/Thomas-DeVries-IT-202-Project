@@ -15,6 +15,10 @@ function pageLoaded() {
 	let myParagraph = document.getElementById("myParagraph");
 	console.log(myParagraph);
 	myParagraph.innerText = "It was updated";
+	
+	let myDiv = document.createElement('div');
+	myDiv.innerText = "Created by JS"
+	document.body.appendChild(myDiv);
 }
 </script>
 </head>

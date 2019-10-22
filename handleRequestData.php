@@ -7,12 +7,15 @@ if(isset($_GET['name'])) {
 
 if(isset($_GET['number'])) {
 	echo "<br>" . $_GET['number'] . " should be a number . . . ";
+
 	echo "<br> but it might not be <br>";
 }
 
 if(isset($_GET['number']) && isset($_GET['number2'])) {
-	$sum = intval($_GET['number']) + intval($_GET['number']);
-	echo "<br>" . $sum . " is the sum of " . $_GET['number'] . " and " . $_GET['number2'] . "<br>";
+		if(isnumeric($_GET['number']) && isnumeric($_GET['number2'])) {
+			$sum = (int)$_GET['number'] + (int)$_GET['number'];
+			echo "<br>" . $sum . " is the sum of " . $_GET['number'] . " and " . $_GET['number2'] . "<br>";
+	}
 }
 
 if(isset($_GET['string1']) && isset($_GET['string2'])) {

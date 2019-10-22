@@ -43,16 +43,20 @@ function verify() {
                 ev.innerText = "Email is invalid";
 		form.email.className = "error";
 		succeeded = false;		
+	} else {
+		ev.style.display = "none";
+                form.email.className= "noerror";
 	}
-	var drop = form.dropdown.value;
+	var drop = form.dropdown;
 	var dv = document.getElementById("validation.dropdown");
-	if(drop == "Select One"){
+	if(drop.selectedIndex  == 0){
 		form.dropdown.className = "error";
 		 dv.style.display = "block";
                 dv.innerText = "Select One";
 		succeeded = false;
 	} else {
-		alert(drop);
+		dv.style.display = "none";
+                form.dropdown.className= "noerror";
 	}
 	return succeeded;
 }

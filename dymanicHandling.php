@@ -25,7 +25,6 @@ function validate(original, confirmation) {
         let conf = confirmation.value;
         let vid = "validation." + original.name;
         let vele = document.getElementById(vid);
-	let valid = true;
         console.log(orig);
         console.log(conf);
          if(!vele) {
@@ -34,21 +33,17 @@ function validate(original, confirmation) {
                 document.body.appendChild(vele);
                 }
 
-	vele.innerText = "";
+
         if(orig.length <=  0) {
-                vele.innerText += " " + original.name + " is empty,";
-        	valid = false;
-	} 
-	if(conf.length <= 0){
-                vele.innerText += " " + confirmation.name + "  is empty,";
-        	valid = false;
-	} 
-	if(orig != conf ) {
-                vele.innerText += " " + original.name  + "s don't match,";
-        	valid = false;
-	}
-        if(vele && valid) {
-                vele.remove();
+                vele.innerText = original.name + " is empty, ";
+        } else if(conf.length <= 0){
+                vele.innerText = confirmation.name + "  is empty, ";
+        }  else if(orig != conf ) {
+                vele.innerText = original.name  + "s don't match, ";
+        } else {
+                if(vele) {
+                        vele.remove();
+                }
          }
 }
 
