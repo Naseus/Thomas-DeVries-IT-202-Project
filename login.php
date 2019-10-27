@@ -8,7 +8,7 @@ function checkUser() {
 <html>
 <head>
 <style>
-input{ border: 1px solid black; border-radius: 2px; margin-left: auto; margin-right:auto;}
+input{ border: 1px solid black; border-radius: 2px; margin-left: auto; margin-right:auto; padding 1%;}
 H1 {font-family:Arial; font-size: 20px; margin-left: auto; margin-right:auto;}
 </style>
 </head>

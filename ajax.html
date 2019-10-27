@@ -1,0 +1,133 @@
+<html>
+<head>
+<script>
+function myAjax(method, type, destination, data) {
+	let xhtml = new XMLHttpRequest();
+	method = method.toUpperCase();
+	if(data) {
+		data += "&";
+	} else {
+		data = "";
+	}
+	data += "type=" +type;
+	xhtml.onreadystatechange = function() {
+		if(this.readyState == 4 && this.status == 200) {
+			destination.innerHTML = this.responseText;
+		}
+	}
+	xhttp.open(method,"ajaxBackend.php", true);
+	if(method == "POST") {
+		xhtml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	}
+	if(data) {
+		xhttp.send(data);
+	} else {
+		xhtml.send();
+	}
+}
+
+function onSubmit() {
+	let form = document.form[0];
+	let sv = form.type.value;
+	switch(sv) {
+		case "add": sampleAdd();
+			break;
+		case "concat" : sampleConcat();
+			break;
+		case "db" : sampleDb();
+			break;
+		case "string" : sampleString();
+			break;
+		default:
+			break;
+	}
+}
+function sampleString() {
+	let cont = document.getElementById("output");
+	let data = "string1=" + document.forms[0].string1.value;
+	myAjax("POST", "echo",cont, data);
+}
+function sampleDb() {
+	let cont = document.getElementById("output");
+	myAjax("POST", "db", cont);
+}
+function sampleAdd() {
+	let cont = document.getElementById("output");
+	let data = "number1=" + document.forms[0].num1.value + "&number2=" + document.forms[0].num2.value;
+	myAjax("POST", "add", cont, data);
+}
+function sampleConcat() {
+	let cont = document.getElementById("output");
+	let data = "string1=" + document.forms[0].string1.value + "&string2=" + document.forms[0].string2.value;
+	myAjax("POST","concat", cont, data);
+}
+
+function handleInputs() {
+	let form = document.forms[0];
+	let sv = form.type.value;
+	switch(sv) {
+		case "echo":
+			form.num1.style.display = "none";
+			form.num2.style.display = "none";
+			form.string1.style.display = "block";
+			form.string2.style.display = "none";
+			break;
+		case "add":
+			form.num1.style.display = "block";
+			form.num2.style.display = "block";
+			form.string1.style.display = "none";
+			form.string2.style.display = "none";
+			break;
+		case "concat":
+			form.num1.style.display = "none";
+                        form.num2.style.display = "none";
+                        form.string1.style.display = "block";
+			form.string2.style.display = "block";
+                        break;
+		case "db":
+		default:
+			form.num1.style.display = "none";
+                        form.num2.style.display = "none";
+                        form.string1.style.display = "none";
+                        form.string2.style.display = "none";
+                        break;
+	}
+} 
+</script>
+</head>
+<style>
+body{background-color: black;}
+section{ width:80%; margin-left: auto; margin-right:auto; background-color:white; padding: 2%;margin-top: 2%;}
+</style>
+<body onload = "handleInputs();">
+	<header>
+		<section>
+			<h3>Ajax Samples</h3>
+			<p>In this sample we're using a form to help us build some data for a few sample requests.<br>
+			This sample shows that we can send a string and get a response, send some data and get a computational result, fetch html, get json, and return results from a table.</p>
+		</section>
+		<section>
+			<h4>Helper Form</h4>
+			<p>Pick a dropdown value, enter a value if applicable, and submit the form.<br>
+			<small>We return false during onsubmit so we don't submit the form. Instead we use the dropdown value to determine which sample to load and what inputs to show.</small></p>
+			<form onsubmit = "onSubmit(); return false;" style = "dsplay: inline-grid">
+				<select name = "type" onchange =>
+					<option value = "add">Add two Numbers</option>
+					<option value = "db">Get TestUsers</option>
+					<option value = "concat">Concatenate Strings</option>
+					<option value = "echo">message</option>
+				</select>
+			<input type = "number" name = "num1" placeholder = "Enter a Number"/>
+			<input type = "number" name = "num2" placeholder = "Enter a Number"/>
+			<input type = "text" name = "string1" placeholder = "Enter text"/>
+			<input type = "text" name = "string2" placeholder = "Enter text"/>
+			<input type = "submit" value = "Submit"/>
+			</form>
+		</section>
+		<section>
+			<p><b>Output</b></p>
+			<p id = "output"></p>
+		</section>
+
+</body>
+</html>
