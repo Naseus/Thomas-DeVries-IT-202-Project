@@ -12,17 +12,13 @@ function handleUsers() {
 		$select_query = "select * from `TestUsers` where username = :username";
 		$stmt = $db ->prepare($select_query);
 		$r = $stmt-> execute(array(":username"=>"Billy"));
-		$results = $stmt ->fetch(PDO::FETCH_ASSOC);
+		$response = $stmt ->fetch(PDO::FETCH_ASSOC);
 		print_r($stmt->errorInfo());
 	}
 	 catch(Exception $e){
 		$response = "DB error: $e";
 	}
 	return $response;
-
-	$response = getSampleUsers();
-		echo "<br><pre>" . $response . "<pre><br>";
-
 } 
 ?>
 
@@ -31,7 +27,6 @@ function handleUsers() {
 <head>
 	<script >
 		function validate() {
-			console.log("RAN");
 			let rtn = true;
 			let form = document.forms[0];
 			if(form.username == "") 
