@@ -25,6 +25,14 @@ function handleUsers() {
 <head>
 	<script >
 		function validate() {
+			let rtn = true;
+			let form = document.forms[0];
+			if(form.username == "") 
+				rtn = false;
+			if(form.password != form.passwordconfirm) 
+				rtn = false;
+			if(rtn)
+				console.log("Succsess");
 
 		}
 	</script>
@@ -34,19 +42,15 @@ function handleUsers() {
 	</style>
 </head>
 <body>
-<H1>Login</H1>
-<HR>
-<form method = 'post' action = '#' onsubmit= "return validate();">
-<input name="username"  placeholder = "username" style width = 300px/>
-<br>
-<input name="email" type="email" placeholder = "email@domain.com"/>
-<input name="emailconfirm" type="email"  placeholder = "email@domain.com"/>
-<br>
-<input name="password" type="password"  placeholder = "password"/>
-<input name="passwordconfirm" type="password"  placeholder = "confirm password"/>
-<br>
-<input type="submit" value="Login"/>
-</form>
+	<H1>Login</H1>
+	<form method = 'post' action = '#' onsubmit= "return validate();">
+		<input name="username"  placeholder = "username" style width = 300px/>
+		<br>
+		<input name="password" type="password"  placeholder = "password"/>
+		<input name="passwordconfirm" type="password"  placeholder = "confirm password"/>
+		<br>
+		<input type="submit" value="Login"/>
+	</form>
 </body>
 </html>
 <?php handleUsers();?>
