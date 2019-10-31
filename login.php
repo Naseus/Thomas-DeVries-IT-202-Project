@@ -1,3 +1,26 @@
+
+<?php
+function handleUsers() {
+	require('config.php');
+	$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
+	try {
+		$db = new PDO($conn_string, $username, $password);
+		$select_qurey = "select id, username from `TestUsers`";
+		$r = $stmt->execute();
+		$response = json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+	}
+	 catch(Exception $e){
+		$response = "DB error: $e";
+	}
+	return $response;
+
+	$response = getSampleUsers();
+		echo "<br>" . $response . "<br>";
+
+} 
+?>
+
+
 <html>
 <head>
 	<script >
@@ -13,7 +36,7 @@
 <body>
 <H1>Login</H1>
 <HR>
-<form method = "post" action = "#" onsubmit= "return validate();">
+<form method = 'post' action = '#' onsubmit= "return validate();">
 <input name="username"  placeholder = "username" style width = 300px/>
 <br>
 <input name="email" type="email" placeholder = "email@domain.com"/>
@@ -26,28 +49,5 @@
 </form>
 </body>
 </html>
-<?php validate();?>
+<?php handleUsers();?>
 <?php echo "<br><pre>" . var_export($_POST, true) . "</pre><br>";?>
-
-<?php
-function getSampleUsers() {
-	require('config.php');
-	$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
-	try {
-		$db = new PDO($conn_string, $username, $password);
-		$select_qurey = "select id, username from `TestUsers`";
-		$r = $stmt->execute();
-		$response = json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
-	}
-	 catch(Exception $e){
-		$response = "DB error: $e";
-	}
-	return $response;
-}
-
-function handleUsers() {
-	$response = getSampleUsers();
-		echo "<br>" . $response . "<br>";
-
-} 
-?>
