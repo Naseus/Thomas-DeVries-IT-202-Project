@@ -52,7 +52,7 @@ function handleUsers() {
 		<input name="password" type="password"  placeholder = "password"/>
 		<input name="passwordconfirm" type="password"  placeholder = "confirm password"/>
 		<br>
-		<input type="submit", value="Login"/>
+		<input type="submit" value="Login"/>
 	</form>
 </body>
 </html>
