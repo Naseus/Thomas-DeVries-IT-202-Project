@@ -2,7 +2,7 @@
 <head>
 <script>
 function myAjax(method, type, destination, data) {
-	let xhtml = new XMLHttpRequest();
+	let xhttp = new XMLHttpRequest();
 	method = method.toUpperCase();
 	if(data) {
 		data += "&";
@@ -10,19 +10,19 @@ function myAjax(method, type, destination, data) {
 		data = "";
 	}
 	data += "type=" +type;
-	xhtml.onreadystatechange = function() {
+	xhttp.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200) {
 			destination.innerHTML = this.responseText;
 		}
 	}
 	xhttp.open(method,"ajaxBackend.php", true);
 	if(method == "POST") {
-		xhtml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	}
 	if(data) {
 		xhttp.send(data);
 	} else {
-		xhtml.send();
+		xhttp.send();
 	}
 }
 
@@ -94,11 +94,11 @@ function handleInputs() {
 	}
 } 
 </script>
-</head>
 <style>
-body{background-color: black;}
-section{ width:80%; margin-left: auto; margin-right:auto; background-color:white; padding: 2%;margin-top: 2%;}
+	body {background-color: black;}
+	section {width:80%; margin-left: auto; margin-right:auto; background-color:white; padding: 2%;margin-top: 1%;}
 </style>
+</head>
 <body onload = "handleInputs();">
 	<header>
 		<section>
@@ -111,7 +111,8 @@ section{ width:80%; margin-left: auto; margin-right:auto; background-color:white
 			<p>Pick a dropdown value, enter a value if applicable, and submit the form.<br>
 			<small>We return false during onsubmit so we don't submit the form. Instead we use the dropdown value to determine which sample to load and what inputs to show.</small></p>
 			<form onsubmit = "onSubmit(); return false;" style = "dsplay: inline-grid">
-				<select name = "type" onchange =>
+				<select name = "type" onchange ="handleInputs();">
+					<option value = "---">- Choose One - </option>
 					<option value = "add">Add two Numbers</option>
 					<option value = "db">Get TestUsers</option>
 					<option value = "concat">Concatenate Strings</option>
