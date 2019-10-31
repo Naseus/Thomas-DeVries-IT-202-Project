@@ -1,15 +1,20 @@
 <html>
 <head>
-<style>
-input{ border: 1px solid black; border-radius: 2px; margin-left: auto; margin-right:auto; padding 1%;}
-H1 {font-family:Arial; font-size: 20px; margin-left: auto; margin-right:auto;}
-</style>
+	<script >
+		function validate() {
+
+		}
+	</script>
+	<style>
+		input{ border: 1px solid black; border-radius: 2px; margin-left: auto; margin-right:auto; padding 1%;}
+		H1 {font-family:Arial; font-size: 20px; margin-left: auto; margin-right:auto;}
+	</style>
 </head>
 <body>
 <H1>Login</H1>
 <HR>
-<form onsubmit = "<?php handleUser(); ?>">
-<input name="username"  placeholder = "username" style width = 300px onchange="validate(this);" />
+<form method = "post" action = "#" onsubmit= "return validate();">
+<input name="username"  placeholder = "username" style width = 300px/>
 <br>
 <input name="email" type="email" placeholder = "email@domain.com"/>
 <input name="emailconfirm" type="email"  placeholder = "email@domain.com"/>
@@ -21,6 +26,8 @@ H1 {font-family:Arial; font-size: 20px; margin-left: auto; margin-right:auto;}
 </form>
 </body>
 </html>
+<?php validate();?>
+<?php echo "<br><pre>" . var_export($_POST, true) . "</pre><br>";?>
 
 <?php
 function getSampleUsers() {
