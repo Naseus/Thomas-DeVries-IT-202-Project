@@ -9,9 +9,11 @@ function handleUsers() {
 	$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 	try {
 		$db = new PDO($conn_string, $username, $password);
-		$select_qurey = "select id, username from `TestUsers`";
-		$r = $stmt->execute();
-		$response = json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+		$select_query = "select * from `TestUsers` where username = :username";
+		$stmt = $db ->prepare($select_query);
+		$r = $stmt-> execute(array(":username"=>"Billy"));
+		$results = $stmt ->fetch(PDO::FETCH_ASSOC);
+		print_r($stmt->errorInfo());
 	}
 	 catch(Exception $e){
 		$response = "DB error: $e";
