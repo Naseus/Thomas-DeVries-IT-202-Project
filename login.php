@@ -15,7 +15,7 @@ function handleUsers() {
 	return $response;
 
 	$response = getSampleUsers();
-		echo "<br>" . $response . "<br>";
+		echo "<br><pre>" . $response . "<pre><br>";
 
 } 
 ?>
@@ -33,6 +33,7 @@ function handleUsers() {
 				rtn = false;
 			if(rtn)
 				console.log("Succsess");
+			return rtn;
 
 		}
 	</script>
@@ -55,3 +56,4 @@ function handleUsers() {
 </html>
 <?php handleUsers();?>
 <?php echo "<br><pre>" . var_export($_POST, true) . "</pre><br>";?>
+
