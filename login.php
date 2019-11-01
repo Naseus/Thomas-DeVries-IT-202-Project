@@ -16,7 +16,12 @@ function handleUsers() {
 	 catch(Exception $e){
 		$response = "DB error: $e";
 	}
+<<<<<<< HEAD
 	return $response['username'];
+=======
+	return $response['Billy'];
+
+>>>>>>> 8ab477166368befda8e69b05ef5ec19ccac22564
 } 
 ?>
 
