@@ -57,6 +57,6 @@ function handleUsers() {
 	</form>
 </body>
 </html>
-<?php echo "<br><pre>" . handleUsers(); . "</pre><br>"?>
-<?php echo "<br><pre>" . var_export($_POST, true) . "</pre><br>";?>
+<?php echo "<br><pre>" . handleUsers() . "</pre><br>"?>
+<?php echo "<br><pre>" . var_export($_POST, true); . "</pre><br>";?>
 
