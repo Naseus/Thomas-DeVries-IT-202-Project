@@ -30,7 +30,11 @@ function handleUsers() {
 		session_start();
 		return "Welcome " . $response["username"];
 	}
-	return "we at the end";
+	if($_POST["username"] == $response["username"]) {
+		 return "Invalid User";
+	 if($_POST["password"] == $response["pin"]) {
+	 	return "Invalid Password"
+	}
 } 
 ?>
 
@@ -71,5 +75,4 @@ function handleUsers() {
 </body>
 </html>
 <?php echo "<br><pre>" . "response: ". handleUsers() . "</pre><br>"?>
-<?php echo "<br><pre>" . var_export($_POST, true) . "</pre><br>";?>
 
