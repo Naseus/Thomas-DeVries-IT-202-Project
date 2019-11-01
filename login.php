@@ -18,6 +18,7 @@ function handleUsers() {
 		$response = "DB error: $e";
 	}
 	return $response;
+	
 } 
 ?>
 
