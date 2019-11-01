@@ -17,8 +17,8 @@ function handleUsers() {
 	 catch(Exception $e){
 		$response = "DB error: $e";
 	}
-	return $response;
-	
+	return $response['Billy'];
+
 } 
 ?>
 
