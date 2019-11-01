@@ -17,12 +17,12 @@ function handleUsers() {
 		$response = "DB error: $e";
 	}
 	if(!(isset($_POST["username"]) && $_POST["password"]) {
-		return "Invalid User";
+		echo "Invalid User";
 	}
 
 	if($_POST["username"] == $response["username"] && $_POST["password"] == $response["pin"]) {
 		start_session();
-		return "Welcome $";
+		echo "Welcome $";
 	}
 } 
 ?>
