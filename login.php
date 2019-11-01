@@ -22,7 +22,7 @@ function handleUsers() {
 
 	if($_POST["username"] == $response["username"] && $_POST["password"] == $response["pin"]) {
 		start_session();
-		return "Welcome $response["username"]";
+		return "Welcome " . $response["username"];
 	}
 } 
 ?>
