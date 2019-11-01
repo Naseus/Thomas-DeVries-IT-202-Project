@@ -16,13 +16,13 @@ function handleUsers() {
 	 catch(Exception $e){
 		$response = "DB error: $e";
 	}
-	if(!(isset($_POST["username"]) && $_POST["password"]) {
-			echo "<br>". "Passwords Matched" ."<br>";
+	if(!(isset($_POST["username"]) && $_POST["password"])) {
+		return "Invalid User";
 	}
 
 	if($_POST["username"] == $response["username"] && $_POST["password"] == $response["pin"]) {
 		start_session();
-			echo "<br>". "Passwords Matched" ."<br>";
+		return "Welcome $response["username"]";
 	}
 } 
 ?>
