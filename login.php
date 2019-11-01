@@ -16,11 +16,13 @@ function handleUsers() {
 	 catch(Exception $e){
 		$response = "DB error: $e";
 	}
+
+	return $response;
 	if(!(isset($_POST["username"]) && $_POST["password"])) {
 		return "Invalid User";
 	}
 
-	if($_POST["username"] == $response["username"] && $_POST["password"] == $response["pin"]) {
+	if($_POST["username"] == $response["username"] && $_POST["password"] == $response[":pin"]) {
 		start_session();
 		return "Welcome " . $response["username"];
 	}
@@ -63,6 +65,6 @@ function handleUsers() {
 	</form>
 </body>
 </html>
-<?php echo "<br><pre>" . handleUsers() . "</pre><br>"?>
+<?php echo "<br><pre>" . "response: ". handleUsers() . "</pre><br>"?>
 <?php echo "<br><pre>" . var_export($_POST, true) . "</pre><br>";?>
 
