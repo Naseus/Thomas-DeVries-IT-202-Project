@@ -1,4 +1,3 @@
-
 <?php
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
@@ -17,6 +16,7 @@ function handleUsers() {
 	 catch(Exception $e){
 		$response = "DB error: $e";
 	}
+<<<<<<< HEAD
 	if(!(isset($_POST["username"]) && $_POST["password"]) {
 		return "Invalid User";
 	}
@@ -25,6 +25,14 @@ function handleUsers() {
 		start_session();
 		return "Welcome $";
 	}
+=======
+<<<<<<< HEAD
+	return $response['username'];
+=======
+	return $response['Billy'];
+
+>>>>>>> 8ab477166368befda8e69b05ef5ec19ccac22564
+>>>>>>> origin/master
 } 
 ?>
 
