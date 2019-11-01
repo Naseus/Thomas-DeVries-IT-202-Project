@@ -16,7 +16,6 @@ function handleUsers() {
 		$stmt = $db ->prepare($select_query);
 		$r = $stmt-> execute(array(":username"=> $_POST["username"]));
 		$response = $stmt ->fetch(PDO::FETCH_ASSOC);
-		print_r($stmt->errorInfo());
 	}
 	 catch(Exception $e){
 		$response = "DB error: $e";
@@ -27,8 +26,8 @@ function handleUsers() {
 	}
 
 	if($_POST["username"] == $response["username"] && $_POST["password"] == $response["pin"]) {
-		session_start();
-		return "Welcome " . $response["username"];
+		print_r( "Welcome " . $response["username"] . "\n");
+		return "user " . $response['username'] . ", " . "password ". $response['pin'];
 	}
 	if($_POST["username"] == $response["username"]) {
 		 return "Invalid User";
