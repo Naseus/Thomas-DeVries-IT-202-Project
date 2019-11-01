@@ -1,10 +1,10 @@
 
 <?php
-function handleUsers() {
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
-
+function handleUsers() {
+	return True;
 	require('config.php');
 	$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 	try {
