@@ -16,16 +16,15 @@ function handleUsers() {
 	 catch(Exception $e){
 		$response = "DB error: $e";
 	}
-
-	return var_export($response);
 	if(!(isset($_POST["username"]) && isset($_POST["password"]))) {
-		return;
+		return "We breaking";
 	}
 
 	if($_POST["username"] == $response["username"] && $_POST["password"] == $response["pin"]) {
 		start_session();
 		return "Welcome " . $response["username"];
 	}
+	return "we at the end";
 } 
 ?>
 
