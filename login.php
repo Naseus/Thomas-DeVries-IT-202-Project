@@ -32,6 +32,7 @@ function handleUsers() {
 	}
 	if($_POST["username"] == $response["username"]) {
 		 return "Invalid User";
+	}
 	 if($_POST["password"] == $response["pin"]) {
 	 	return "Invalid User";
 	}
