@@ -40,7 +40,7 @@ function handleUsers() {
 		}
 	</script>
 	<style>
-		input { border: 1px solid black; border-radius: 2px; margin-left: auto; margin-right:auto; padding:1%;}
+		input { border: 1px solid black; border-radius: 2px; margin-left: auto; margin-right:auto; padding:0.1%;}
 		H1 {font-family:Arial; font-size: 20px; margin-left: auto; margin-right:auto;}
 	</style>
 </head>
@@ -54,9 +54,9 @@ function handleUsers() {
 		<input name="passwordconfirm" type="password"  placeholder = "confirm password"/>
 		<br>
 		<input type="submit" value="Login"/>
+	</form>
 </body>
 </html>
-<?php handleUsers();?>
+<?php echo "<br><pre>" . handleUsers(); . "</pre><br>"?>
 <?php echo "<br><pre>" . var_export($_POST, true) . "</pre><br>";?>
 
-	</form>
