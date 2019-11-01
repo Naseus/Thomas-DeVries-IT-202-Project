@@ -16,7 +16,7 @@ function handleUsers() {
 		$stmt = $db ->prepare($select_query);
 		$r = $stmt-> execute(array(":username"=> $_POST["username"]));
 		$response = $stmt ->fetch(PDO::FETCH_ASSOC);
-		//print_r($stmt->errorInfo());
+		print_r($stmt->errorInfo());
 	}
 	 catch(Exception $e){
 		$response = "DB error: $e";
