@@ -21,12 +21,9 @@ function handleUsers() {
 		$response = "DB error: $e";
 		return "Invalid User";
 	}
-	if(!(isset($_POST["username"]) && isset($_POST["password"]))) {
-		return "We breaking";
-	}
 
 	if($_POST["username"] == $response["username"] && $_POST["password"] == $response["pin"]) {
-		echo "<br><pre>" . response . "</pre><br>"
+		echo "<br><pre>" . var_export($response) . "</pre><br>";
 		return "Welcome " . $response["username"];
 	}
 	if($_POST["username"] == $response["username"]) {
@@ -46,7 +43,7 @@ function handleUsers() {
 			let rtn = true;
 			let form = document.forms[0];
 			let vid = "validation";
-    		let vele = document.getElementById(vid);
+    			let vele = document.getElementById(vid);
 
 			if(vele) {
 				vele.remove();
@@ -55,12 +52,14 @@ function handleUsers() {
 			vele.id = vid;
 			document.body.appendChild(vele);
 
-			if(form.username.value == "") 
+			if(form.username.value == "") { 
 				vele.innerText = "Username is empty \n";
 				rtn = false;
-			if(form.password.value != form.passwordconfirm.value) 
+			}
+			if(form.password.value != form.passwordconfirm.value) { 
 				vele.innerText = "passwords dont match";
 				rtn = false;
+			}
 			if(vele)
 				vele.remove();
 			return rtn;
