@@ -56,9 +56,12 @@ function handleUsers() {
 			if(form.password.value != form.passwordconfirm.value) {
 				vele.style.display = "block";	 
 				vele.innerText += "passwords dont match";
-				rtn = false;
+				form.password.className = "error";
+				form.passwordconfirm.className = "error";
+				rtn = false;				
 			} else {
-				form.username.className = "noerror";
+				form.password.className = "noerror";
+				form.confirm.className = "noerror";
 			}
 			return rtn;
 
