@@ -42,33 +42,34 @@ function handleUsers() {
 		function validate() {
 			let rtn = true;
 			let form = document.forms[0];
-			let vid = "validation";
-    			let vele = document.getElementById(vid);
-
-			if(vele) {
-				vele.remove();
-			} 
-			vele = document.createElement("span");
-			vele.id = vid;
-			document.body.appendChild(vele);
-
+    		let vele = document.getElementById("validation");
+    		vele.innerText = "";
+			vele.style.display = "none";
 			if(form.username.value == "") { 
-				vele.innerText = "Username is empty \n";
+				vele.style.display = "block";	
+				vele.innerText = "username is empty \n";
+				form.username.className = "error";
 				rtn = false;
+			}else {
+				form.username.className = "noerror";				
 			}
-			if(form.password.value != form.passwordconfirm.value) { 
-				vele.innerText = "passwords dont match";
+			if(form.password.value != form.passwordconfirm.value) {
+				vele.style.display = "block";	 
+				vele.innerText += "passwords dont match";
 				rtn = false;
+			} else {
+				form.username.className = "noerror";
 			}
-			if(vele)
-				vele.remove();
 			return rtn;
 
 		}
+
 	</script>
 	<style>
 		input { border: 1px solid black; border-radius: 2px; margin-left: auto; margin-right:auto; padding:0.1%;}
 		H1 {font-family:Arial; font-size: 20px; margin-left: auto; margin-right:auto;}
+		.error {border: 1px solid red; border-radius: 2px; margin-left: auto; margin-right:auto; padding:0.1%;}
+		.noerror {border: 1px solid black; border-radius: 2px; margin-left: auto; margin-right:auto; padding:0.1%;}
 	</style>
 </head>
 <body>
@@ -81,6 +82,7 @@ function handleUsers() {
 		<input name="passwordconfirm" type="password"  placeholder = "confirm password"/>
 		<br>
 		<input type="submit" value="Login"/>
+		<span id = 'validation' style = 'display:none;'></span>
 	</form>
 </body>
 </html>
