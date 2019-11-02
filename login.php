@@ -26,8 +26,8 @@ function handleUsers() {
 	}
 
 	if($_POST["username"] == $response["username"] && $_POST["password"] == $response["pin"]) {
-		print_r( "Welcome " . $response["username"] . "\n");
-		return "user " . $response['username'] . ", " . "password ". $response['pin'];
+		echo "<br><pre>" . response . "</pre><br>"
+		return "Welcome " . $response["username"];
 	}
 	if($_POST["username"] == $response["username"]) {
 		 return "Invalid User";
@@ -41,17 +41,26 @@ function handleUsers() {
 
 <html>
 <head>
-	<script >
+	<script>
 		function validate() {
 			let rtn = true;
 			let form = document.forms[0];
-			console.log(form.username);			
+
+			if(vele) {
+			vele.remove();
+			} 
+			vele = document.createElement("span");
+			vele.id = vid;
+			document.body.appendChild(vele);
+
 			if(form.username.value == "") 
+				vele.innerText = "Username is empty \n";
 				rtn = false;
 			if(form.password.value != form.passwordconfirm.value) 
+				vele.innerText = "passwords dont match";
 				rtn = false;
-			if(rtn)
-				console.log("Succsess");
+			if(vele)
+				vele.remove();
 			return rtn;
 
 		}
