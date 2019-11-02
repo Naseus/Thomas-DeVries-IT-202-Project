@@ -45,9 +45,11 @@ function handleUsers() {
 		function validate() {
 			let rtn = true;
 			let form = document.forms[0];
+			let vid = "validation";
+    		let vele = document.getElementById(vid);
 
 			if(vele) {
-			vele.remove();
+				vele.remove();
 			} 
 			vele = document.createElement("span");
 			vele.id = vid;
