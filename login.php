@@ -21,16 +21,15 @@ function handleUsers() {
 		$response = "DB error: $e";
 		return "Invalid User";
 	}
-
-	if($_POST["username"] == $response["username"] && $_POST["password"] == $response["pin"]) {
-		echo "<br><pre>" . var_export($response) . "</pre><br>";
-		return "Welcome " . $response["username"];
-	}
 	if($_POST["username"] != $response["username"]) {
 		 return "Invalid User";
 	}
 	 if($_POST["password"] != $response["pin"]) {
 	 	return "Invalid password";
+	}
+	if($_POST["username"] == $response["username"] && $_POST["password"] == $response["pin"]) {
+		echo "<br><pre>" . var_export($response) . "</pre><br>";
+		return "Welcome " . $response["username"];
 	}
 } 
 ?>
