@@ -45,7 +45,7 @@ function handleUsers() {
     		let vele = document.getElementById("validation");
     		vele.innerText = "";
 			vele.style.display = "none";
-			if(form.username.value == "") { 
+			if(form.username.value == null) { 
 				vele.style.display = "block";	
 				vele.innerText = "username is empty \n";
 				form.username.className = "error";
