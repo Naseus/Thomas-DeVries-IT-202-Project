@@ -44,7 +44,7 @@ function handleUsers() {
     		let vele = document.getElementById("validation");
     		vele.innerText = "";
 			vele.style.display = "none";
-			if(form.username.value == null) { 
+			if(form.username.value.length <= 0) { 
 				vele.style.display = "block";	
 				vele.innerText = "username is empty \n";
 				form.username.className = "error";
@@ -60,7 +60,7 @@ function handleUsers() {
 				rtn = false;				
 			} else {
 				form.password.className = "noerror";
-				form.confirm.className = "noerror";
+				form.passwordconfirm.className = "noerror";
 			}
 			console.log(rtn);
 			return rtn;
