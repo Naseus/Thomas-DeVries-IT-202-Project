@@ -63,6 +63,7 @@ function handleUsers() {
 				form.password.className = "noerror";
 				form.confirm.className = "noerror";
 			}
+			console.log(rtn);
 			return rtn;
 
 		}
