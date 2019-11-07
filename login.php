@@ -54,15 +54,13 @@ function handleUsers() {
 			}else {
 				form.username.className = "noerror";				
 			}
-			if(form.password.value != form.passwordconfirm.value) {
+			if(form.password.value.length <= 0) {
 				vele.style.display = "block";	 
-				vele.innerText += "passwords dont match";
+				vele.innerText += "passwords is empty";
 				form.password.className = "error";
-				form.passwordconfirm.className = "error";
 				rtn = false;				
 			} else {
 				form.password.className = "noerror";
-				form.passwordconfirm.className = "noerror";
 			}
 			console.log(rtn);
 			return rtn;
@@ -84,7 +82,6 @@ function handleUsers() {
 		<input name="username"  placeholder = "username" style width = "300px"/>
 		<br>
 		<input name="password" type="password"  placeholder = "password"/>
-		<input name="passwordconfirm" type="password"  placeholder = "confirm password"/>
 		<br>
 		<input type="submit" value="Login"/>
 		<span id = 'validation' style = 'display:none;'></span>
