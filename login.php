@@ -12,21 +12,23 @@ function handleUsers() {
 			$stmt = $db ->prepare($select_query);
 			$r = $stmt-> execute(array(":username"=> $_POST["username"]));
 			$response = $stmt ->fetch(PDO::FETCH_ASSOC);
+			
+			if($_POST["username"] != $response["username"]) {
+			 return "Invalid User";
+		}
+			if($_POST["password"] != $response["pin"]) {
+			 	return "Invalid password";
+			}
+			if($_POST["username"] == $response["username"] && $_POST["password"] == $response["pin"]) {
+				echo "<br><pre>" . var_export($response) . "</pre><br>";
+				return "Welcome " . $response["username"];
+			}
 		}
 		 catch(Exception $e){
 			$response = "DB error: $e";
 			return "Invalid User";
 		}
-		if($_POST["username"] != $response["username"]) {
-			 return "Invalid User";
-		}
-		 if($_POST["password"] != $response["pin"]) {
-		 	return "Invalid password";
-		}
-		if($_POST["username"] == $response["username"] && $_POST["password"] == $response["pin"]) {
-			echo "<br><pre>" . var_export($response) . "</pre><br>";
-			return "Welcome " . $response["username"];
-		}
+		
 	}
 } 
 ?>
