@@ -3,7 +3,10 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 function handleUsers() {
+
 	if(isset($_POST["username"]) && isset($_POST["password"])) {
+		if(empty($_POST["username"]) || empty($_POST["password"]))
+			return "Stop messing with my frontend";
 		require('config.php');
 		$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 		try {
