@@ -15,12 +15,12 @@
 			$('#register').ready(function(event){
 				let rtn = true;
 				let alertvalue = "";
-				console.log(this.forms[0]);
-				if(this.username.value.length == 0) {
+				reg = this.forms[0];
+				if(reg.username.value.length == 0) {
 					rtn = false;
 				}
 					alertvalue += "Enter a username\n";
-				if(this.password.value == this.confirm.value || this.password.value.length == 0 || this.confirm.value.length == 0){
+				if(reg.password.value == reg.confirm.value || reg.password.value.length == 0 || reg.confirm.value.length == 0){
 					rtn = false;
 					alertvalue += "passwords don't match";
 					}
