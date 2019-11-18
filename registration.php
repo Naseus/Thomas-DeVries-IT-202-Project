@@ -24,7 +24,7 @@
 					rtn = false;
 					alertvalue += "passwords don't match";
 					}
-				if(alertvalue > 0)
+				if(alertvalue.length > 0)
 					alert(alertvalue);
 				return rtn;
 			});
