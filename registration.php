@@ -15,7 +15,7 @@
 			$('#register').ready(function(event){
 				let rtn = true;
 				let alertvalue = "";
-				console.log(this);
+				console.log($(this));
 				if(this.username.value.length == 0) {
 					rtn = false;
 				}
