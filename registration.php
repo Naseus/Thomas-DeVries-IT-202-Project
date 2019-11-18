@@ -15,7 +15,7 @@
 			$("#register").ready(function(event){
 				let rtn = true;
 				let alertvalue = "";
-				if(this.username.length == 0) {
+				if(this.username == 0) {
 					rtn = false;
 				}
 					alertvalue += "Enter a username\n";
@@ -31,13 +31,13 @@
 	</script>
 	<body>
 		<form id = "register" method = "POST">
-			<input id = "username" type = "text" placeholder="Username"/>
-			<input id = "email" type = "email" placeholder="name@domain.com" />
+			<input name = "username" type = "text" placeholder="Username"/>
+			<input name = "email" type = "email" placeholder="name@domain.com" />
 			<br>
-			<input id = "password" type = "password" placeholder = "password" />
-			<input id = "confirm" type = "password" placeholder = "password" />	
+			<input name = "password" type = "password" placeholder = "password" />
+			<input name = "confirm" type = "password" placeholder = "password" />	
 			<br>
-			<input id = "submit" type = "submit" placeholder="Enter" />		
+			<input name = "submit" type = "submit" placeholder="Enter" />		
 		</form>
 	</body>
 </html>
