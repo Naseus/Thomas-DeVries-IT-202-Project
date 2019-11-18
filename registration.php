@@ -13,18 +13,18 @@
 	<script>
 		$(document).ready(function(event){
 			$("#register").ready(function(event){
-				rtn = true;
-				alertvalue = "";
+				let rtn = true;
+				let alertvalue = "";
 				if(this.username.length == 0) {
 					rtn = false;
 				}
 					alertvalue += "Enter a username\n";
 				if(this.password.value == this.confirm.value || this.password.length == 0 ||this.confirm.length == 0){
 					rtn = false;
-					alertvalue += "passwords don't match"
+					alertvalue += "passwords don't match";
 					}
 				if(alertvalue > 0)
-					alert("alertvalue")
+					alert(alertvalue);
 				return rtn;
 			});
 		});
