@@ -43,5 +43,5 @@
 </html>
 
 <?php 
-	echo "<br><pre>" . "response:" . "</pre><br>";
+	echo "<br><pre>" . "response:" . $_POST["username"] . "</pre><br>";
 ?>
