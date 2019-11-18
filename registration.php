@@ -11,7 +11,7 @@
   crossorigin="anonymous">
 	</script>
 	<script>
-		$(document).ready(function(event){
+		$(document).ready(function(){
 			$('#register').ready(function(event){
 				let rtn = true;
 				let alertvalue = "";
