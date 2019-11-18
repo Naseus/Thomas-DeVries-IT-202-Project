@@ -33,8 +33,11 @@
 		<form id = "register" method = "POST">
 			<input id = "username" type = "text" placeholder="Username"/>
 			<input id = "email" type = "email" placeholder="name@domain.com" />
+			<br>
 			<input id = "password" type = "password" placeholder = "password" />
-			<input id = "confirm" type = "password" placeholder = "password" />			
+			<input id = "confirm" type = "password" placeholder = "password" />	
+			<br>
+			<input id = "submit" type = "submit" placeholder="Enter" />		
 		</form>
 	</body>
 </html>
