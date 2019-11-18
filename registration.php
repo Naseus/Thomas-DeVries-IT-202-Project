@@ -15,11 +15,11 @@
 			$("#register").ready(function(event){
 				let rtn = true;
 				let alertvalue = "";
-				if(this.username.value.length == 0) {
+				if($(this).username.value.length == 0) {
 					rtn = false;
 				}
 					alertvalue += "Enter a username\n";
-				if(this.password.value == this.confirm.value || this.password.value.length == 0 ||this.confirm.value.length == 0){
+				if($(this).password.value == $(this).confirm.value || $(this).password.value.length == 0 ||$(this).confirm.value.length == 0){
 					rtn = false;
 					alertvalue += "passwords don't match";
 					}
@@ -41,7 +41,3 @@
 		</form>
 	</body>
 </html>
-
-<?php 
-	echo "<br><pre>" . "response:" . $_POST["username"] . "</pre><br>";
-?>
