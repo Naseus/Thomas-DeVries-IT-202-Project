@@ -20,6 +20,11 @@
 					rtn = false;
 				}
 					alertvalue += "Enter a username\n";
+
+				if(this.email.value.indexOf('@') < 0){
+					rtn = false;
+					alertvalue += "Email is invalid\n";					
+				}
 				if(this.password.value == this.confirm.value || this.password.value.length == 0 || this.confirm.value.length == 0){
 					rtn = false;
 					alertvalue += "passwords don't match";
@@ -32,6 +37,8 @@
 		});
 	</script>
 	<body>
+		<H1>Registration</H1>
+		<HR>
 		<form id = "register" method = "POST"/>
 			<input name = "username" type = "text" placeholder="Username"/>
 			<input name = "email" type = "email" placeholder="name@domain.com" />
@@ -45,5 +52,8 @@
 </html>
 
 <?php
+	if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm']) && isset($_POST['email'])) {
 
+		echo "<br><pre>" . var_export($_POST) . "<pre><br>";
+	}
 ?>
