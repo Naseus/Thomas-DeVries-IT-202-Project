@@ -58,9 +58,17 @@
 
 <?php
 	if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm']) && isset($_POST['email'])) {
+		if(isempty($_POST['username']) || isempty($_POST['password']) || isempty($_POST['confirm']) || isempty($_POST['email'])) {
+			exit();
+		}
 		$user =  $_POST['username'];
-		$
-		if()
-		echo "<br><pre>" . var_export($_POST) . "<pre><br>";
+		$pass = $_POST['password'];
+		$conf = $_POST['confirm'];
+		$email = $_POST['email'];
+		echo "<br><pre>" . $user . "<pre><br>";
+		echo "<br><pre>" . $email . "<pre><br>";
+		echo "<br><pre>" . $pass . "<pre><br>";
+		echo "<br><pre>" . $conf . "<pre><br>";
+
 	}
 ?>
