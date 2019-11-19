@@ -15,17 +15,16 @@
 			$('#register').submit(function(event){
 				let rtn = true;
 				let alertvalue = "";
-				//reg = this.forms[0];
 				if(this.username.value.length == 0) {
 					rtn = false;
-				}
 					alertvalue += "Enter a username\n";
+				}
 
-				if(this.email.value.indexOf('@') < 0){
+				if(this.email.value.length == 0){
 					rtn = false;
 					alertvalue += "Email is invalid\n";					
 				}
-				if(this.password.value == this.confirm.value || this.password.value.length == 0 || this.confirm.value.length == 0){
+				if(this.password.value != this.confirm.value || this.password.value.length == 0 || this.confirm.value.length == 0){
 					rtn = false;
 					alertvalue += "passwords don't match";
 					}
@@ -36,6 +35,12 @@
 			});
 		});
 	</script>
+		<style>
+		input { border: 1px solid black; border-radius: 2px; margin-left: auto; margin-right:auto; padding:0.1%;}
+		H1 {font-family:Arial; font-size: 20px; margin-left: auto; margin-right:auto;}
+		.error {border: 1px solid red; border-radius: 2px; margin-left: auto; margin-right:auto; padding:0.1%;}
+		.noerror {border: 1px solid black; border-radius: 2px; margin-left: auto; margin-right:auto; padding:0.1%;}
+	</style>
 	<body>
 		<H1>Registration</H1>
 		<HR>
@@ -53,7 +58,9 @@
 
 <?php
 	if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm']) && isset($_POST['email'])) {
-
+		$user =  $_POST['username'];
+		$
+		if()
 		echo "<br><pre>" . var_export($_POST) . "<pre><br>";
 	}
 ?>
