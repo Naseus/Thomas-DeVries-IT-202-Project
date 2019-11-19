@@ -58,7 +58,7 @@
 
 <?php
 	if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm']) && isset($_POST['email'])) {
-		if(isempty($_POST['username']) || isempty($_POST['password']) || isempty($_POST['confirm']) || isempty($_POST['email'])) {
+		if(empty($_POST['username']) || empty($_POST['password']) || empty($_POST['confirm']) || empty($_POST['email'])) {
 			exit();
 		}
 		$user =  $_POST['username'];
