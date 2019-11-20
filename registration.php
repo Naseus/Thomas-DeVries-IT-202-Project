@@ -65,10 +65,31 @@
 		$pass = $_POST['password'];
 		$conf = $_POST['confirm'];
 		$email = $_POST['email'];
-		echo "<br><pre>" . $user . "<pre><br>";
-		echo "<br><pre>" . $email . "<pre><br>";
-		echo "<br><pre>" . $pass . "<pre><br>";
-		echo "<br><pre>" . $conf . "<pre><br>";
+		$isValid = true;
+		if($pass != $conf) {
+			$isValid = false;
+		}
+		if($user )
+		if($isValid) {
+			try {
+				$hash = password_hash($pass, PASSWORD_BCRYPT);
+				require("config.php");
+				$conn_string = "mysql:host = $host;dbname = $database; charset = utf8mb4";
+				$db = new PDO($conn_string, $username, $password);
+				$stmt = $db->prepare("INSERT into `Users`(`username`,`password`,`email`) VALUES (:username, :password, :email)");
+				$result = $stmt->execute(
+					array(":username"=>$user,
+							":password"=>$pass,
+							":email"=>$email;
+					)
+				);
+			print_r($stmt->errorInfo());
+			echo var_export($result, true);
 
+			}catch(Exception $e){
+			 	echo $e->getMessage();
+			 }
+
+		}
 	}
 ?>
