@@ -69,6 +69,7 @@
 		if($pass != $conf) {
 			$isValid = false;
 		}
+		exit();
 		if($isValid) {
 			try {
 				$hash = password_hash($pass, PASSWORD_BCRYPT);
