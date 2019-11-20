@@ -57,11 +57,11 @@
 </html>
 
 <?php
+		exit();
 	if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm']) && isset($_POST['email'])) {
 		if(empty($_POST['username']) || empty($_POST['password']) || empty($_POST['confirm']) || empty($_POST['email'])) {
 			exit();
 		}
-		exit();
 		$user =  $_POST['username'];
 		$pass = $_POST['password'];
 		$conf = $_POST['confirm'];
