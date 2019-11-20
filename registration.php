@@ -75,11 +75,11 @@
 				require("config.php");
 				$conn_string = "mysql:host = $host;dbname = $database; charset = utf8mb4";
 				$db = new PDO($conn_string, $username, $password);
-				$stmt = $db->prepare("INSERT into `Users`(`username`,`password`,`email`) VALUES (:username, :password, :email)");
+				$stmt = $db->prepare("INSERT into `Users` (`username`,`password`,`email`) VALUES (:username, :password, :email)");
 				$result = $stmt->execute(
 					array(":username"=>$user,
-							":password"=>$pass,
-							":email"=>$email;
+							":password"=>$hash,
+							":email"=>$email
 					)
 				);
 			echo var_export($result, true);
