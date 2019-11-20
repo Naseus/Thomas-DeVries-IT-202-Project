@@ -56,3 +56,19 @@
 	</body>
 </html>
 
+<?php
+	if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm']) && isset($_POST['email'])) {
+		if(empty($_POST['username']) || empty($_POST['password']) || empty($_POST['confirm']) || empty($_POST['email'])) {
+			exit();
+		}
+		$user =  $_POST['username'];
+		$pass = $_POST['password'];
+		$conf = $_POST['confirm'];
+		$email = $_POST['email'];
+		$isValid = true;
+		if($pass != $conf) {
+			$isValid = false;
+		}
+	
+	}
+?>
