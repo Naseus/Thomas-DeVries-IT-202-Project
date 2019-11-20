@@ -61,6 +61,7 @@
 		if(empty($_POST['username']) || empty($_POST['password']) || empty($_POST['confirm']) || empty($_POST['email'])) {
 			exit();
 		}
+		exit();
 		$user =  $_POST['username'];
 		$pass = $_POST['password'];
 		$conf = $_POST['confirm'];
@@ -69,7 +70,6 @@
 		if($pass != $conf) {
 			$isValid = false;
 		}
-		exit();
 		if($isValid) {
 			try {
 				$hash = password_hash($pass, PASSWORD_BCRYPT);
