@@ -94,6 +94,7 @@
 					)
 				);
 			echo var_export($result, true);
+			header("location: login.php");
 
 			}catch(Exception $e){
 			 	echo $e->getMessage();
