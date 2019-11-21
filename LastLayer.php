@@ -1,5 +1,5 @@
 <?php
-//start_session();
+session_start();
 if(isset($_SESSION['user'])){
 	echo $_SESSION['user'] . " time for database stuff";
 } else {
