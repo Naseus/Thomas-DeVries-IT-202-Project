@@ -23,6 +23,10 @@ function handleUsers() {
 			 	return "Invalid password";
 			}
 			if($_POST["username"] == $response["username"] && $_POST["password"] == $response["pin"]) {
+				if(!isset($_SESSION)) {
+					session_start();
+				}
+				$_SESSION['loggedUser'] = array('id'=> 1,'user' => $response["username"])
 				echo "<br><pre>" . var_export($response) . "</pre><br>";
 				return "Welcome " . $response["username"];
 			}
