@@ -11,7 +11,7 @@ function handleUsers() {
 		$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 		try {
 			$db = new PDO($conn_string, $username, $password);
-			$select_query = "select * from `TestUsers` where username = :username";
+			$select_query = "select * from `Users` where username = :username";
 			$stmt = $db ->prepare($select_query);
 			$r = $stmt-> execute(array(":username"=> $_POST["username"]));
 			$response = $stmt ->fetch(PDO::FETCH_ASSOC);
@@ -24,7 +24,7 @@ function handleUsers() {
 			}
 			if($_POST["username"] == $response["username"] && $_POST["password"] == $response["pin"]) {
 				session_start();
-				$_SESSION['loggedUser'] = array('id'=> 1,'user' => $response["username"])
+				$_SESSION['user'] = $response["username"];
 				echo "<br><pre>" . var_export($response) . "</pre><br>";
 				return "Welcome " . $response["username"];
 			}
