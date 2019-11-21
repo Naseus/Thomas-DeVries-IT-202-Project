@@ -18,9 +18,9 @@
 				if(this.username.value.length == 0) {
 					rtn = false;
 					alertvalue += "Enter a username\n";
-					this.user.className = "error";
+					this.username.className = "error";
 				} else {
-					this.user.className = "noerror";
+					this.username.className = "noerror";
 				}
 
 				if(this.email.value.length == 0){
@@ -36,8 +36,8 @@
 					this.password.className = "error";
 					this.confirm.className = "error";
 					} else {
-						this.password.className = "error";
-					this.confirm.className = "error";
+						this.password.className = "noerror";
+					this.confirm.className = "noerror";
 					}
 				if(alertvalue.length > 0)
 					alert(alertvalue);
