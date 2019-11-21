@@ -25,7 +25,7 @@ function handleUsers() {
 			}
 			$_SESSION['user'] = $response["username"];
 			echo "<br><pre>" . $_SESSION['user'] . "</pre><br>";
-			return "Welcome " . $response["username"];
+			header("location: landing.php");
 		}
 		 catch(Exception $e){
 			$response = "DB error: $e";
