@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
@@ -22,9 +23,8 @@ function handleUsers() {
 			if(!password_verify($_POST["password"], $response["password"])) {
 			 	return "Invalid password";
 			}
-			//session_start();
-			//$_SESSION['user'] = $response["username"];
-			echo "<br><pre>" . var_export($response) . "</pre><br>";
+			$_SESSION['user'] = $response["username"];
+			echo "<br><pre>" . $_SESSION['user'] . "</pre><br>";
 			return "Welcome " . $response["username"];
 		}
 		 catch(Exception $e){
