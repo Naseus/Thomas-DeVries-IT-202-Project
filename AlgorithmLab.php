@@ -1,5 +1,5 @@
 <?php
-start_session();
+//start_session();
 if(isset($_SESSION['user'])){
 	echo $_SESSION['user'] . "'s alg lab" ;
 } else{
