@@ -18,15 +18,26 @@
 				if(this.username.value.length == 0) {
 					rtn = false;
 					alertvalue += "Enter a username\n";
+					this.user.className = "error";
+				} else {
+					this.user.className = "noerror";
 				}
 
 				if(this.email.value.length == 0){
 					rtn = false;
-					alertvalue += "Email is invalid\n";					
+					alertvalue += "Email is invalid\n";	
+					this.email.className = "error";				
+				} else {
+					this.email.className = "noerror";
 				}
 				if(this.password.value != this.confirm.value || this.password.value.length == 0 || this.confirm.value.length == 0){
 					rtn = false;
 					alertvalue += "passwords don't match";
+					this.password.className = "error";
+					this.confirm.className = "error";
+					} else {
+						this.password.className = "error";
+					this.confirm.className = "error";
 					}
 				if(alertvalue.length > 0)
 					alert(alertvalue);
@@ -75,7 +86,7 @@
 				require("config.php");
 				$conn_string = "mysql:host = $host;dbname = $database; charset = utf8mb4";
 				$db = new PDO($conn_string, $username, $password);
-				$stmt = $db->prepare("INSERT into `Users` (`username`,`password`,`email`) VALUES (:username, :password, :email)");
+				$stmt = $db->prepare("INSERT into `Users` (`username`, `email`, `password`) VALUES (:username, :email, :password)");
 				$result = $stmt->execute(
 					array(":username"=>$user,
 							":password"=>$hash,
