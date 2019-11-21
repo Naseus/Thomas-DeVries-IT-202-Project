@@ -84,7 +84,7 @@
 			try {
 				$hash = password_hash($pass, PASSWORD_BCRYPT);
 				require("config.php");
-				$conn_string = "mysql:host = $host;dbname = $database; charset = utf8mb4";
+				$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 				$db = new PDO($conn_string, $username, $password);
 				$stmt = $db->prepare("INSERT into `Users` (`username`, `email`, `password`) VALUES (:username, :email, :password)");
 				$result = $stmt->execute(
