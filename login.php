@@ -18,16 +18,14 @@ function handleUsers() {
 			
 			if($_POST["username"] != $response["username"]) {
 			 return "Invalid User";
-		}
-			if($_POST["password"] != $response["pin"]) {
+			}
+			if(!password_verify($_POST["password"], $response["password"])) {
 			 	return "Invalid password";
 			}
-			if($_POST["username"] == $response["username"] && $_POST["password"] == $response["pin"]) {
-				session_start();
-				$_SESSION['user'] = $response["username"];
-				echo "<br><pre>" . var_export($response) . "</pre><br>";
-				return "Welcome " . $response["username"];
-			}
+			//session_start();
+			//$_SESSION['user'] = $response["username"];
+			echo "<br><pre>" . var_export($response) . "</pre><br>";
+			return "Welcome " . $response["username"];
 		}
 		 catch(Exception $e){
 			$response = "DB error: $e";
