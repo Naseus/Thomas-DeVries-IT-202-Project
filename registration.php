@@ -103,8 +103,11 @@
 				echo "<br><pre>" . $labName . "</pre><br>";
 
 
-				$stmt2 = $db->prepare("UPDATE  `Users` SET (`alg_lab_ref`) VALUES (:ref) WHERE `id_number`= $response["id_number"]");
-				$result = $stmt2->execute(array(":ref"=>$labName));
+				$stmt2 = $db->prepare("UPDATE  `Users` SET `alg_lab_ref`=:ref WHERE `id_number`=:id");
+				$result = $stmt2->execute(
+					array(":ref"=>$labName,
+					 		":id" =>$response["id_number"])
+				);
 				unset($r);
 
 
