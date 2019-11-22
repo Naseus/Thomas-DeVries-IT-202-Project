@@ -100,6 +100,8 @@
 				$r = $extract_stmt-> execute(array(":username"=> $user));
 				$response = $extract_stmt ->fetch(PDO::FETCH_ASSOC);
 				$labName = "Alg_Lab_" . $response["id_number"];
+				echo "<br><pre>" . labName . "</pre><br>";
+
 
 				$stmt2 = $db->prepare("INSERT into `Users` (`alg_lab_ref`) VALUES (:ref)");
 				$result = $stmt2->execute(array(":ref"=>$labName));
@@ -118,7 +120,6 @@
 
 			}catch(Exception $e){
 			 	echo $e->getMessage();
-			 	echo "<br><pre>" . "wha - " . "</pre><br>";
 			 }
 
 		}
