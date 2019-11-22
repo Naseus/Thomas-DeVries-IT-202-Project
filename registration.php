@@ -114,11 +114,11 @@
 				) CHARACTER SET utf8 COLLATE utf8_general_ci";
 				$create_stmt = $db->prepare($query);
 				$r = $create_stmt->execute();
-				//echo "<br>" . ($r>0?"Created table or already exists":"Failed to create table") . "<br>";
 				//header("location: login.php");
 
 			}catch(Exception $e){
 			 	echo $e->getMessage();
+			 	echo "<br><pre>" . "wha - " . "</pre><br>";
 			 }
 
 		}
