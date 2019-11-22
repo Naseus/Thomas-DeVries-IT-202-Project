@@ -78,7 +78,7 @@ function handleUsers() {
 <body>
 	<H1>Login</H1>
 	<HR>
-	<form method = 'post' action = '#' onsubmit= "return validate();">
+	<form method = 'post' onsubmit= "return validate();">
 		<input name="username"  placeholder = "username" style width = "300px"/>
 		<br>
 		<input name="password" type="password"  placeholder = "password"/>
