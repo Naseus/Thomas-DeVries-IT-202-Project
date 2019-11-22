@@ -86,15 +86,35 @@
 				require("config.php");
 				$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 				$db = new PDO($conn_string, $username, $password);
-				$stmt = $db->prepare("INSERT into `Users` (`username`, `email`, `password`) VALUES (:username, :email, :password)");
-				$result = $stmt->execute(
+				$stmt1 = $db->prepare("INSERT into `Users` (`username`, `email`, `password`) VALUES (:username, :email, :password)");
+				$result = $stmt1->execute(
 					array(":username"=>$user,
 							":password"=>$hash,
 							":email"=>$email
 					)
 				);
-			echo var_export($result, true);
-			header("location: login.php");
+				echo var_export($result, true);
+
+				$extract_stmt = $db ->prepare($select_query);
+				$r = $extract_stmt-> execute(array(":username"=> $user));
+				$response = $extract_stmt ->fetch(PDO::FETCH_ASSOC);
+				$labName = "Alg_Lab_" . $response["id_number"];
+
+				$stmt2 = $db->prepare("INSERT into `Users` (`alg_lab_ref`) VALUES (:ref)");
+				header("location: login.php");
+				$result = $stmt2->execute(":ref"=>$labName);
+				unset($r);
+
+
+				$query = "create table if not exists `$labName`(
+				`alg_name` varchar(30) not null,
+				`alg` varchar(60) not null unique,
+				`moveNumber` int default 0,
+				PRIMARY KEY(`alg_name`)
+				) CHARACTER SET utf8 COLLATE utf8_general_ci";
+				$create_stmt = $db->prepare($query);
+				$r = $create_stmt->execute();
+				//echo "<br>" . ($r>0?"Created table or already exists":"Failed to create table") . "<br>";
 
 			}catch(Exception $e){
 			 	echo $e->getMessage();
