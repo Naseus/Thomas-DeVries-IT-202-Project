@@ -119,7 +119,7 @@
 				) CHARACTER SET utf8 COLLATE utf8_general_ci";
 				$create_stmt = $db->prepare($query);
 				$r = $create_stmt->execute();
-				//header("location: login.php");
+				header("location: login.php");
 
 			}catch(Exception $e){
 			 	echo $e->getMessage();
