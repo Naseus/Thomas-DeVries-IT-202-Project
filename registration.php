@@ -101,8 +101,7 @@
 				$labName = "Alg_Lab_" . $response["id_number"];
 
 				$stmt2 = $db->prepare("INSERT into `Users` (`alg_lab_ref`) VALUES (:ref)");
-				header("location: login.php");
-				$result = $stmt2->execute(":ref"=>$labName);
+				$result = $stmt2->execute(array(":ref"=>$labName));
 				unset($r);
 
 
@@ -115,6 +114,7 @@
 				$create_stmt = $db->prepare($query);
 				$r = $create_stmt->execute();
 				//echo "<br>" . ($r>0?"Created table or already exists":"Failed to create table") . "<br>";
+				header("location: login.php");
 
 			}catch(Exception $e){
 			 	echo $e->getMessage();
