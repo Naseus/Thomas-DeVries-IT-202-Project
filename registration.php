@@ -95,6 +95,7 @@
 				);
 				echo var_export($result, true);
 
+				$select_query = "select * from `Users` where username = :username";
 				$extract_stmt = $db ->prepare($select_query);
 				$r = $extract_stmt-> execute(array(":username"=> $user));
 				$response = $extract_stmt ->fetch(PDO::FETCH_ASSOC);
