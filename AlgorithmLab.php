@@ -7,3 +7,9 @@ if(isset($_SESSION['user'])){
 	exit();
 }
 ?>
+
+<html>
+	<br>
+	<br>
+	<a href="landing.php">Back</a>
+</html>

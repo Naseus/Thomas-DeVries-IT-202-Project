@@ -7,8 +7,11 @@ if(isset($_SESSION['user'])){
 <html>
 <body>
 	<br>
-	<a href="Landing.php">OLL Lab</a>
+	<a href="OLL.php">OLL Lab</a>
 	<br>
-	<a href="Landing.php">PLL</a>
+	<a href="PLL.php">PLL</a>
+	<br>
+	<br>
+	<a href="landing.php">Back</a>
 </body>
 </html>
