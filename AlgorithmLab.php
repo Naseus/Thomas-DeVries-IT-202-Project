@@ -60,6 +60,7 @@ function addAlg($algoritham, $length, $name) {
      			$('<button/>', {
         			text: n,
         			id: 'btn_'+ n,
+        			style = "block",
         			click: function () { 
         					alert(n); }
     					});
