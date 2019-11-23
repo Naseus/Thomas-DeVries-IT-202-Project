@@ -30,7 +30,6 @@ function addAlg() {
 		$length = count(str_word_count($_POST["algValue"], 1));
 		$name = $_POST["name"];
 		global $algDatabase, $db;
-		echo ($algDatabase);
 		$stmt =$db->prepare("INSERT into $algDatabase (`alg_name`,`alg`,`move_number`) VALUES (:name, :alg, :length)");
 		$run = $stmt->execute(array(
 			":name" => $name,
@@ -82,7 +81,7 @@ function addAlg() {
 			<input name = 'name' type = "hidden">
 			<input id = 'input' type = "submit" value= "Save Algoritham"/>
 		</form>
-	<?php echo $results; ?>
+	<?php echo var_export($results); ?>
 		<br>
 		<br>
 		<a href="landing.php">Back</a>
