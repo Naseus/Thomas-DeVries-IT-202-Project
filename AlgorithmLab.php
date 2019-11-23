@@ -30,6 +30,8 @@ function addAlg() {
 		$algoritham = $_POST["algValue"];
 		$length = count(str_word_count($_POST["algValue"], 1));
 		$name = $_POST["name"];
+		console.log($_POST["name"]);
+		console.log($_POST["algValue"]);
 		$stmt =$db->prepare("INSERT into $algDatabase (`alg_name`,`alg`,`move_number`) VALUES (:name, :alg, :length)");
 		$run = $stmt->execute(array(
 			":name" => $name,
