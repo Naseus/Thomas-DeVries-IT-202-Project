@@ -33,6 +33,7 @@ function addAlg() {
 		$name = $_POST["name"];
 		echo ($algDatabase);
 		echo ($_POST["algValue"]);
+		global $algDatabase, $db;
 		$stmt =$db->prepare("INSERT into $algDatabase (`alg_name`,`alg`,`move_number`) VALUES (:name, :alg, :length)");
 		$run = $stmt->execute(array(
 			":name" => $name,
