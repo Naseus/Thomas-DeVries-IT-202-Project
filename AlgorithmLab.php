@@ -56,7 +56,6 @@ function addAlg() {
 			$('#algs').submit(function(event){
 				this.algValue.value = $("#textArea").text();
 				this.name.value = prompt("Enter a name for the Algoritham");
-				<?php addAlg(); ?>
 			});
 		});
         notations = [
@@ -91,3 +90,4 @@ function addAlg() {
 		<a href="landing.php">Back</a>
 	</body>
 </html>
+<?php addAlg(); ?>
