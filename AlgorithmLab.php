@@ -81,8 +81,8 @@ function addAlg() {
 		<span id = "textArea" style = "display:block"></span>
 		<div id = buttons></div>
 		<form id = 'algs'>
-			<input id = 'algValue' type = "hidden"/>
-			<input id = 'name' type = "hidden">
+			<input name = 'algValue' type = "hidden"/>
+			<input name = 'name' type = "hidden">
 			<input id = 'input' type = "submit" value= "Save Algoritham" />
 		</form>
 		<br>
