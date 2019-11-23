@@ -47,12 +47,13 @@ function addAlg($algoritham, $length, $name) {
 				console.log("working");			
 			$('algs').submit(function(event){
 				alert("submit");
-
-				let allButtons = $("move > button");
-				allButtons.click(function(){
-					console.log("ran");
-					document.textArea.innerText += this.text + " "; 
-				});
+			});
+		});
+		$(document).ready(function(){
+			let allButtons = $("move > button");
+			allButtons.click(function(){
+				console.log("ran");
+				document.textArea.innerText += this.text + " "; 
 			});
 		});
 		</script>
