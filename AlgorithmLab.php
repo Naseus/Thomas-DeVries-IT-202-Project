@@ -54,7 +54,6 @@ function addAlg($algoritham, $length, $name) {
             ["L", "R", "U", "D", "F", "B", "L\'", "R\'", "U\'", "D\'", "F\'", "B\'", "L2", "R2", "U2", "D2", "F2","B2"],
             ["l", "r", "u", "d", "f", "b", "l\'", "r\'", "u\'", "d\'", "f\'", "b\'", "l2", "r2", "u2", "d2", "f2","b2"], 
             ["M", "E", "S", "M\'", "E\'", "S\'", "M2", "E2", "S2"], ["X", "Y", "Z", "X\'", "Y\'", "Z\'"]];
-        //btns = []
 		$(document).ready(function() {
   			for(n of notations[0]) {
      			b = $('<button/>', {
@@ -63,11 +62,10 @@ function addAlg($algoritham, $length, $name) {
         			click: function () { 
         					alert(n); }
     					});
-     		  //btns.push(b);
      		console.log(b[0]);
      		console.log($(this));
      		console.log(this);
-     		$(b).appendTo($(this.algs));
+     		$(b).appendTo($('#buttons'));
   			}
 		});
 		</script>
@@ -76,6 +74,7 @@ function addAlg($algoritham, $length, $name) {
 	<body>
 		<span id = "textArea" style = "block"></span>
 		<br>
+		<div id = buttons></div>
 		<form id = 'algs'>
 			<input id = 'input' type = "submit" value= "Save Algoritham" />
 		</form>
