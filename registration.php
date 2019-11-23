@@ -114,7 +114,7 @@
 				$query = "create table if not exists `$labName`(
 				`alg_name` varchar(30) not null,
 				`alg` varchar(60) not null unique,
-				`moveNumber` int default 0,
+				`move_number` int default 0,
 				PRIMARY KEY(`alg_name`)
 				) CHARACTER SET utf8 COLLATE utf8_general_ci";
 				$create_stmt = $db->prepare($query);
