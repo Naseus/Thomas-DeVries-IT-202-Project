@@ -67,7 +67,7 @@ function addAlg($algoritham, $length, $name) {
      		console.log(b[0]);
      		console.log($(this));
      		   console.log(this);
-     		$(this).append($(b));
+     		$(this).forms[0].append($(b));
   			}
 		});
 		</script>
