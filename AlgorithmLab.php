@@ -12,7 +12,7 @@ try {
 				$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 				$db = new PDO($conn_string, $username, $password);
 				$stmt1 = $db->prepare("select * from `Users` where username =:user");
-				$userData = $stmt1->execute(array(":user" = $_SESSION['user']));
+				$userData = $stmt1->execute(array(":user" => $_SESSION['user']));
 				$algDatabase = $userData["Alg_Lab_Reference"];
 				$stmt2 = $db->prepare("select * from `$algDatabase`");
 				$results = $stmt2->execute();
@@ -25,8 +25,13 @@ try {
 function getLabData() {
 	return $results;
 }
-function addAlg($algoritham,$length,$name) {
+function addAlg($algoritham, $length, $name) {
 	$stmt =$db->prepare("INSERT into $algDatabase (`alg_name`,`alg`,`move_number`) VALUES (:name, :alg, :length)");
+	$run = $stmt->execute(array(
+		":name" => $name,
+		":alg" => $algoritham,
+		":length" => $length
+	));
 }
 ?>
 
@@ -45,7 +50,7 @@ function addAlg($algoritham,$length,$name) {
 			(function() {
 				let allButtons = $("move > button");
 				allButtons.click(function(){
-					document.textArea.innerText += this.text; 
+					document.textArea.innerText += this.text + " "; 
 				});
 			});
 		}
