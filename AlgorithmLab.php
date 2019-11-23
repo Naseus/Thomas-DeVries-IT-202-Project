@@ -64,7 +64,8 @@ function addAlg($algoritham, $length, $name) {
         					alert(n); }
     					});
      		  //btns.push(b);
-     	console.log(b[0]);
+     		console.log(b[0]);
+     		$(this).append($(b));
   			}
 		});
 		</script>
