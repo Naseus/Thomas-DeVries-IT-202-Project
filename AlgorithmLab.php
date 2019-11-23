@@ -45,20 +45,19 @@ function addAlg($algoritham, $length, $name) {
 		<script>
 		$(document).ready(function(){
 			$('#input').submit(function(event){
-					
+				console.log("submit");
 			}
-			(function() {
 				let allButtons = $("move > button");
 				allButtons.click(function(){
+					console.log("ran");
 					document.textArea.innerText += this.text + " "; 
 				});
-			});
-		}
+			};
 		</script>
 
 	</head>
 	<body>
-		<span id = "textArea"/>
+		<span id = "textArea" style = "block"/>
 		<br>
 		<button type="button" class = "move" value="R">R</button>
 		<button type="button" class = "move" value="L">L</button>
