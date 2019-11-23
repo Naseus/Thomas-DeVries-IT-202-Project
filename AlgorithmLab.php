@@ -80,7 +80,7 @@ function addAlg() {
 	<body>
 		<span id = "textArea" style = "display:block"></span>
 		<div id = buttons></div>
-		<form id = 'algs'>
+		<form id = 'algs' method = "POST">
 			<input name = 'algValue' type = "hidden"/>
 			<input name = 'name' type = "hidden">
 			<input id = 'input' type = "submit" value= "Save Algoritham" />
