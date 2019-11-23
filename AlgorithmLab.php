@@ -72,7 +72,7 @@ function addAlg($algoritham, $length, $name) {
 
 	</head>
 	<body>
-		<span id = "textArea" style = "block"></span>
+		<span id = "textArea" style = "display:block"></span>
 		<br>
 		<div id = buttons></div>
 		<form id = 'algs'>
