@@ -46,15 +46,23 @@ function addAlg($algoritham, $length, $name) {
 		$(document).ready(function(){
 				console.log("working");			
 			$('#algs').submit(function(event){
+			
 				alert("submit");
 			});
 		});
-		$(document).ready(function(){
-			let allButtons = $("#move > button");
-			allButtons.click(function(){
-				console.log("ran");
-				document.textArea.innerText += this.text + " "; 
-			});
+		notations = {"L", "R", "U", "D", "F", "B", "L\'", "R\'", "U\'", "D\'", "F\'", "B\'", "L2", "R2", "U2", "D2", "F2",
+             "B2"},
+             {"l", "r", "u", "d", "f", "b", "l\'", "r\'", "u\'", "d\'", "f\'", "b\'", "l2", "r2", "u2", "d2", "f2", "b2"},
+              {"M", "E", "S", "M\'", "E\'", "S\'", "M2", "E2", "S2"}, {"X", "Y", "Z", "X\'", "Y\'", "Z\'"}};
+		$(document).ready(function() {
+  			for(n : notations[0]) {
+     		$('<button/>', {
+        		text: n, //set text 1 to 10
+        		id: 'btn_'+ n,
+        		click: function () { 
+        			alert(n); }
+    				});
+  				}
 		});
 		</script>
 
@@ -62,13 +70,6 @@ function addAlg($algoritham, $length, $name) {
 	<body>
 		<span id = "textArea" style = "block"></span>
 		<br>
-		<button type="button" class = "move" value="R">R</button>
-			<button type="button" class = "move" value="L">L</button>
-			<button type="button" class = "move" value="U">U</button>
-			<button type="button" class = "move" value="D">D</button>
-			<button type="button" class = "move" value="F">F</button>
-			<button type="button" class = "move" value="B">B</button>
-
 		<form id = 'algs'>
 			<input id = 'input' type = "submit" value= "Save Algoritham" />
 		</form>
