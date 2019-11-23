@@ -44,16 +44,14 @@ function addAlg($algoritham, $length, $name) {
 		</script>
 		<script>
 		$(document).ready(function(){
-			$('#input').submit(function(event){
+			$('input').submit(function(event){
 				console.log("submit");
-			});
-			(function() {
+	
 				let allButtons = $("move > button");
 				allButtons.click(function(){
 					console.log("ran");
 					document.textArea.innerText += this.text + " "; 
 				});
-			});
 		});
 		</script>
 
