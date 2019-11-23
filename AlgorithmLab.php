@@ -26,18 +26,20 @@ function getLabData() {
 	return $results;
 }
 function addAlg() {
+	echo ("RAN");
 	if(isset($_POST["algValue"]) && $_POST["name"]) {
 		$algoritham = $_POST["algValue"];
 		$length = count(str_word_count($_POST["algValue"], 1));
 		$name = $_POST["name"];
-		console.log($_POST["name"]);
-		console.log($_POST["algValue"]);
+		echo ($_POST["name"]);
+		echo ($_POST["algValue"]);
 		$stmt =$db->prepare("INSERT into $algDatabase (`alg_name`,`alg`,`move_number`) VALUES (:name, :alg, :length)");
 		$run = $stmt->execute(array(
 			":name" => $name,
 			":alg" => $algoritham,
 			":length" => $length
 		));
+		echo ("DONE");
 	}
 }
 ?>
@@ -51,7 +53,6 @@ function addAlg() {
 		</script>
 		<script>
 		$(document).ready(function(){
-				console.log("working");			
 			$('#algs').submit(function(event){
 				this.algValue.value = $("#textArea").text();
 				this.name.value = prompt("Enter a name for the Algoritham");
