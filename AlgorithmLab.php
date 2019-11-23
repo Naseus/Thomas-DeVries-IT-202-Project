@@ -50,7 +50,6 @@ function addAlg($algoritham, $length, $name) {
 			});
 		});
 		$(document).ready(function(){
-			'use strict'
 			let allButtons = $("#move > button");
 			allButtons.click(function(){
 				console.log("ran");
