@@ -45,7 +45,7 @@ function addAlg($algoritham, $length, $name) {
 		<script>
 		$(document).ready(function(){
 				console.log("working");			
-			$('algs').submit(function(event){
+			$('#algs').submit(function(event){
 				alert("submit");
 			});
 		});
@@ -60,16 +60,16 @@ function addAlg($algoritham, $length, $name) {
 
 	</head>
 	<body>
-		<form id = 'algs'>
-			<span id = "textArea" style = "block"></span>
-			<br>
-			<button type="button" class = "move" value="R">R</button>
+		<span id = "textArea" style = "block"></span>
+		<br>
+		<button type="button" class = "move" value="R">R</button>
 			<button type="button" class = "move" value="L">L</button>
 			<button type="button" class = "move" value="U">U</button>
 			<button type="button" class = "move" value="D">D</button>
 			<button type="button" class = "move" value="F">F</button>
 			<button type="button" class = "move" value="B">B</button>
 
+		<form id = 'algs'>
 			<input id = 'input' type = "submit" value= "Save Algoritham" />
 		</form>
 		<br>
