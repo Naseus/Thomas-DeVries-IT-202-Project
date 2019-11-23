@@ -60,7 +60,7 @@ function addAlg($algoritham, $length, $name) {
         			text: n,
         			id: 'btn_'+ n,
         			click: function () { 
-        					this.textArea.innerText += n; }
+        					this.getElementById("textArea)".innerText += n; }
     					});
      		console.log(b[0]);
      		console.log($(this));
