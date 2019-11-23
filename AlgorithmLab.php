@@ -67,7 +67,7 @@ function addAlg($algoritham, $length, $name) {
      		console.log(b[0]);
      		console.log($(this));
      		   console.log(this);
-     		$(b).appendTo(document);
+     		$(b).appendTo($(this));
   			}
 		});
 		</script>
