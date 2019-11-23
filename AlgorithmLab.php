@@ -17,6 +17,7 @@ try {
 				$stmt2 = $db->prepare("select * from `$algDatabase`");
 				$results = $stmt2->execute();
 				echo $results;
+				echo "<br><pre>" . var_export($userData) . "<pre><br>";
 
 		}catch(Exception $e){
 			 echo $e->getMessage();
