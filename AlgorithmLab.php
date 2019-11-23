@@ -56,13 +56,14 @@ function addAlg($algoritham, $length, $name) {
             ["M", "E", "S", "M\'", "E\'", "S\'", "M2", "E2", "S2"], ["X", "Y", "Z", "X\'", "Y\'", "Z\'"]];
 		$(document).ready(function() {
   			for(n in notations[0]) {
-     		$('<button/>', {
-        		text: n, //set text 1 to 10
-        		id: 'btn_'+ n,
-        		click: function () { 
-        			alert(n); }
-    				});
-  				}
+  				console.log("Button maker");
+     			$('<button/>', {
+        			text: n,
+        			id: 'btn_'+ n,
+        			click: function () { 
+        					alert(n); }
+    					});
+  			}
 		});
 		</script>
 
