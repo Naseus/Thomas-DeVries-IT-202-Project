@@ -52,6 +52,7 @@ function addAlg($algoritham, $length, $name) {
 				allButtons.click(function(){
 					console.log("ran");
 					document.textArea.innerText += this.text + " "; 
+				});
 			});
 		});
 		</script>
