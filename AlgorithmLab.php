@@ -44,6 +44,7 @@ function addAlg($algoritham, $length, $name) {
 		</script>
 		<script>
 		$(document).ready(function(){
+				console.log("working");			
 			$('input').submit(function(event){
 				console.log("submit");
 				});
