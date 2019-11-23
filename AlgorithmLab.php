@@ -47,7 +47,7 @@ function addAlg($algoritham, $length, $name) {
 			$('#input').submit(function(event){
 				console.log("submit");
 			});
-			function() {
+			(function() {
 				let allButtons = $("move > button");
 				allButtons.click(function(){
 					console.log("ran");
