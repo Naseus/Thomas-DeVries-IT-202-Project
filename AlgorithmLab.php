@@ -56,13 +56,13 @@ function addAlg($algoritham, $length, $name) {
             ["M", "E", "S", "M\'", "E\'", "S\'", "M2", "E2", "S2"], ["X", "Y", "Z", "X\'", "Y\'", "Z\'"]];
 		$(document).ready(function() {
   			for(n of notations[0]) {
-  				console.log(n);
-     			$('<button/>', {
+     			b = $('<button/>', {
         			text: n,
         			id: 'btn_'+ n,
         			click: function () { 
         					alert(n); }
     					});
+     		  console.log(b);
   			}
 		});
 		</script>
