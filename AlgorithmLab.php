@@ -60,7 +60,7 @@ function addAlg($algoritham, $length, $name) {
         			text: n,
         			id: 'btn_'+ n,
         			click: function () { 
-        					$("#textArea span").text += n;
+        					$("#textArea span").text($("#textArea span").text() + n);
         					 }
     					});
      		$(b).appendTo($('#buttons'));
@@ -71,7 +71,6 @@ function addAlg($algoritham, $length, $name) {
 	</head>
 	<body>
 		<span id = "textArea" style = "display:block"></span>
-		<br>
 		<div id = buttons></div>
 		<form id = 'algs'>
 			<input id = 'input' type = "submit" value= "Save Algoritham" />
