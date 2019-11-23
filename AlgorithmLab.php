@@ -3,9 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
-if(isset($_SESSION['user'])){
-	echo $_SESSION['user'] . "'s alg lab" ;
-} else{
+if(!isset($_SESSION['user'])){
 	echo "log-in to accsess the lab";
 	exit();
 }
@@ -20,18 +18,13 @@ try {
 				$algDatabase = $userData["Alg_Lab_Reference"];
 				$stmt2 = $db->prepare("select * from `$algDatabase`");
 				$results = $stmt2->execute();
-				echo $results;
-				echo "<br><pre>" . var_export($userData) . "<pre><br>";
-
 		}catch(Exception $e){
-			 echo $e->getMessage();
 		}
 
 function getLabData() {
 	return $results;
 }
 function addAlg() {
-	echo ("RAN ");
 	if(isset($_POST["algValue"]) && isset($_POST["name"])) {
 		$algoritham = $_POST["algValue"];
 		$length = count(str_word_count($_POST["algValue"], 1));
@@ -44,7 +37,6 @@ function addAlg() {
 			":alg" => $algoritham,
 			":length" => $length
 		));
-		echo (" DONE");
 	}
 }
 ?>
