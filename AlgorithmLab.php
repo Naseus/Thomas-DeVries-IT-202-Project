@@ -12,7 +12,8 @@ try {
 				$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 				$db = new PDO($conn_string, $username, $password);
 				$stmt1 = $db->prepare("select * from `Users` where username =:user");
-				$userData = $stmt1->execute(array(":user" => $_SESSION['user']));
+				$user = $stmt1->execute(array(":user" => $_SESSION['user']));
+				$userData = $stmt ->fetch(PDO::FETCH_ASSOC);
 				$algDatabase = $userData["Alg_Lab_Reference"];
 				$stmt2 = $db->prepare("select * from `$algDatabase`");
 				$results = $stmt2->execute();
