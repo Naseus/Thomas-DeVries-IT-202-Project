@@ -25,13 +25,19 @@ try {
 function getLabData() {
 	return $results;
 }
-function addAlg($algoritham, $length, $name) {
-	$stmt =$db->prepare("INSERT into $algDatabase (`alg_name`,`alg`,`move_number`) VALUES (:name, :alg, :length)");
-	$run = $stmt->execute(array(
-		":name" => $name,
-		":alg" => $algoritham,
-		":length" => $length
-	));
+function addAlg() {
+	if(isset($_POST["algValue"]) && $_POST["name"]) {
+		$algoritham = $_POST["algValue"];
+		$length = count(str_word_count($_POST["algValue"], 1));
+		$name = $_POST["name"];
+		$algoritham, $length, $name
+		$stmt =$db->prepare("INSERT into $algDatabase (`alg_name`,`alg`,`move_number`) VALUES (:name, :alg, :length)");
+		$run = $stmt->execute(array(
+			":name" => $name,
+			":alg" => $algoritham,
+			":length" => $length
+		));
+	}
 }
 ?>
 
@@ -46,8 +52,9 @@ function addAlg($algoritham, $length, $name) {
 		$(document).ready(function(){
 				console.log("working");			
 			$('#algs').submit(function(event){
-			
-				alert("submit");
+				this.algValue.value = $("#textArea").text();
+				this.name.value = prompt("Enter a name for the Algoritham");
+				<?php addAlg(); ?>
 			});
 		});
         notations = [
@@ -73,6 +80,8 @@ function addAlg($algoritham, $length, $name) {
 		<span id = "textArea" style = "display:block"></span>
 		<div id = buttons></div>
 		<form id = 'algs'>
+			<input id = 'algValue' type = "hidden"/>
+			<input id = 'name' type = "hidden">
 			<input id = 'input' type = "submit" value= "Save Algoritham" />
 		</form>
 		<br>
