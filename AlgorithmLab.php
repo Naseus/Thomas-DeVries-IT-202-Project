@@ -55,7 +55,7 @@ function addAlg($algoritham, $length, $name) {
             ["l", "r", "u", "d", "f", "b", "l\'", "r\'", "u\'", "d\'", "f\'", "b\'", "l2", "r2", "u2", "d2", "f2","b2"], 
             ["M", "E", "S", "M\'", "E\'", "S\'", "M2", "E2", "S2"], ["X", "Y", "Z", "X\'", "Y\'", "Z\'"]];
 		$(document).ready(function() {
-  			for(n : notations[0]) {
+  			for(n in notations[0]) {
      		$('<button/>', {
         		text: n, //set text 1 to 10
         		id: 'btn_'+ n,
