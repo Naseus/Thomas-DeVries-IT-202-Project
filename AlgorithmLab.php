@@ -36,9 +36,23 @@ function getLabData() {
 		echo $rtn;
 	}catch(Exception $e){}
 }
+//	HANDLES THE DATA SUMBITED TO THE BACKEND
+function handleData() {
+	if(isset($_POST["algValue"]) && isset($_POST["name"])) {
+		addAlg()
+	}
+	elseif(isset($_POST["delete"])) {
+		delete();
+	}
+}
+// DELETES AN ALGORITHAM FROM THE DATABASE
+function delete() {
+	global $algDatabase, $db;
+	echo $_POST["delete"];
+}
 // ADD AN ALGORITHAM TO THE DATABASE
 function addAlg() {
-	if(isset($_POST["algValue"]) && isset($_POST["name"])) {
+	if(!empty($_POST["algValue"]) && !empty($_POST["name"])) {
 		$algoritham = $_POST["algValue"];
 		$length = count(str_word_count($_POST["algValue"], 1));
 		$name = $_POST["name"];
@@ -53,7 +67,6 @@ function addAlg() {
 }
 ?>
 
-<?php addAlg(); ?>
 <html>
 	<head>
 		<script
@@ -145,7 +158,6 @@ function addAlg() {
 					click: function () { 
 						$("#delete").text($(this).attr("id"));
 						alert($(this).attr("id"));
-						//$("#algData").submit();
 					}
 				}));
 			}
@@ -170,3 +182,5 @@ function addAlg() {
 		<a href="landing.php">Back</a>
 	</body>
 </html>
+
+<?php handleData(); ?>
