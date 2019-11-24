@@ -91,7 +91,7 @@ function addAlg() {
 			$(b).appendTo($('#buttons'));
 		});
 		//BACKSPACE LOGIC
-		back(){ 
+		function back(){ 
         	lst = $("#textArea").text().split();
         	lst[lst.length - 1] = "";
         	rtn = "";
