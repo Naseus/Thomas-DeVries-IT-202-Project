@@ -83,11 +83,12 @@ function addAlg() {
      		$(b).appendTo($('#buttons'));
   			}
 		// CREATE BACKSPACE
-				   			b = $('<button/>', {
+				  b = $('<button/>', {
         			text: "BACK",
         			id: 'btn_BACK',
-        			click: back();
-     		$(b).appendTo($('#buttons')});
+        			click: back()
+     		});
+			$(b).appendTo($('#buttons')
 		});
 		//BACKSPACE LOGIC
 		back(){ 
