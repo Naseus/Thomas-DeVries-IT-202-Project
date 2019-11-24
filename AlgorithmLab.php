@@ -116,13 +116,13 @@ function addAlg() {
 			let $headTr = $("<tr>");
 			$('#algData').append($(table));
 			$table.append($headTr);
-			$headTr.append($("<th>", text: "Name"));
-			$headTr.append($("<th>", text: "Algoritham"));
-			$headTr.append($("<th>", text: "Length"));
+			$headTr.append($("<th>", { text: "Name"}));
+			$headTr.append($("<th>", { text: "Algoritham"}));
+			$headTr.append($("<th>", { text: "Length"}));
 			for(let i = 0; i < arr.length; i ++) {
 				let $tr = $("<tr>");
 				for(let j = 0; j < arr.length; j++) {
-					$tr.append($("<td>", text: arr[i][j]));
+					$tr.append($("<td>", { text: arr[i][j]}));
 				}
 			}
 		});
