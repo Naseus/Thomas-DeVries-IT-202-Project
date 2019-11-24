@@ -111,4 +111,4 @@ function addAlg() {
 	</body>
 </html>
 <?php addAlg(); ?>
-<?php getLabDat()); ?>
+<?php getLabData(); ?>
