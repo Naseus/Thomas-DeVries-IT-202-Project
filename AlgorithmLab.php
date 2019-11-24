@@ -86,12 +86,12 @@ function addAlg() {
 				  b = $('<button/>', {
         			text: "BACK",
         			id: 'btn_BACK',
-        			click: back()
+        			click: algBackSpace()
      		});
 			$(b).appendTo($('#buttons'));
 		});
 		//BACKSPACE LOGIC
-		function back(){ 
+		function algBackSpace(){ 
         	lst = $("#textArea").text().split();
         	lst[lst.length - 1] = "";
         	rtn = "";
