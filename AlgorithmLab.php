@@ -151,10 +151,9 @@ function addAlg() {
        				}
  				});
      		$(b).appendTo($('#buttons'));
-		});
 
 		/////////////////SECOND ROW		////////////////
-		  	//$('#buttons').append("<br>");
+		  	$('#buttons').append($("<br>"));
   			for(n of notations[3]) {
      			b = $('<button/>', {
         			text: n,
@@ -189,7 +188,7 @@ function addAlg() {
   			}
 
   		/////////////////THIRD ROW		////////////////
-		  	//$('#buttons').append("<br/>");
+		  	$('#buttons').append($("<br/>"));
   			for(n of notations[6]) {
      			b = $('<button/>', {
         			text: n,
@@ -211,6 +210,7 @@ function addAlg() {
     					});
      		$(b).appendTo($('#buttons'));
   			}
+  	});
 
 		//CREATE TABLE
 		$(document).ready(function() {
