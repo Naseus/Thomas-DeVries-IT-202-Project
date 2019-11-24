@@ -83,18 +83,13 @@ function addAlg() {
      		$(b).appendTo($('#buttons'));
   			}
 		// CREATE BACKSPACE
-				b = $('<button/>', {
-        			text: "BACK",
-        			id: 'btn_BACK',
-        		});
-        		$("#btn_BACK").on("click", function(){ 
-        			lst = $("#textArea").text().split();
-        			lst[lst.length - 1] = "";
-        			rtn = "";
-       				for(text of lst)
-        				rtn += text;
-        			$("#textArea").text(rtn);
-      			});
+			b = $('<button/>', {
+        		text: "Clear",
+        		id: 'btn_BACK',
+       			click: function () { 
+       					$("#textArea").text("");
+       				}
+ 				});
      		$(b).appendTo($('#buttons'));
 		});
 
