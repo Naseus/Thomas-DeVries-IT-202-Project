@@ -87,7 +87,7 @@ function addAlg() {
         		text: "Clear",
         		id: 'btn_BACK',
        			click: function () { 
-       					$("#textArea").text("");
+       					$("#textArea").text(" ");
        				}
  				});
      		$(b).appendTo($('#buttons'));
@@ -108,11 +108,12 @@ function addAlg() {
 				console.log(log);
 			}
 		}
+		console.log(createTable());
 		</script>
 
 	</head>
 	<body>
-		<span id = "textArea" style = "display:block"></span>
+		<span id = "textArea" style = "display:block" text =""></span>
 		<div id = buttons></div>
 		<form id = 'algs' method = "POST">
 			<input name = 'algValue' type = "hidden"/>
