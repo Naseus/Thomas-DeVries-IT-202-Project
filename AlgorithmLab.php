@@ -85,7 +85,7 @@ function addAlg() {
 		//ONSUBMIT FOR DELETE
 		$(document).ready(function(){
 			$('#algData').submit(function(event){
-				alert("RAN");
+				alert($('#delete'));
 			});
 		});		
 		//CREATING NOTATIONS
