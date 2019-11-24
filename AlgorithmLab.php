@@ -113,6 +113,7 @@ function addAlg() {
 			let blocks = algData.split("!");
 			for(let lst of blocks)
 				arr.push(lst.split("_"));
+			arr.pop();
 			for(let i = 0; i < arr.length; i++) 
 				arr[i].pop();
 			let $table = $("<table>");
@@ -149,6 +150,7 @@ function addAlg() {
 		<form id = 'algs' method = "POST">
 			<input name = 'algValue' type = "hidden"/>
 			<input name = 'name' type = "hidden">
+			<input name = 'delete' type = "hidden">
 			<input id = 'input' type = "submit" value= "Save Algoritham"/>
 		</form>
 		<div id = "algData"></div>
