@@ -83,7 +83,7 @@ function addAlg() {
 			<input name = 'name' type = "hidden">
 			<input id = 'input' type = "submit" value= "Save Algoritham"/>
 		</form>
-	<?php echo "<br><pre>" . var_export($results, true) ."<pre><br>" ?>
+	<?php echo "<br><pre>" . var_export($results[1], true) ."<pre><br>" ?>
 		<br>
 		<br>
 		<a href="landing.php">Back</a>
