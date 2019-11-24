@@ -18,7 +18,7 @@ try {
 				$algDatabase = $userData["Alg_Lab_Reference"];
 				$stmt2 = $db->prepare("select * from `$algDatabase`");
 				$r = $stmt2->execute();
-				$results = $stmt2 ->fetch(PDO::FETCH_ASSOC);
+				$results = $stmt2 ->fetchAll(PDO::FETCH_ASSOC);
 
 		}catch(Exception $e){
 		}
@@ -83,7 +83,7 @@ function addAlg() {
 			<input name = 'name' type = "hidden">
 			<input id = 'input' type = "submit" value= "Save Algoritham"/>
 		</form>
-	<?php echo "<br><pre>" . var_export($results[1], true) ."<pre><br>" ?>
+	<?php echo "<br><pre>" . var_export($results, true) ."<pre><br>" ?>
 		<br>
 		<br>
 		<a href="landing.php">Back</a>
