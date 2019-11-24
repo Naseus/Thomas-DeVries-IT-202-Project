@@ -121,6 +121,7 @@ function addAlg() {
 			$headTr.append($("<th>", { text: "Length"}));
 			for(let i = 0; i < arr.length; i ++) {
 				let $tr = $("<tr>");
+				$table.append($tr);
 				for(let j = 0; j < arr.length; j++) {
 					$tr.append($("<td>", { text: arr[i][j]}));
 				}
