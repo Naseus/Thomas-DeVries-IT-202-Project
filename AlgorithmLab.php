@@ -127,7 +127,7 @@ function addAlg() {
 					$tr.append($("<td>", { text: arr[i][j]}));
 				}
 				$btnTd = ("<td>");
-				td.append($('<button/>',{
+				$btnTd.append($('<button/>',{
 					text: "X",
 					id:"Delete " + arr[i][0],
 					click : function() {
