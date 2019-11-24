@@ -45,23 +45,23 @@ function handleData() {
 		delete();
 	}
 }
-// DELETES AN ALGORITHAM FROM THE DATABASE
+// DELETES AN ALGORITHM FROM THE DATABASE
 function delete() {
 	global $algDatabase, $db;
 	$stmt = $db -> prepare("DELETE FROM $algDatabase WHERE alg_name = :name");
 	$user = $stmt->execute(array(":name" => $_POST["delete"]));
 }
-// ADD AN ALGORITHAM TO THE DATABASE
+// ADD AN ALGORITHM TO THE DATABASE
 function addAlg() {
 	if(!empty($_POST["algValue"]) && !empty($_POST["name"])) {
-		$algoritham = $_POST["algValue"];
+		$algorithm = $_POST["algValue"];
 		$length = count(str_word_count($_POST["algValue"], 1));
 		$name = $_POST["name"];
 		global $algDatabase, $db;
 		$stmt =$db->prepare("INSERT into $algDatabase (`alg_name`,`alg`,`move_number`) VALUES (:name, :alg, :length)");
 		$run = $stmt->execute(array(
 			":name" => $name,
-			":alg" => $algoritham,
+			":alg" => $algorithm,
 			":length" => $length
 		));
 	}
@@ -84,7 +84,7 @@ function addAlg() {
 		$(document).ready(function(){
 			$('#algs').submit(function(event){
 				this.algValue.value = $("#textArea").text();
-				this.name.value = prompt("Enter a name for the Algoritham");
+				this.name.value = prompt("Enter a name for the Algorithm");
 			});
 		});
 		//ONSUBMIT FOR DELETE
@@ -227,7 +227,7 @@ function addAlg() {
 			$('#algData').append($table);
 			$table.append($headTr);
 			$headTr.append($("<th>", { text: "Name"}));
-			$headTr.append($("<th>", { text: "Algoritham"}));
+			$headTr.append($("<th>", { text: "Algorithm"}));
 			$headTr.append($("<th>", { text: "Length"}));
 			$headTr.append($("<th>", { text: "Delete"}));
 			for(let i = 0; i < arr.length; i ++) {
@@ -256,7 +256,7 @@ function addAlg() {
 		<form id = 'algs' method = "POST">
 			<input name = 'algValue' type = "hidden"/>
 			<input name = 'name' type = "hidden">
-			<input id = 'input' type = "submit" value= "Save Algoritham"/>
+			<input id = 'input' type = "submit" value= "Save Algorithm"/>
 		</form>
 
 		<form id = "algData" method = "POST">
