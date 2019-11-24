@@ -90,8 +90,10 @@ function addAlg() {
         					lst = $("#textArea").text().split();
         					lst[lst.length - 1] = "";
         					rtn = "";
-        					for(text of lst)
+        					for(text of lst){
         						rtn += text;
+        						console.log(text);
+        					}
         					$("#textArea").text(rtn);
         					}
     					});
@@ -130,5 +132,5 @@ function addAlg() {
 		<a href="landing.php">Back</a>
 	</body>
 </html>
-<?php getLabData(); ?>
-<?php echo addAlg(); ?>
+<?php echo getLabData(); ?>
+<?php addAlg(); ?>
