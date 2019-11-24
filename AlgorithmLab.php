@@ -81,7 +81,7 @@ function addAlg() {
 		});
 		function createTable() {
 			table = [[]];
-			algData ="R' U !R U F";// <?php getLabData() ?>;
+			algData ="R' U !R U F";/* <?php getLabData() ?>;*/
 			blocks = algData.Split("!");
 			for(lst of blocks)
 				table.push(lst.split());
