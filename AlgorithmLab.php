@@ -2,11 +2,10 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-session_start();
 if(!isset($_SESSION['user'])){
 	header("login.php");
 }
-
+session_start();
 try {
 	require("config.php");
 				$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
