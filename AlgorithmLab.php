@@ -109,13 +109,11 @@ function addAlg() {
 			let algData ="R' U !R U F";/* <?php getLabData() ?>;*/
 			let blocks = algData.split("!");
 			for(let lst of blocks)
-				table.push(lst.split(" "));
+				table.push(lst.split("_"));
 			for(let i = 0; i < table.length; i++) {
-				let log = "";
 				for (let j = 0; j < table[0].length; i++) {
-					log += table[i][j];
+					console.log(table[i][j]);
 				}
-				console.log(log);
 			}
 		}
 		console.log(createTable());
@@ -137,5 +135,5 @@ function addAlg() {
 		<a href="landing.php">Back</a>
 	</body>
 </html>
-<?php echo  getLabData(); ?>
+//<?php echo  getLabData(); ?>
 <?php addAlg(); ?>
