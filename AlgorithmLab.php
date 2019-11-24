@@ -17,7 +17,9 @@ try {
 				$userData = $stmt1 ->fetch(PDO::FETCH_ASSOC);
 				$algDatabase = $userData["Alg_Lab_Reference"];
 				$stmt2 = $db->prepare("select * from `$algDatabase`");
-				$results = $stmt2->execute();
+				$r = $stmt2->execute();
+				$results = $stmt2 ->fetch(PDO::FETCH_ASSOC);
+
 		}catch(Exception $e){
 		}
 
