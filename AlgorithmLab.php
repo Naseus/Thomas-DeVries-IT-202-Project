@@ -89,9 +89,8 @@ function addAlg() {
        			click: function () { 
        					let lst = $("#textArea").text().split(" ");
       	 				console.log(lst[lst.length - 1]);   					
-       					lst.pop();
         				let rtn = "";
-       					for(text of lst) {
+       					for(let text of lst) {
   	 						rtn += text + " ";
   	 						console.log(text);
        					}
@@ -106,11 +105,11 @@ function addAlg() {
 			let table = [[]];
 			let algData ="R' U !R U F";/* <?php getLabData() ?>;*/
 			let blocks = algData.split("!");
-			for(lst of blocks)
+			for(let lst of blocks)
 				table.push(lst.split(" "));
-			for(i = 0; i < table.length; i++) {
+			for(let i = 0; i < table.length; i++) {
 				let log = "";
-				for (j = 0; j < table[0].length; i++) {
+				for (let j = 0; j < table[0].length; i++) {
 					log += table[i][j];
 				}
 				console.log(log);
