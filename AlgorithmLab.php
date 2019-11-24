@@ -87,7 +87,7 @@ function addAlg() {
         			text: "BACK",
         			id: 'btn_BACK',
         		});
-        		$("#btn_BACK").submit(function(event){ 
+        		$("#btn_BACK").on("click", function(){ 
         			lst = $("#textArea").text().split();
         			lst[lst.length - 1] = "";
         			rtn = "";
