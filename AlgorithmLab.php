@@ -157,7 +157,7 @@ function addAlg() {
 					type: "submit",
 					click: function () { 
 						$("#algData").delete.value = $(this).attr("id");
-						//alert($(this).attr("id"));
+						alert($("#algData").delete.value );
 					}
 				}));
 			}
@@ -175,7 +175,7 @@ function addAlg() {
 		</form>
 
 		<form id = "algData" method = "POST">
-			<input name = 'delete' type = "hidden">
+			<input name = 'delete' type = "hidden"/>
 		</form>
 		<br>
 		<br>
