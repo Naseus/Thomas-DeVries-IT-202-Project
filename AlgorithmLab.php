@@ -48,7 +48,6 @@ function handleData() {
 // DELETES AN ALGORITHAM FROM THE DATABASE
 function delete() {
 	global $algDatabase, $db;
-	echo $_POST["delete"];
 	$stmt = $db -> prepare("DELETE FROM $algDatabase WHERE alg_name = :name");
 	$user = $stmt->execute(array(":name" => $_POST["delete"]));
 }
@@ -162,7 +161,6 @@ function addAlg() {
 					type: "submit",
 					click: function () { 
 						document.forms[1].delete.value = $(this).attr("id").split("_")[1];
-						alert(document.forms[1].delete.value);
 					}
 				}));
 			}
