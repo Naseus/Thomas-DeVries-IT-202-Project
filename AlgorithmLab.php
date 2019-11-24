@@ -27,12 +27,12 @@ function getLabData() {
 	$rtn = "";
 	foreach($results as $lst) {
 		foreach($lst as $item) {
-			$rtn += $item + " ";
-			echo $item;
+			$rtn += $item + "_";
+			//echo $item;
 		}
 		$rtn += "!";
 	}
-	return $rtn;
+	echo $rtn;
 }
 // ADD AN ALGORITHAM TO THE DATABASE
 function addAlg() {
