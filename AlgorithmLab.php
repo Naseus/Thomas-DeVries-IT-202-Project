@@ -131,11 +131,11 @@ function addAlg() {
 					$tr.append($("<td>", { text: arr[i][j]}));
 				}
 				$btnTd = ("<td>");
-				$tr.append($('<button/>',{
+				$tr.append($('<input/>',{
 					text: "X",
 					id:"Delete " + arr[i][0],
-					click : function() {
-						 alert($(this).attr('id'));
+					submit : function() {
+						$(this).delete.value = ($(this).attr('id'));
 					}
 				}));
 				//$tr.append($btnTd);
@@ -150,10 +150,12 @@ function addAlg() {
 		<form id = 'algs' method = "POST">
 			<input name = 'algValue' type = "hidden"/>
 			<input name = 'name' type = "hidden">
-			<input name = 'delete' type = "hidden">
 			<input id = 'input' type = "submit" value= "Save Algoritham"/>
 		</form>
-		<div id = "algData"></div>
+
+		<form id = "algData" method = "POST">
+			<input name = 'delete' type = "hidden">
+		</form>
 		<br>
 		<br>
 		<a href="landing.php">Back</a>
