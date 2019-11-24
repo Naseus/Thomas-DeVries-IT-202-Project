@@ -134,7 +134,7 @@ function addAlg() {
 					text: "X",
 					id:"Delete " + arr[i][0],
 					click : function() {
-						 alert("Oh boy this dosen't work yet");
+						 alert($(this).attr('id'));
 					}
 				}));
 				//$tr.append($btnTd);
