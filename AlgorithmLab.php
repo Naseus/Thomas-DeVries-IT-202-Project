@@ -24,6 +24,7 @@ try {
 // CREATE A STRING FOR THE FRONTEND
 function getLabData() {
 	global $return;
+	echo var_export($return)_true;
 	$rtn = "";
 	foreach($return as $lst) {
 		foreach($lst as $item) {
