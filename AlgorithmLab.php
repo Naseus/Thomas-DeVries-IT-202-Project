@@ -88,12 +88,11 @@ function addAlg() {
         		id: 'btn_BACK',
        			click: function () { 
        					let lst = $("#textArea").text().split(" ");
-      	 				console.log($("#textArea").text());   					
-       					lst[lst.length - 1] = "";
+      	 				console.log(lst[lst.length - 1]);   					
+       					lst.pop();
         				let rtn = "";
        					for(text of lst) {
   	 						rtn += text + " ";
-  	 						console.log(text);
        					}
       					$("#textArea").text(rtn);
        				}
