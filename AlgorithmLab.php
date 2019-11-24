@@ -85,7 +85,7 @@ function addAlg() {
 		//ONSUBMIT FOR DELETE
 		$(document).ready(function(){
 			$('#algData').submit(function(event){
-				alert($('#delete'));
+				alert($('#delete').data);
 			});
 		});		
 		//CREATING NOTATIONS
@@ -156,8 +156,8 @@ function addAlg() {
 					id:"Delete " + arr[i][0],
 					type: "submit",
 					click: function () { 
-						$("#delete").text($(this).attr("id"));
-						alert($(this).attr("id"));
+						$("#delete").data = $(this).attr("id");
+						//alert($(this).attr("id"));
 					}
 				}));
 			}
