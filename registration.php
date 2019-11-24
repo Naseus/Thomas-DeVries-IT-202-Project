@@ -60,7 +60,7 @@
 			<input name = "email" type = "email" placeholder="name@domain.com" />
 			<br>
 			<input name = "password" type = "password" placeholder = "password" />
-			<input name = "confirm" type = "password" placeholder = "password" />	
+			<input name = "confirm" type = "password" placeholder = " confirm password" />	
 			<br>
 			<input name = "submit" type = "submit" value="Enter" />		
 		</form>
