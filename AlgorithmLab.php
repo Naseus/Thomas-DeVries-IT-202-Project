@@ -71,7 +71,7 @@ function addAlg() {
 		});
 		//ONSUBMIT FOR DELETE
 		$(document).ready(function(){
-			$('#algs').submit(function(event){
+			$('#algData').submit(function(event){
 				alert("RAN");
 			});
 		});		
@@ -145,7 +145,7 @@ function addAlg() {
 					click: function () { 
 						$("#delete").text($(this).attr("id"));
 						alert($(this).attr("id"));
-						$("#algData").submit();
+						//$("#algData").submit();
 					}
 				}));
 			}
