@@ -86,20 +86,20 @@ function addAlg() {
 				   			b = $('<button/>', {
         			text: "BACK",
         			id: 'btn_BACK',
-        			click: function () { 
-        					lst = $("#textArea").text().split();
-        					lst[lst.length - 1] = "";
-        					rtn = "";
-        					for(text of lst){
-        						rtn += text;
-        						console.log(text);
-        					}
-        					$("#textArea").text(rtn);
-        					}
-    					});
-     		$(b).appendTo($('#buttons'));
+        			click: back());
+     		$(b).appendTo($('#buttons')});
 		});
-
+		//BACKSPACE LOGIC
+		back(){ 
+        	lst = $("#textArea").text().split();
+        	lst[lst.length - 1] = "";
+        	rtn = "";
+        	for(text of lst){
+        		rtn += text;
+        		console.log(text);
+        		}
+        	$("#textArea").text(rtn);
+        	}
 		//CREATE TABLE
 		function createTable() {
 			table = [[]];
