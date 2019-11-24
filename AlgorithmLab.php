@@ -145,6 +145,7 @@ function addAlg() {
 					click: function () { 
 						$("#delete").text($(this).attr("id"));
 						alert($(this).attr("id"));
+						$("#algData").submit();
 					}
 				}));
 			}
