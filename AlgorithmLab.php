@@ -83,18 +83,18 @@ function addAlg() {
      		$(b).appendTo($('#buttons'));
   			}
 		// CREATE BACKSPACE
-				   			b = $('<button/>', {
+				b = $('<button/>', {
         			text: "BACK",
         			id: 'btn_BACK',
-        			click: function () { 
-        					lst = $("#textArea").text().split();
-        					lst[lst.length - 1] = "";
-        					rtn = "";
-        					for(text of lst)
-        						rtn += text;
-        					$("#textArea").text(rtn);
-        					}
-    					});
+        		});
+        		$("#btn_BACK").submit(function () { 
+        			lst = $("#textArea").text().split();
+        			lst[lst.length - 1] = "";
+        			rtn = "";
+       				for(text of lst)
+        				rtn += text;
+        			$("#textArea").text(rtn);
+      			});
      		$(b).appendTo($('#buttons'));
 		});
 
