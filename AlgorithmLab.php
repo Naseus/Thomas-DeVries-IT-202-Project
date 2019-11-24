@@ -88,7 +88,7 @@ function addAlg() {
         			id: 'btn_BACK',
         			click: back()
      		});
-			$(b).appendTo($('#buttons');
+			$(b).appendTo($('#buttons'));
 		});
 		//BACKSPACE LOGIC
 		back(){ 
