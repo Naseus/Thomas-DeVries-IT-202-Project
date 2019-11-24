@@ -104,21 +104,28 @@ function addAlg() {
 		});
 
 		//CREATE TABLE
-		function createTable() {
-			let table = [];
+		$(document).ready(function createTable() {
+			let arr = [];
 			let algData ="<?php getLabData() ?>";
 			let blocks = algData.split("!");
 			for(let lst of blocks)
-				table.push(lst.split("_"));
-			for(let i = 0; i < table.length; i++) {
-				table[i].pop();
-				for (let j = 0; j < table[0].length; j++) {
-					console.log(table[i][j]);
+				arr.push(lst.split("_"));
+			for(let i = 0; i < arr.length; i++) 
+				arr[i].pop();
+			let $table = $("<table>");
+			let $headTr = $("<tr>");
+			$('#algData').append($(table));
+			$table.append($headTr);
+			$headTr.append($("<th>", text: "Name"));
+			$headTr.append($("<th>", text: "Algoritham"));
+			$headTr.append($("<th>", text: "Length"));
+			for(let i = 0; i < arr.length; i ++) {
+				let $tr = $("<tr>");
+				for(let j = 0; j < arr.length; j++) {
+					$tr.append($("<td>", text: arr[i][j]));
 				}
 			}
-		}
-		console.log(createTable());
-
+		});
 		</script>
 
 	</head>
@@ -136,5 +143,4 @@ function addAlg() {
 		<a href="landing.php">Back</a>
 	</body>
 </html>
-//<?php echo  getLabData(); ?>
 <?php addAlg(); ?>
