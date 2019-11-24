@@ -4,8 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
 if(!isset($_SESSION['user'])){
-	echo "log-in to accsess the lab";
-	exit();
+	header("login.php");
 }
 
 try {
@@ -24,7 +23,16 @@ try {
 		}
 
 function getLabData() {
-	return $results;
+	global $return;
+	$rtn = "";
+	for($lst : $return) {
+		for($item : $lst) {
+			$rtn += $item + " ";
+		}
+		$rtn += "!";
+	}
+	for(int i = 0)
+	return $rtn;
 }
 function addAlg() {
 	if(isset($_POST["algValue"]) && isset($_POST["name"])) {
@@ -72,6 +80,20 @@ function addAlg() {
      		$(b).appendTo($('#buttons'));
   			}
 		});
+		function createTable() {
+			table = [[]];
+			algData = <?php getLabData() ?>;
+			blocks = algData.Split("!");
+			for(lst of blocks)
+				table.push(lst.split());
+			for(i = 0; i < table.length; i++) {
+				log = "";
+				for (j = 0; j < table[0].length; i++) {
+					log += table[i][j];
+				}
+				console.log("\n");
+			}
+		}
 		</script>
 
 	</head>
@@ -83,7 +105,7 @@ function addAlg() {
 			<input name = 'name' type = "hidden">
 			<input id = 'input' type = "submit" value= "Save Algoritham"/>
 		</form>
-	<?php echo "<br><pre>" . var_export($results, true) ."<pre><br>" ?>
+		<div id = "algData"></div>
 		<br>
 		<br>
 		<a href="landing.php">Back</a>
