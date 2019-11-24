@@ -119,12 +119,20 @@ function addAlg() {
 			$headTr.append($("<th>", { text: "Name"}));
 			$headTr.append($("<th>", { text: "Algoritham"}));
 			$headTr.append($("<th>", { text: "Length"}));
+			$headTr.append($("<th>", { text: "Delete"}));
 			for(let i = 0; i < arr.length; i ++) {
 				let $tr = $("<tr>");
 				$table.append($tr);
 				for(let j = 0; j < arr.length; j++) {
 					$tr.append($("<td>", { text: arr[i][j]}));
 				}
+				$tr.append($("<td>").append($("<btn>",
+													text: arr[i][0]
+													id: "btn_delete_" + arr[i][0]
+													click function {
+														alert($(this).text());
+													})
+												));
 			}
 		});
 		</script>
