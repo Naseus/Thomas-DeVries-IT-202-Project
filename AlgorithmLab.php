@@ -86,7 +86,7 @@ function addAlg() {
 				   			b = $('<button/>', {
         			text: "BACK",
         			id: 'btn_BACK',
-        			click: back());
+        			click: back();
      		$(b).appendTo($('#buttons')});
 		});
 		//BACKSPACE LOGIC
