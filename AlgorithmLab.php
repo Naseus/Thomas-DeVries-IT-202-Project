@@ -38,9 +38,6 @@ function getLabData() {
 }
 // ADD AN ALGORITHAM TO THE DATABASE
 function addAlg() {
-	if(isset($_POST["delete"])) {
-		echo $_POST["delete"];
-	}
 	if(isset($_POST["algValue"]) && isset($_POST["name"])) {
 		$algoritham = $_POST["algValue"];
 		$length = count(str_word_count($_POST["algValue"], 1));
@@ -140,6 +137,7 @@ function addAlg() {
 					type: "submit",
 					submit : function() {
 						$(this).delete.value = ($(this).attr('id'));
+						alert($(this).delete.value);
 					}
 				}));
 				//$tr.append($btnTd);
