@@ -69,6 +69,10 @@ function addAlg() {
 }
 ?>
 
+
+<?php handleData(); ?>
+
+
 <html>
 	<head>
 		<script
@@ -183,5 +187,3 @@ function addAlg() {
 		<a href="landing.php">Back</a>
 	</body>
 </html>
-
-<?php handleData(); ?>
