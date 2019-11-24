@@ -84,10 +84,15 @@ function addAlg() {
   			}
 		// CREATE BACKSPACE
 			b = $('<button/>', {
-        		text: "Clear",
+        		text: "C",
         		id: 'btn_BACK',
        			click: function () { 
-       					$("#textArea").text(" ");
+       					let lst = $("#textArea").text("").split;
+       					lst[lst.length - 1] = "";
+        				let rtn = "";
+       					for(text of lst)
+  	 						rtn += text;
+      					$("#textArea").text(rtn);
        				}
  				});
      		$(b).appendTo($('#buttons'));
@@ -95,9 +100,9 @@ function addAlg() {
 
 		//CREATE TABLE
 		function createTable() {
-			table = [[]];
-			algData ="R' U !R U F";/* <?php getLabData() ?>;*/
-			blocks = algData.split("!");
+			let table = [[]];
+			let algData ="R' U !R U F";/* <?php getLabData() ?>;*/
+			let blocks = algData.split("!");
 			for(lst of blocks)
 				table.push(lst.split());
 			for(i = 0; i < table.length; i++) {
@@ -108,12 +113,11 @@ function addAlg() {
 				console.log(log);
 			}
 		}
-		console.log(createTable());
 		</script>
 
 	</head>
 	<body>
-		<span id = "textArea" style = "display:block" text =""></span>
+		<span id = "textArea" style = "display:block"></span>
 		<div id = buttons></div>
 		<form id = 'algs' method = "POST">
 			<input name = 'algValue' type = "hidden"/>
