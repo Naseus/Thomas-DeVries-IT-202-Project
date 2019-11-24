@@ -83,24 +83,21 @@ function addAlg() {
      		$(b).appendTo($('#buttons'));
   			}
 		// CREATE BACKSPACE
-				  b = $('<button/>', {
+				   			b = $('<button/>', {
         			text: "BACK",
         			id: 'btn_BACK',
-        			click: algBackSpace()
-     		});
-			$(b).appendTo($('#buttons'));
+        			click: function () { 
+        					lst = $("#textArea").text().split;
+        					lst[lst.length - 1] = "";
+        					rtn = "";
+        					for(text of lst)
+        						rtn += text;
+        					$("#textArea").text(rtn);
+        					}
+    					});
+     		$(b).appendTo($('#buttons'));
 		});
-		//BACKSPACE LOGIC
-		function algBackSpace(){ 
-        	lst = $("#textArea").text().split();
-        	lst[lst.length - 1] = "";
-        	rtn = "";
-        	for(text of lst){
-        		rtn += text;
-        		console.log(text);
-        		}
-        	$("#textArea").text(rtn);
-        	}
+
 		//CREATE TABLE
 		function createTable() {
 			table = [[]];
@@ -133,5 +130,5 @@ function addAlg() {
 		<a href="landing.php">Back</a>
 	</body>
 </html>
-<?php echo getLabData(); ?>
-<?php addAlg(); ?>
+<?php getLabData(); ?>
+<?php echo addAlg(); ?>
