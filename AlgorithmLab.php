@@ -111,6 +111,7 @@ function addAlg() {
 			for(let lst of blocks)
 				table.push(lst.split("_"));
 			for(let i = 0; i < table.length; i++) {
+				table[i].pop();
 				for (let j = 0; j < table[0].length; j++) {
 					console.log(table[i][j]);
 				}
