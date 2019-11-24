@@ -49,6 +49,8 @@ function handleData() {
 function delete() {
 	global $algDatabase, $db;
 	echo $_POST["delete"];
+	$stmt = $db -> prepare("DELETE FROM $algDatabase WHERE alg_name = :name");
+	$user = $stmt1->execute(array(":name" => $_POST["delete"]));
 }
 // ADD AN ALGORITHAM TO THE DATABASE
 function addAlg() {
