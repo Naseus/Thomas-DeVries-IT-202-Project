@@ -104,7 +104,7 @@ function addAlg() {
 		});
 
 		//CREATE TABLE
-		$(document).ready(function createTable() {
+		$(document).ready(function() {
 			let arr = [];
 			let algData ="<?php getLabData() ?>";
 			let blocks = algData.split("!");
