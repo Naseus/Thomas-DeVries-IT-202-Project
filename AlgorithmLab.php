@@ -111,3 +111,4 @@ function addAlg() {
 	</body>
 </html>
 <?php addAlg(); ?>
+<?php algData(); ?>
