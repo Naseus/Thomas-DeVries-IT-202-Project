@@ -136,5 +136,5 @@ function addAlg() {
 		<a href="landing.php">Back</a>
 	</body>
 </html>
-<?php getLabData(); ?>
-<?php echo addAlg(); ?>
+<?php echo  getLabData(); ?>
+<?php addAlg(); ?>
