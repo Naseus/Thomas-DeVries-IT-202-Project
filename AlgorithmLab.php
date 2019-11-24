@@ -156,7 +156,7 @@ function addAlg() {
 					id:"Delete " + arr[i][0],
 					type: "submit",
 					click: function () { 
-						$("#delete").value = $(this).attr("id");
+						$("#algData").delete.value = $(this).attr("id");
 						//alert($(this).attr("id"));
 					}
 				}));
