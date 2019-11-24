@@ -99,7 +99,7 @@ function addAlg() {
             ["M", "E", "S", "M\'", "E\'", "S\'", "M2", "E2", "S2"], ["X", "Y", "Z", "X\'", "Y\'", "Z\'"]];
 		//CREATING BUTTONS
 		$(document).ready(function() {
-  		//FIRST ROW
+  		/////////////////FIRST ROW		////////////////
   			for(n of notations[0]) {
      			b = $('<button/>', {
         			text: n,
@@ -110,6 +110,29 @@ function addAlg() {
     					});
      		$(b).appendTo($('#buttons'));
   			}
+
+  			for(n of notations[1]) {
+     			b = $('<button/>', {
+        			text: n,
+        			id: 'btn_'+ n,
+        			click: function () { 
+        					$("#textArea").text($("#textArea").text() + $(this).text() + " ");
+        					 }
+    					});
+     		$(b).appendTo($('#buttons'));
+  			}
+
+  			for(n of notations[2]) {
+     			b = $('<button/>', {
+        			text: n,
+        			id: 'btn_'+ n,
+        			click: function () { 
+        					$("#textArea").text($("#textArea").text() + $(this).text() + " ");
+        					 }
+    					});
+     		$(b).appendTo($('#buttons'));
+  			}
+
 		// CREATE BACKSPACE
 			b = $('<button/>', {
         		text: "Back",
@@ -129,6 +152,65 @@ function addAlg() {
  				});
      		$(b).appendTo($('#buttons'));
 		});
+
+		/////////////////SECOND ROW		////////////////
+		  		$('#buttons').append($("<br>"));
+  			for(n of notations[3]) {
+     			b = $('<button/>', {
+        			text: n,
+        			id: 'btn_'+ n,
+        			click: function () { 
+        					$("#textArea").text($("#textArea").text() + $(this).text() + " ");
+        					 }
+    					});
+     		$(b).appendTo($('#buttons'));
+  			}
+
+  			for(n of notations[4]) {
+     			b = $('<button/>', {
+        			text: n,
+        			id: 'btn_'+ n,
+        			click: function () { 
+        					$("#textArea").text($("#textArea").text() + $(this).text() + " ");
+        					 }
+    					});
+     		$(b).appendTo($('#buttons'));
+  			}
+
+  			for(n of notations[5]) {
+     			b = $('<button/>', {
+        			text: n,
+        			id: 'btn_'+ n,
+        			click: function () { 
+        					$("#textArea").text($("#textArea").text() + $(this).text() + " ");
+        					 }
+    					});
+     		$(b).appendTo($('#buttons'));
+  			}
+
+  		/////////////////THIRD ROW		////////////////
+		  		$('#buttons').append($("<br>"));
+  			for(n of notations[6]) {
+     			b = $('<button/>', {
+        			text: n,
+        			id: 'btn_'+ n,
+        			click: function () { 
+        					$("#textArea").text($("#textArea").text() + $(this).text() + " ");
+        					 }
+    					});
+     		$(b).appendTo($('#buttons'));
+  			}
+
+  			for(n of notations[7]) {
+     			b = $('<button/>', {
+        			text: n,
+        			id: 'btn_'+ n,
+        			click: function () { 
+        					$("#textArea").text($("#textArea").text() + $(this).text() + " ");
+        					 }
+    					});
+     		$(b).appendTo($('#buttons'));
+  			}
 
 		//CREATE TABLE
 		$(document).ready(function() {
