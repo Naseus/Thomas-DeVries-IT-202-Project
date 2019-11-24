@@ -106,7 +106,7 @@ function addAlg() {
 		//CREATE TABLE
 		function createTable() {
 			let table = [];
-			let algData ="R' U !R U F";/* <?php getLabData() ?>;*/
+			let algData ="<?php getLabData() ?>";
 			let blocks = algData.split("!");
 			for(let lst of blocks)
 				table.push(lst.split("_"));
