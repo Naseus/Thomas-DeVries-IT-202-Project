@@ -24,11 +24,11 @@ try {
 // CREATE A STRING FOR THE FRONTEND
 function getLabData() {
 	global $results;
-	//echo var_export($results, true);
 	$rtn = "";
 	foreach($results as $lst) {
 		foreach($lst as $item) {
 			$rtn += $item + " ";
+			echo $item;
 		}
 		$rtn += "!";
 	}
