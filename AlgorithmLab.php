@@ -51,6 +51,7 @@ function addAlg() {
 }
 ?>
 
+<?php addAlg(); ?>
 <html>
 	<head>
 		<script
@@ -154,4 +155,3 @@ function addAlg() {
 		<a href="landing.php">Back</a>
 	</body>
 </html>
-<?php addAlg(); ?>
