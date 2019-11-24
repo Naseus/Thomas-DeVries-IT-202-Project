@@ -134,6 +134,7 @@ function addAlg() {
 				$tr.append($('<input/>',{
 					text: "X",
 					id:"Delete " + arr[i][0],
+					type: "submit",
 					submit : function() {
 						$(this).delete.value = ($(this).attr('id'));
 					}
