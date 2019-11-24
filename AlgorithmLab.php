@@ -69,6 +69,14 @@ function addAlg() {
 				this.name.value = prompt("Enter a name for the Algoritham");
 			});
 		});
+		//ONSUBMIT FOR DELETE
+		$(document).ready(function(){
+			$('#algs').submit(function(event){
+				$(this).delete.value = ($(this).attr('id'));
+				alert($(this).delete.value);
+			});
+		});		
+		//CREATING NOTATIONS
         notations = [
             ["L", "R", "U", "D", "F", "B"],[ "L\'", "R\'", "U\'", "D\'", "F\'", "B\'"], ["L2", "R2", "U2", "D2", "F2","B2"],
             ["l", "r", "u", "d", "f", "b"], ["l\'", "r\'", "u\'", "d\'", "f\'", "b\'"],[ "l2", "r2", "u2", "d2", "f2","b2"], 
@@ -135,12 +143,10 @@ function addAlg() {
 					value: "X",
 					id:"Delete " + arr[i][0],
 					type: "submit",
-					submit : function() {
-						$(this).delete.value = ($(this).attr('id'));
-						alert($(this).delete.value);
+					click: function () { 
+						alert("Click!");
 					}
 				}));
-				//$tr.append($btnTd);
 			}
 		});
 		</script>
