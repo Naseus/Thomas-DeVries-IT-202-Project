@@ -90,7 +90,7 @@ function addAlg() {
 				for (j = 0; j < table[0].length; i++) {
 					log += table[i][j];
 				}
-				console.log("\n");
+				console.log(log);
 			}
 		}
 		</script>
