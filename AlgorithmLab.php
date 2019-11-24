@@ -126,13 +126,15 @@ function addAlg() {
 				for(let j = 0; j < arr.length; j++) {
 					$tr.append($("<td>", { text: arr[i][j]}));
 				}
-				$tr.append($("<td>").append($("<btn>",
-													text: arr[i][0],
-													id: "btn_delete_" + arr[i][0],
-													click function {
-														alert($(this).text());
-													})
-												));
+				$btnTd = ("<td>");
+				td.append($('<button/>',{
+					text: "X",
+					id:"Delete " + arr[i][0];
+					click : function() {
+						 alert("Oh boy this dosen't work yet");
+					}
+				}));
+				$tr.append($btnTd);
 			}
 		});
 		</script>
