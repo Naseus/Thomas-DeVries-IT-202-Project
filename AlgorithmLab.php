@@ -31,7 +31,6 @@ function getLabData() {
 		}
 		$rtn += "!";
 	}
-	for(int i = 0)
 	return $rtn;
 }
 function addAlg() {
