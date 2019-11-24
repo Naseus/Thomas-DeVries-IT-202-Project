@@ -27,10 +27,10 @@ function getLabData() {
 	$rtn = "";
 	foreach($results as $lst) {
 		foreach($lst as $item) {
-			$rtn += $item + "_";
+			$rtn .= $item . "_";
 			//echo $item;
 		}
-		$rtn += "!";
+		$rtn .= "!";
 	}
 	echo $rtn;
 }
