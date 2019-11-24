@@ -89,6 +89,7 @@ function addAlg() {
        			click: function () { 
        					let lst = $("#textArea").text().split(" ");
       	 				console.log(lst[lst.length - 1]);
+      	 				lst.pop();   
       	 				lst.pop();   					
         				let rtn = "";
        					for(let text of lst) {
