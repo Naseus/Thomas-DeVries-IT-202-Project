@@ -87,7 +87,7 @@ function addAlg() {
         			text: "BACK",
         			id: 'btn_BACK',
         			click: function () { 
-        					lst = $("#textArea").text().Split;
+        					lst = $("#textArea").text().split;
         					lst[lst.length - 1] = "";
         					rtn = "";
         					for(text of lst)
@@ -102,7 +102,7 @@ function addAlg() {
 		function createTable() {
 			table = [[]];
 			algData ="R' U !R U F";/* <?php getLabData() ?>;*/
-			blocks = algData.Split("!");
+			blocks = algData.split("!");
 			for(lst of blocks)
 				table.push(lst.split());
 			for(i = 0; i < table.length; i++) {
@@ -131,4 +131,4 @@ function addAlg() {
 	</body>
 </html>
 <?php getLabData(); ?>
-<?php addAlg(); ?>
+<?php echo addAlg(); ?>
