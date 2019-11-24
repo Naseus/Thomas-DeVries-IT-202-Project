@@ -90,8 +90,10 @@ function addAlg() {
        					let lst = $("#textArea").text().split();
        					lst[lst.length - 1] = "";
         				let rtn = "";
-       					for(text of lst)
+       					for(text of lst) {
   	 						rtn += text;
+  	 						console.log(text);
+       					}
       					$("#textArea").text(rtn);
        				}
  				});
@@ -113,6 +115,8 @@ function addAlg() {
 				console.log(log);
 			}
 		}
+		console.log(createTable());
+
 		</script>
 
 	</head>
