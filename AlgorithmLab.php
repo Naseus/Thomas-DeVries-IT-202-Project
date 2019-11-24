@@ -87,7 +87,7 @@ function addAlg() {
         			text: "BACK",
         			id: 'btn_BACK',
         			click: function () { 
-        					lst = $("#textArea").text().split;
+        					lst = $("#textArea").text().split();
         					lst[lst.length - 1] = "";
         					rtn = "";
         					for(text of lst)
