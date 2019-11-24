@@ -39,7 +39,7 @@ function getLabData() {
 //	HANDLES THE DATA SUMBITED TO THE BACKEND
 function handleData() {
 	if(isset($_POST["algValue"]) && isset($_POST["name"])) {
-		addAlg()
+		addAlg();
 	}
 	elseif(isset($_POST["delete"])) {
 		delete();
