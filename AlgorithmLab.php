@@ -114,7 +114,7 @@ function addAlg() {
 				arr[i].pop();
 			let $table = $("<table>");
 			let $headTr = $("<tr>");
-			$('#algData').append($(table));
+			$('#algData').append($table);
 			$table.append($headTr);
 			$headTr.append($("<th>", { text: "Name"}));
 			$headTr.append($("<th>", { text: "Algoritham"}));
