@@ -21,7 +21,7 @@ try {
 
 		}catch(Exception $e){
 		}
-
+// CREATE A STRING FOR THE FRONTEND
 function getLabData() {
 	global $return;
 	$rtn = "";
@@ -33,6 +33,7 @@ function getLabData() {
 	}
 	return $rtn;
 }
+// ADD AN ALGORITHAM TO THE DATABASE
 function addAlg() {
 	if(isset($_POST["algValue"]) && isset($_POST["name"])) {
 		$algoritham = $_POST["algValue"];
@@ -57,6 +58,7 @@ function addAlg() {
   			crossorigin="anonymous">
 		</script>
 		<script>
+		//ONSUBMIT
 		$(document).ready(function(){
 			$('#algs').submit(function(event){
 				this.algValue.value = $("#textArea").text();
@@ -67,7 +69,9 @@ function addAlg() {
             ["L", "R", "U", "D", "F", "B"],[ "L\'", "R\'", "U\'", "D\'", "F\'", "B\'"], ["L2", "R2", "U2", "D2", "F2","B2"],
             ["l", "r", "u", "d", "f", "b"], ["l\'", "r\'", "u\'", "d\'", "f\'", "b\'"],[ "l2", "r2", "u2", "d2", "f2","b2"], 
             ["M", "E", "S", "M\'", "E\'", "S\'", "M2", "E2", "S2"], ["X", "Y", "Z", "X\'", "Y\'", "Z\'"]];
+		//CREATING BUTTONS
 		$(document).ready(function() {
+  		//FIRST ROW
   			for(n of notations[0]) {
      			b = $('<button/>', {
         			text: n,
@@ -78,7 +82,23 @@ function addAlg() {
     					});
      		$(b).appendTo($('#buttons'));
   			}
+		// CREATE BACKSPACE
+				   			b = $('<button/>', {
+        			text: "BACK",
+        			id: 'btn_BACK',
+        			click: function () { 
+        					lst = $("#textArea").text().Split;
+        					lst[lst.length - 1] = "";
+        					rtn = "";
+        					for(text of lst)
+        						rtn += text;
+        					$("#textArea").text(rtn);
+        					}
+    					});
+     		$(b).appendTo($('#buttons'));
 		});
+
+		//CREATE TABLE
 		function createTable() {
 			table = [[]];
 			algData ="R' U !R U F";/* <?php getLabData() ?>;*/
@@ -110,5 +130,5 @@ function addAlg() {
 		<a href="landing.php">Back</a>
 	</body>
 </html>
-<?php addAlg(); ?>
 <?php getLabData(); ?>
+<?php addAlg(); ?>
