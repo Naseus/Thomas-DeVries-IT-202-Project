@@ -87,7 +87,8 @@ function addAlg() {
         		text: "Back",
         		id: 'btn_BACK',
        			click: function () { 
-       					let lst = $("#textArea").text().split();
+       					let lst = $("#textArea").text().split(" ");
+      	 				console.log($("#textArea").text());   					
        					lst[lst.length - 1] = "";
         				let rtn = "";
        					for(text of lst) {
@@ -106,9 +107,9 @@ function addAlg() {
 			let algData ="R' U !R U F";/* <?php getLabData() ?>;*/
 			let blocks = algData.split("!");
 			for(lst of blocks)
-				table.push(lst.split());
+				table.push(lst.split(" "));
 			for(i = 0; i < table.length; i++) {
-				log = "";
+				let log = "";
 				for (j = 0; j < table[0].length; i++) {
 					log += table[i][j];
 				}
