@@ -93,6 +93,7 @@ function addAlg() {
         				let rtn = "";
        					for(text of lst) {
   	 						rtn += text + " ";
+  	 						console.log(text);
        					}
       					$("#textArea").text(rtn);
        				}
