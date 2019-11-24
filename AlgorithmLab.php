@@ -25,8 +25,8 @@ try {
 function getLabData() {
 	global $return;
 	$rtn = "";
-	for($lst : $return) {
-		for($item : $lst) {
+	foreach($return as $lst) {
+		for($lst as $item) {
 			$rtn += $item + " ";
 		}
 		$rtn += "!";
