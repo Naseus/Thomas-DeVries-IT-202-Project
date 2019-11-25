@@ -213,15 +213,16 @@ function addAlg() {
   	});
 
 		//CREATE TABLE
-		$(document).ready(function() {
-			let arr = [];
-			let algData ="<?php getLabData() ?>";
-			let blocks = algData.split("!");
-			for(let lst of blocks)
-				arr.push(lst.split("_"));
-			arr.pop();
-			for(let i = 0; i < arr.length; i++) 
-				arr[i].pop();
+	$(document).ready(function() {
+		let arr = [];
+		let algData ="<?php getLabData() ?>";
+		let blocks = algData.split("!");
+		for(let lst of blocks)
+			arr.push(lst.split("_"));
+		arr.pop();
+		for(let i = 0; i < arr.length; i++) 
+			//arr[i].pop();
+			console.log(arr[i]);
 			let $table = $("<table>");
 			let $headTr = $("<tr>");
 			$('#algData').append($table);
