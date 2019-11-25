@@ -221,8 +221,7 @@ function addAlg() {
 			arr.push(lst.split("_"));
 		arr.pop();
 		for(let i = 0; i < arr.length; i++) 
-			//arr[i].pop();
-			console.log(arr[i]);
+			arr[i].pop();
 			let $table = $("<table>");
 			let $headTr = $("<tr>");
 			$('#algData').append($table);
@@ -234,7 +233,7 @@ function addAlg() {
 			for(let i = 0; i < arr.length; i ++) {
 				let $tr = $("<tr>");
 				$table.append($tr);
-				for(let j = 0; j < arr.length; j++) {
+				for(let j = 0; j < arr[0].length; j++) {
 					$tr.append($("<td>", { text: arr[i][j]}));
 				}
 				$btnTd = ("<td>");
@@ -268,4 +267,3 @@ function addAlg() {
 		<a href="landing.php">Back</a>
 	</body>
 </html>
-<?php getLabData()?>
