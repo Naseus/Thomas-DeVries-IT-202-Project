@@ -100,6 +100,8 @@
 				$r = $extract_stmt-> execute(array(":username"=> $user));
 				$response = $extract_stmt ->fetch(PDO::FETCH_ASSOC);
 				$labName = "Alg_Lab_" . $response["id_number"];
+				$speedAlgs = "Speed_Algs_" . $response["id_number"];
+
 				echo "<br><pre>" . $labName . "</pre><br>";
 
 
@@ -116,6 +118,23 @@
 				`alg` varchar(60) not null unique,
 				`move_number` int default 0,
 				PRIMARY KEY(`alg_name`)
+				) CHARACTER SET utf8 COLLATE utf8_general_ci";
+				$create_stmt = $db->prepare($query);
+				$r = $create_stmt->execute();
+
+				$stmt3 = $db->prepare("UPDATE `Users` SET `Speed_Algs_Reference`=:ref WHERE `id_number`=:id");
+				$result = $stmt3->execute(
+					array(":ref"=>$speedAlgs,
+					 		":id" =>$response["id_number"])
+				);
+				unset($r);
+
+				$query = "create table if not exists `$speedAlgs`(
+				`alg` varchar(60) not null unique,
+				`base_alg` varchar(60) not null,
+				`alg_type` varchar(30) not null,
+				`move_number` int default 0,
+				PRIMARY KEY(`alg`)
 				) CHARACTER SET utf8 COLLATE utf8_general_ci";
 				$create_stmt = $db->prepare($query);
 				$r = $create_stmt->execute();
