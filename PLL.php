@@ -41,7 +41,7 @@
 	<head>
 		<script>
 			function test(x) {
-				alert("Working" + x);
+				alert("<?php getLabData();?>" + x);
 			}
 		</script>
 	</head>
