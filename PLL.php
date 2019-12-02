@@ -5,13 +5,13 @@
 <html>
 	<head>
 		<script>
-			function test(let x) {
-				alert(x + "Working");
+			function test() {
+				alert("Working");
 			}
 		</script>
 	</head>
 	<body>
-		<a href="javascript: test('RAN');">Back</a>
+		<a href="javascript: test();">Back</a>
 		<a href="LastLayer.php">Back</a>
 	</body>
 </html>
