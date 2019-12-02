@@ -14,7 +14,7 @@
 			$stmt1 = $db->prepare("select * from `Users` where username =:user");
 			$user = $stmt1->execute(array(":user" => $_SESSION['user']));
 			$userData = $stmt1 ->fetch(PDO::FETCH_ASSOC);
-			$algDatabase = $userData["Speed_Alg_Reference"];
+			$algDatabase = $userData["Speed_Algs_Reference"];
 	}catch(Exception $e){}
 	//Creates a string for the frontend
 	function getLabData() {
