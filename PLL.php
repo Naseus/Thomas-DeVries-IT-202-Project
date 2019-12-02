@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<script>
-			function test(let x) {
+			function test(x) {
 				alert("Working" + x);
 			}
 		</script>
