@@ -77,6 +77,18 @@
 					}
 				}));
 			}
+			let $addRow = $("<tr>");
+			table.append($('<HR>'));
+			table.append($addRow);
+			$addRow.append($('<td>', {text: "add"}));
+			$tr.append($('<input/>',{
+					value: "+",
+					id:"add",
+					type: "submit",
+					click: function () { 
+						document.forms[1].add.value = prompt();
+					}
+				}));
 		});
 
 			function test(x) {
@@ -98,6 +110,7 @@
 		<br>
 		<form id = "algData" method = "POST">
 			<input name = 'delete' type = "hidden"/>
+			<input name = 'add' type = "hidden"/>
 		</form>
 		<br>
 		<a href="LastLayer.php">Back</a>
