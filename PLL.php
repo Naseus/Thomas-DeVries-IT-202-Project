@@ -47,9 +47,10 @@
 		<script>
 			function test(x) {
 				$("#setAlg").submit(function() {
+					alert(x);
 					this.alg.value = x;
 				});
-				alert("<?php getLabData();?>" + x);
+				alert("<?php getLabData();?>");
 			}
 		</script>
 	</head>
