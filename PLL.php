@@ -19,7 +19,7 @@
 	//Creates a string for the frontend
 	function getLabData() {
 	$rtn = "";
-	if(isset($_GET['alg'])) {
+	if(isset($_GET['alg']) && !empty($_GET['alg'])) {
 		try {
 			global $db, $algDatabase;
 			$stmt2 = $db->prepare("select * from `$algDatabase` where base_alg =:alg");
@@ -39,13 +39,23 @@
 
 <html>
 	<head>
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.js"
+  			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  			crossorigin="anonymous">
+		</script>
 		<script>
 			function test(x) {
+				$("#setAlg").alg.value = x;
+				$("#setAlg").submit();
 				alert("<?php getLabData();?>" + x);
 			}
 		</script>
 	</head>
 	<body>
+		<form id = "setAlg">
+			<input name = "alg" type = "hidden"/>
+		</form>
 		<a href="javascript: test(&quot;R&apos; U R&apos; d&apos; R&apos; F&apos; R2 U&apos; R&apos; U R&apos; F R F&quot;);">V-Perm</a>
 		<a href="LastLayer.php">Back</a>
 	</body>
