@@ -45,6 +45,44 @@
   			crossorigin="anonymous">
 		</script>
 		<script>
+		//CREATE TABLE
+	$(document).ready(function() {
+		let arr = [];
+		let algData ="<?php getLabData() ?>";
+		if(algData == "")
+			return;
+		let blocks = algData.split("!");
+		for(let lst of blocks)
+			arr.push(lst.split("_"));
+		arr.pop();
+		for(let i = 0; i < arr.length; i++) 
+			arr[i].pop();
+			let $table = $("<table>");
+			let $headTr = $("<tr>");
+			$('#algData').append($table);
+			$table.append($headTr);
+			$headTr.append($("<th>", { text: "Algorithm"}));
+			$headTr.append($("<th>", { text: "Type"}));
+			$headTr.append($("<th>", { text: "Length"}));
+			$headTr.append($("<th>", { text: "Delete"}));
+			for(let i = 0; i < arr.length; i ++) {
+				let $tr = $("<tr>");
+				$table.append($tr);
+				for(let j = 0; j < arr[0].length; j++) {
+					$tr.append($("<td>", { text: arr[i][j]}));
+				}
+				$btnTd = ("<td>");
+				$tr.append($('<input/>',{
+					value: "X",
+					id:"Delete_" + arr[i][0],
+					type: "submit",
+					click: function () { 
+						document.forms[1].delete.value = $(this).attr("id").split("_")[1];
+					}
+				}));
+			}
+		});
+
 			function test(x) {
 				$("#setAlg").submit(function() {
 					alert(x);
@@ -61,6 +99,11 @@
 		</form>
 		<a href="javascript: test(&quot;R&apos; U R&apos; d&apos; R&apos; F&apos; R2 U&apos; R&apos; U R&apos; F R F&quot;);">V-Perm</a>
 		<!-- RETURN TO LANDING -->
+		<br>
+		<form id = "algData" method = "POST">
+			<input name = 'delete' type = "hidden"/>
+		</form>
+		<br>
 		<a href="LastLayer.php">Back</a>
 	</body>
 </html>
