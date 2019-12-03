@@ -53,10 +53,11 @@
 		</script>
 	</head>
 	<body>
-		<form id = "setAlg">
-			<input name = "alg" type = "hidden"/>
+		<form id = 'setAlg' method = "GET">
+			<input name = 'alg' type = 'hidden'/>
 		</form>
 		<a href="javascript: test(&quot;R&apos; U R&apos; d&apos; R&apos; F&apos; R2 U&apos; R&apos; U R&apos; F R F&quot;);">V-Perm</a>
+		<!-- RETURN TO LANDING -->
 		<a href="LastLayer.php">Back</a>
 	</body>
 </html>

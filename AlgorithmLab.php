@@ -255,7 +255,7 @@ function addAlg() {
 		<div id = buttons></div>
 		<form id = 'algs' method = "POST">
 			<input name = 'algValue' type = "hidden"/>
-			<input name = 'name' type = "hidden">
+			<input name = 'name' type = "hidden"/>
 			<input id = 'input' type = "submit" value= "Save Algorithm"/>
 		</form>
 
