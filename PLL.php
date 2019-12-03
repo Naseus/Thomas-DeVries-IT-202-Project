@@ -62,15 +62,11 @@
 			$('#algData').append($table);
 			$table.append($headTr);
 			$headTr.append($("<th>", { text: "Algorithm"}));
-			$headTr.append($("<th>", { text: "Type"}));
-			$headTr.append($("<th>", { text: "Length"}));
 			$headTr.append($("<th>", { text: "Delete"}));
 			for(let i = 0; i < arr.length; i ++) {
 				let $tr = $("<tr>");
 				$table.append($tr);
-				for(let j = 0; j < arr[0].length; j++) {
-					$tr.append($("<td>", { text: arr[i][j]}));
-				}
+				$tr.append($("<td>", { text: arr[i][0]}));
 				$btnTd = ("<td>");
 				$tr.append($('<input/>',{
 					value: "X",
