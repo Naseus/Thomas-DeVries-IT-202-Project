@@ -50,6 +50,7 @@
 					alert(x);
 					this.alg.value = x;
 				});
+				$("#setAlg").submit();
 				alert("<?php getLabData();?>");
 			}
 		</script>
