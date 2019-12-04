@@ -51,6 +51,7 @@
 		//CHECK IF AN ALG IS SET
 		let arr = [];
 		let algData ="<?php getLabData() ?>";
+		alert(algData);
 		if(algData == "###") {
 			$('#algList').css('display', 'block');
 			$('#selectedAlg').css('display', 'none');
