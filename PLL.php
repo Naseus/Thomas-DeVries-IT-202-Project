@@ -45,12 +45,19 @@
   			crossorigin="anonymous">
 		</script>
 		<script>
-		//CREATE TABLE
+	//CREATE PAGE
 	$(document).ready(function() {
+		//CHECK IF AN ALG IS SET
 		let arr = [];
 		let algData ="<?php getLabData() ?>";
-		if(algData == "")
+		if(algData == "") {
+			$("#algList").css('visibility', 'visible');
+			$("#selectedAlg").css('visibility', 'hidden');
 			return;
+		}
+		$("#algList").css('visibility', 'visible');
+		$("#selectedAlg").css('visibility', 'hidden');
+		//PARSE DATABASE INFORMATION
 		let blocks = algData.split("!");
 		for(let lst of blocks)
 			arr.push(lst.split("_"));
@@ -78,6 +85,7 @@
 				}));
 			}
 			let $addRow = $("<tr>");
+			alert("RAN");
 			table.append($('<HR>'));
 			table.append($addRow);
 			$addRow.append($('<td>', {text: "add"}));
@@ -91,13 +99,13 @@
 				}));
 		});
 
-			function test(x) {
+			function submitAlg(x) {
 				$("#setAlg").submit(function() {
-					alert(x);
+					//alert(x);
 					this.alg.value = x;
 				});
 				$("#setAlg").submit();
-				alert("<?php getLabData();?>");
+				//alert("<?php getLabData();?>");
 			}
 		</script>
 	</head>
@@ -105,14 +113,22 @@
 		<form id = 'setAlg' method = "GET">
 			<input name = 'alg' type = 'hidden'/>
 		</form>
-		<a href="javascript: test(&quot;R&apos; U R&apos; d&apos; R&apos; F&apos; R2 U&apos; R&apos; U R&apos; F R F&quot;);">V-Perm</a>
-		<!-- RETURN TO LANDING -->
+		<!-- div WITH LIST OF ALGORITHMS -->
+		<div id = algList>
+			<a href="javascript: submitAlg(&quot;R&apos; U R&apos; d&apos; R&apos; F&apos; R2 U&apos; R&apos; U R&apos; F R F&quot;);">V-Perm</a>
+			<br>
+			<br>
+			<a href="LastLayer.php">Back</a>
+		</div>
 		<br>
-		<form id = "algData" method = "POST">
-			<input name = 'delete' type = "hidden"/>
-			<input name = 'add' type = "hidden"/>
-		</form>
+		<div id = "selectedAlg">
+		<!--  FORM FOR TABLE -->
+			<form id = "algData" method = "POST">
+				<input name = 'delete' type = "hidden"/>
+				<input name = 'add' type = "hidden"/>
+			</form>
 		<br>
-		<a href="LastLayer.php">Back</a>
+		<a href = 'PLL.php'>Back</a>
+		</div>
 	</body>
 </html>
