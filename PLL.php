@@ -55,8 +55,8 @@
 			$("#selectedAlg").css('visibility', 'hidden');
 			return;
 		}
-		$("#algList").css('visibility', 'visible');
-		$("#selectedAlg").css('visibility', 'hidden');
+		$("#algList").css('visibility', 'hidden');
+		$("#selectedAlg").css('visibility', 'visible');
 		//PARSE DATABASE INFORMATION
 		let blocks = algData.split("!");
 		for(let lst of blocks)
