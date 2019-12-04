@@ -115,12 +115,20 @@
 		<div id = algList>
 			<a href="javascript: submitAlg(&quot;R&apos; U R&apos; d&apos; R&apos; F&apos; R2 U&apos; R&apos; U R&apos; F R F&quot;);">V-Perm</a>
 			<br>
+			<a href="javascript: submitAlg(&quot;R2 u R&apos; U R&apos; U&apos; R u&apos; R2 y&apos; R&apos; U R&quot;);">Ga-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;R&apos; U&apos; R U D&apos; R2 U R&apos; U R U&apos; R U&apos; R2&quot; D);">Gb-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;R2 u&apos; R U&apos; R U R&apos; u R2 y R U&apos; R&apos;&quot;);">Gc-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;R U R&apos; y&apos; R2 u&apos; R U&apos; R&apos; U R&apos; u R2&quot;);">Gd-Perm</a>
+			<br>
 			<br>
 			<a href="LastLayer.php">Back</a>
 		</div>
 		<br>
 		<div id = "selectedAlg">
-			<span id = 'selectedBaseAlg' >
+			<span id = 'selectedBaseAlg' ></span>
 		<!--  FORM FOR TABLE -->
 			<form id = "algData" method = "POST">
 				<input name = 'delete' type = "hidden"/>
