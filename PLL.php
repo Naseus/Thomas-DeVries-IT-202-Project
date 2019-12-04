@@ -51,13 +51,14 @@
 		let arr = [];
 		let algData ="<?php getLabData() ?>";
 		if(algData == "") {
-			$("#algList").css('display', 'block');
-			$("#selectedAlg").css('display', 'none');
+			$('#algList').css('display', 'block');
+			$('#selectedAlg').css('display', 'none');
 			return;
 		}
-		$("#algList").css('display', 'none');
-		$("#selectedAlg").css('display', 'block');
-		//PARSE DATABASE INFORMATION
+		$('#algList').css('display', 'none');
+		$('#selectedAlg').css('display', 'block');
+		$('#selectedBaseAlg').text($('#setAlg').alg.value);
+		//CREATE TABLE
 		let blocks = algData.split("!");
 		for(let lst of blocks)
 			arr.push(lst.split("_"));
@@ -85,8 +86,7 @@
 				}));
 			}
 			let $addRow = $("<tr>");
-			alert("RAN");
-			table.append($('<HR>'));
+			//alert("RAN");
 			table.append($addRow);
 			$addRow.append($('<td>', {text: "add"}));
 			$tr.append($('<input/>',{
@@ -101,11 +101,9 @@
 
 			function submitAlg(x) {
 				$("#setAlg").submit(function() {
-					//alert(x);
 					this.alg.value = x;
 				});
 				$("#setAlg").submit();
-				//alert("<?php getLabData();?>");
 			}
 		</script>
 	</head>
@@ -122,6 +120,7 @@
 		</div>
 		<br>
 		<div id = "selectedAlg">
+			<span id = 'selectedBaseAlg' >
 		<!--  FORM FOR TABLE -->
 			<form id = "algData" method = "POST">
 				<input name = 'delete' type = "hidden"/>
