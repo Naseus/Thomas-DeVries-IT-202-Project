@@ -88,7 +88,7 @@
 			//alert("RAN");
 			$table.append($addRow);
 			$addRow.append($('<td>', {text: "add"}));
-			$tr.append($('<input/>',{
+			$addRow.append($('<input/>',{
 					value: "+",
 					id:"add",
 					type: "submit",
