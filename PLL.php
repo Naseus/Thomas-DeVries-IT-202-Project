@@ -64,7 +64,7 @@
 		for(let lst of blocks)
 			arr.push(lst.split("_"));
 		arr.pop();
-		for(let i = 0; i < arr.length; i++) 
+		for(let i = 1; i < arr.length; i++) 
 			arr[i].pop();
 			let $table = $("<table>");
 			let $headTr = $("<tr>");
