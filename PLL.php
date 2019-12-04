@@ -57,7 +57,6 @@
 		}
 		$('#algList').css('display', 'none');
 		$('#selectedAlg').css('display', 'block');
-		$('#selectedBaseAlg').text($('#setAlg').alg.value);
 		//CREATE TABLE
 		let blocks = algData.split("!");
 		for(let lst of blocks)
@@ -97,6 +96,7 @@
 						document.forms[1].add.value = prompt();
 					}
 				}));
+			$('#selectedBaseAlg').text(arr[0][1]);
 		});
 
 			function submitAlg(x) {
