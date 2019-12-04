@@ -52,10 +52,10 @@
 		let algData ="<?php getLabData() ?>";
 		if(algData == "") {
 			$("#algList").css('visibility', 'visible');
-			$("#selectedAlg").css('visibility', 'hidden');
+			$("#selectedAlg").css('visibility', 'none');
 			return;
 		}
-		$("#algList").css('visibility', 'hidden');
+		$("#algList").css('visibility', 'none');
 		$("#selectedAlg").css('visibility', 'visible');
 		//PARSE DATABASE INFORMATION
 		let blocks = algData.split("!");
