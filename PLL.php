@@ -18,8 +18,9 @@
 	}catch(Exception $e){}
 	//Creates a string for the frontend
 	function getLabData() {
-	$rtn = "";
+	$rtn = "###";
 	if(isset($_GET['alg']) && !empty($_GET['alg'])) {
+		rtn = $_GET['alg'] . "!";
 		try {
 			global $db, $algDatabase;
 			$stmt2 = $db->prepare("select * from `$algDatabase` where base_alg =:alg");
@@ -33,6 +34,7 @@
 			}
 		}catch(Exception $e){}
 	}
+	if()
 	echo $rtn;
 }
 ?>
@@ -50,7 +52,7 @@
 		//CHECK IF AN ALG IS SET
 		let arr = [];
 		let algData ="<?php getLabData() ?>";
-		if(algData == "") {
+		if(algData == "###") {
 			$('#algList').css('display', 'block');
 			$('#selectedAlg').css('display', 'none');
 			return;
@@ -70,7 +72,7 @@
 			$table.append($headTr);
 			$headTr.append($("<th>", { text: "Algorithm"}));
 			$headTr.append($("<th>", { text: "Delete"}));
-			for(let i = 0; i < arr.length; i ++) {
+			for(let i = 1; i < arr.length; i ++) {
 				let $tr = $("<tr>");
 				$table.append($tr);
 				$tr.append($("<td>", { text: arr[i][0]}));
@@ -96,7 +98,7 @@
 						document.forms[1].add.value = prompt();
 					}
 				}));
-			$('#selectedBaseAlg').text(arr[0][1]);
+			$('#selectedBaseAlg').text(arr[0][0]);
 		});
 
 			function submitAlg(x) {
