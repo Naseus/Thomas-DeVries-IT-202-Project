@@ -86,7 +86,7 @@
 			}
 			let $addRow = $("<tr>");
 			//alert("RAN");
-			table.append($addRow);
+			$table.append($addRow);
 			$addRow.append($('<td>', {text: "add"}));
 			$tr.append($('<input/>',{
 					value: "+",
