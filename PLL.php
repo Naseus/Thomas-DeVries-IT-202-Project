@@ -20,7 +20,7 @@
 	function getLabData() {
 	$rtn = "###";
 	if(isset($_GET['alg']) && !empty($_GET['alg'])) {
-		rtn = $_GET['alg'] . "!";
+		$rtn = $_GET['alg'] . "!";
 		try {
 			global $db, $algDatabase;
 			$stmt2 = $db->prepare("select * from `$algDatabase` where base_alg =:alg");
