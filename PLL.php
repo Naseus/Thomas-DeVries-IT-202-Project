@@ -34,7 +34,6 @@
 			}
 		}catch(Exception $e){}
 	}
-	if()
 	echo $rtn;
 }
 ?>
