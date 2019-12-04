@@ -97,6 +97,7 @@
 						document.forms[1].add.value = prompt();
 					}
 				}));
+			alert(arr[0][0]);
 			$('#selectedBaseAlg').text(arr[0][0]);
 		});
 
@@ -118,7 +119,7 @@
 			<br>
 			<a href="javascript: submitAlg(&quot;R2 u R&apos; U R&apos; U&apos; R u&apos; R2 y&apos; R&apos; U R&quot;);">Ga-Perm</a>
 			<br>
-			<a href="javascript: submitAlg(&quot;R&apos; U&apos; R U D&apos; R2 U R&apos; U R U&apos; R U&apos; R2&quot; D);">Gb-Perm</a>
+			<a href="javascript: submitAlg(&quot;R&apos; U&apos; R U D&apos; R2 U R&apos; U R U&apos; R U&apos; R2 D&quot;);">Gb-Perm</a>
 			<br>
 			<a href="javascript: submitAlg(&quot;R2 u&apos; R U&apos; R U R&apos; u R2 y R U&apos; R&apos;&quot;);">Gc-Perm</a>
 			<br>
