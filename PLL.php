@@ -51,12 +51,12 @@
 		let arr = [];
 		let algData ="<?php getLabData() ?>";
 		if(algData == "") {
-			$("#algList").css('visibility', 'visible');
-			$("#selectedAlg").css('visibility', 'none');
+			$("#algList").css('display', 'block');
+			$("#selectedAlg").css('display', 'none');
 			return;
 		}
-		$("#algList").css('visibility', 'none');
-		$("#selectedAlg").css('visibility', 'visible');
+		$("#algList").css('display', 'none');
+		$("#selectedAlg").css('display', 'block');
 		//PARSE DATABASE INFORMATION
 		let blocks = algData.split("!");
 		for(let lst of blocks)
