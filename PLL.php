@@ -97,8 +97,8 @@
 						document.forms[1].add.value = prompt();
 					}
 				}));
-			alert(arr[0][0]);
-			$('#selectedBaseAlg').text(arr[0][0]);
+			alert(arr[0]);
+			$('#selectedBaseAlg').text(arr[0]);
 		});
 
 			function submitAlg(x) {
