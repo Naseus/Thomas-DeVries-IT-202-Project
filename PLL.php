@@ -36,6 +36,37 @@
 	}
 	echo $rtn;
 }
+//	HANDLES THE DATA SUMBITED TO THE BACKEND
+function handleData() {
+	if(isset($_POST["add"]) && isset($_GET['alg'])) {
+		addAlg();
+	}
+	elseif(isset($_POST["delete"])) {
+		delete();
+	}
+}
+// DELETES AN ALGORITHM FROM THE DATABASE
+function delete() {
+	global $algDatabase, $db;
+	$stmt = $db -> prepare("DELETE FROM $algDatabase WHERE alg = :alg");
+	$user = $stmt->execute(array(":alg" => $_POST["delete"]));
+}
+// ADD AN ALGORITHM TO THE DATABASE
+function addAlg() {
+	if(!empty($_POST["alg"]) && !empty($_GET["alg"])) {
+		$alg = $_POST["alg"];
+		$baseAlg = $GET["alg"];
+		$length = count(str_word_count($_POST["alg"], 1));
+		global $algDatabase, $db;
+		$stmt =$db->prepare("INSERT into $algDatabase (`alg`,`base_alg`,`alg_type`,`move_number`) VALUES (:alg, :base_alg,,:type :length)");
+		$run = $stmt->execute(array(
+			":alg" => $alg,
+			":base_alg" => $baseAlg,
+			":type" => "PLL",
+			":length" => $length
+		));
+	}
+}
 ?>
 
 <html>
@@ -51,7 +82,6 @@
 		//CHECK IF AN ALG IS SET
 		let arr = [];
 		let algData ="<?php getLabData() ?>";
-		alert(algData);
 		if(algData == "###") {
 			$('#algList').css('display', 'block');
 			$('#selectedAlg').css('display', 'none');
@@ -87,7 +117,6 @@
 				}));
 			}
 			let $addRow = $("<tr>");
-			//alert("RAN");
 			$table.append($addRow);
 			$addRow.append($('<td>', {text: "add"}));
 			$addRow.append($('<input/>',{
@@ -96,18 +125,21 @@
 					type: "submit",
 					click: function () { 
 						document.forms[1].add.value = prompt();
+						let lst = document.forms[1].add.value.split(" ");
+						let temp = "";
+						for(let i = 0; i < lst.length; i++)
+							temp+=(lst[i]) + "|";
+						alert(temp);
 					}
 				}));
-			alert(arr[0]);
 			$('#selectedBaseAlg').text(arr[0]);
 		});
-
-			function submitAlg(x) {
-				$("#setAlg").submit(function() {
-					this.alg.value = x;
-				});
-				$("#setAlg").submit();
-			}
+	function submitAlg(x) {
+		$("#setAlg").submit(function() {
+			this.alg.value = x;
+		});
+		$("#setAlg").submit();
+	}
 		</script>
 	</head>
 	<body>
@@ -131,7 +163,9 @@
 		</div>
 		<br>
 		<div id = "selectedAlg">
+			<img/>
 			<span id = 'selectedBaseAlg' ></span>
+			<span id = 'timer' ></span>
 		<!--  FORM FOR TABLE -->
 			<form id = "algData" method = "POST">
 				<input name = 'delete' type = "hidden"/>
