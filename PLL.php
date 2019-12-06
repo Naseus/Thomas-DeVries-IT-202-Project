@@ -124,13 +124,14 @@ function addAlg() {
 					id:"add",
 					type: "submit",
 					click: function () { 
-						document.forms[1].add.value = prompt();
+						let temp = prompt();
+						document.forms[1].add.value = temp;
 						//alert(document.forms[1].add.value);
 						let lst = document.forms[1].add.value.split(" ");
-						let temp = "";
+						let accum = "";
 						for(let i = 0; i < lst.length; i++)
-							temp+=(lst[i]) + "|";
-						//alert(temp);
+							acuum+=(lst[i]) + "|";
+						alert(temp);
 					}
 				}));
 			$('#selectedBaseAlg').text(arr[0]);
