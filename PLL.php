@@ -53,6 +53,8 @@ function delete() {
 // ADD AN ALGORITHM TO THE DATABASE
 function addAlg() {
 	if(!empty($_POST["alg"]) && !empty($_GET["alg"])) {
+		echo( $_POST["alg"]);
+		echo( $_GET["alg"]);
 		$alg = $_POST["alg"];
 		$baseAlg = $GET["alg"];
 		$length = count(str_word_count($_POST["alg"], 1));
