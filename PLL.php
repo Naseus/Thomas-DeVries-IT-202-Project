@@ -37,13 +37,11 @@
 	echo $rtn;
 }
 //	HANDLES THE DATA SUMBITED TO THE BACKEND
-function handleData() {
-	if(isset($_POST["add"]) && isset($_GET['alg'])) {
-		addAlg();
-	}
-	elseif(isset($_POST["delete"])) {
-		delete();
-	}
+if(isset($_POST["add"]) && isset($_GET['alg'])) {
+	addAlg();
+}
+elseif(isset($_POST["delete"])) {
+	delete();
 }
 // DELETES AN ALGORITHM FROM THE DATABASE
 function delete() {
@@ -126,12 +124,12 @@ function addAlg() {
 					type: "submit",
 					click: function () { 
 						document.forms[1].add.value = prompt();
-						alert(document.forms[1].add.value);
+						//alert(document.forms[1].add.value);
 						let lst = document.forms[1].add.value.split(" ");
 						let temp = "";
 						for(let i = 0; i < lst.length; i++)
 							temp+=(lst[i]) + "|";
-						alert(temp);
+						//alert(temp);
 					}
 				}));
 			$('#selectedBaseAlg').text(arr[0]);
