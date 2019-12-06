@@ -130,7 +130,7 @@ function addAlg() {
 						let lst = document.forms[1].add.value.split(" ");
 						let accum = "";
 						for(let i = 0; i < lst.length; i++)
-							acuum+=(lst[i]) + "|";
+							accum+=(lst[i]) + "|";
 						alert(temp);
 					}
 				}));
