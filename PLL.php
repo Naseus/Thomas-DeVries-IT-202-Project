@@ -126,7 +126,8 @@ function addAlg() {
 					click: function () { 
 						let temp = prompt();
 						document.forms[1].add.value = temp;
-						//alert(document.forms[1].add.value);
+						alert(document.forms[1].add.value);
+						alert(document.forms[1]);
 						let lst = document.forms[1].add.value.split(" ");
 						let accum = "";
 						for(let i = 0; i < lst.length; i++)
