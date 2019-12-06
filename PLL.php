@@ -37,10 +37,11 @@
 	echo $rtn;
 }
 //	HANDLES THE DATA SUMBITED TO THE BACKEND
+echo "<br><pre>" . $_POST . "</pre><br>";
 if(isset($_POST["add"]) && isset($_GET['alg'])) {
 	addAlg();
 }
-elseif(isset($_POST["delete"])) {
+if(isset($_POST["delete"])) {
 	delete();
 }
 // DELETES AN ALGORITHM FROM THE DATABASE
