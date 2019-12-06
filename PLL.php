@@ -113,6 +113,7 @@ function addAlg() {
 					type: "submit",
 					click: function () { 
 						document.forms[1].delete.value = $(this).attr("id").split("_")[1];
+						alert(document.forms[1].delete.value);
 					}
 				}));
 			}
@@ -125,6 +126,7 @@ function addAlg() {
 					type: "submit",
 					click: function () { 
 						document.forms[1].add.value = prompt();
+						alert(document.forms[1].add.value);
 						let lst = document.forms[1].add.value.split(" ");
 						let temp = "";
 						for(let i = 0; i < lst.length; i++)
