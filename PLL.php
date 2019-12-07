@@ -155,8 +155,6 @@ function addAlg() {
 		</form>
 		<!-- div WITH LIST OF ALGORITHMS -->
 		<div id = algList>
-			<a href="javascript: submitAlg(&quot;R&apos; U R&apos; d&apos; R&apos; F&apos; R2 U&apos; R&apos; U R&apos; F R F&quot;);">V-Perm</a>
-			<br>
 			<a href="javascript: submitAlg(&quot;R2 u R&apos; U R&apos; U&apos; R u&apos; R2 y&apos; R&apos; U R&quot;);">Ga-Perm</a>
 			<br>
 			<a href="javascript: submitAlg(&quot;R&apos; U&apos; R U D&apos; R2 U R&apos; U R U&apos; R U&apos; R2 D&quot;);">Gb-Perm</a>
@@ -164,6 +162,46 @@ function addAlg() {
 			<a href="javascript: submitAlg(&quot;R2 u&apos; R U&apos; R U R&apos; u R2 y R U&apos; R&apos;&quot;);">Gc-Perm</a>
 			<br>
 			<a href="javascript: submitAlg(&quot;R U R&apos; y&apos; R2 u&apos; R U&apos; R&apos; U R&apos; u R2&quot;);">Gd-Perm</a>
+			
+			<br>
+			<a href="javascript: submitAlg(&quot;R U&apos; R U R U R U&apos; R&apos; U&apos; R2&quot;);">Ua-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;R2 U R U R&apos; U&apos; R&apos; U&apos; R&apos; U R&apos;&quot;);">Ub-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;M2 U M2 U M&apos; U2 M2 U2 M&apos; U2&quot;);">Z-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;M2 U M2 U2 M2 U M2&quot;);">H-Perm</a>
+			
+
+			<br>
+			<a href="javascript: submitAlg(&quot;l&apos; U R&apos; D2 R U&apos; R&apos; D2 R2&quot;);">Aa-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;l U&apos; R D2 R&apos; U R D2 R2&quot;);">Ab-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;x&apos; R U&apos; R&apos; D R U R&apos; D&apos; R U R&apos; D R U&apos; R&apos; D&apos;&quot;);">E-Perm</a>
+			<br>
+			
+
+			<a href="javascript: submitAlg(&quot;R U R&apos; U&apos; R&apos; F R2 U&apos; R&apos; U&apos; R U R&apos; F&apos;&quot;);">T-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;R&apos; U2 R&apos; d&apos; R&apos; F&apos; R2 U&apos; R&apos; U R&apos; F R U&apos; F&quot;);">F-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;R&apos; U L&apos; U2 R U&apos; R&apos; U2 L R U&apos;&quot;);">Ja-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;R U R&apos; F&apos; R U R&apos; U&apos; R&apos; F R2 U&apos; R&apos; U&apos;&quot;);">Jb-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;L U2&apos; L&apos; U2&apos; L F&apos; L&apos; U&apos; L U L F L2&apos; U&quot;);">Ra-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;R&apos; U2 R U2 R&apos; F R U R&apos; U&apos; R&apos; F&apos; R2 U&apos;&quot;);">Rb-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;R&apos; U R&apos; d&apos; R&apos; F&apos; R2 U&apos; R&apos; U R&apos; F R F&quot;);">V-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;F R U&apos; R&apos; U&apos; R U R&apos; F&apos; R U R&apos; U&apos; R&apos; F R F&apos;&quot;);">Y-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;L U&apos; R U2 L&apos; U R&apos; L U&apos; R U2 L&apos; U R&apos; U&quot;);">Na-Perm</a>
+			<br>
+			<a href="javascript: submitAlg(&quot;R&apos; U L&apos; U2 R U&apos; L R&apos; U L&apos; U2 R U&apos; L U&apos;&quot;);">Nb-Perm</a>
+		
 			<br>
 			<br>
 			<a href="LastLayer.php">Back</a>
@@ -172,7 +210,7 @@ function addAlg() {
 		<div id = "selectedAlg">
 			<img/>
 			<span id = 'selectedBaseAlg' ></span>
-			<span id = 'timer' ></span>
+			<!--span id = 'timer' ></span-->
 		<!--  FORM FOR TABLE -->
 			<form id = "algData" method = "POST">
 				<input name = 'delete' type = "hidden"/>
