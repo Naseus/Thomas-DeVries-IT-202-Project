@@ -58,7 +58,7 @@ function addAlg() {
 		echo( $_GET["alg"]);
 	if(!empty($_POST["newAlg"]) && !empty($_GET["alg"])) {
 		$alg = $_POST["newAlg"];
-		$baseAlg = $GET["alg"];
+		$baseAlg = $_GET["alg"];
 		$length = count(str_word_count($alg, 1));
 		global $algDatabase, $db;
 		$stmt =$db->prepare("INSERT into $algDatabase (`alg`,`base_alg`,`alg_type`,`move_number`) VALUES (:alg, :base_alg,,:type :length)");
