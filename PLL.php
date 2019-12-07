@@ -37,12 +37,14 @@
 	echo $rtn;
 }
 //	HANDLES THE DATA SUMBITED TO THE BACKEND
-echo "<br><pre>" . var_export($_POST) . "</pre><br>";
-if(isset($_POST['add']) && isset($_GET['alg'])) {
-	addAlg();
-}
-if(isset($_POST["delete"])) {
-	delete();
+function handleData() {}
+	echo "<br><pre>" . var_export($_POST) . "</pre><br>";
+	if(isset($_POST['add']) && isset($_GET['alg'])) {
+		addAlg();
+	}
+	if(isset($_POST["delete"])) {
+		delete();
+	}
 }
 // DELETES AN ALGORITHM FROM THE DATABASE
 function delete() {
@@ -128,8 +130,6 @@ function addAlg() {
 					click: function () { 
 						let temp = prompt();
 						document.forms[1].add.value = temp;
-						alert(document.forms[1].add.value);
-						alert(document.forms[1]);
 						let lst = document.forms[1].add.value.split(" ");
 						let accum = "";
 						for(let i = 0; i < lst.length; i++)
@@ -181,3 +181,4 @@ function addAlg() {
 		</div>
 	</body>
 </html>
+<?php handleData();?>
