@@ -38,7 +38,7 @@
 }
 //	HANDLES THE DATA SUMBITED TO THE BACKEND
 echo "<br><pre>" . var_export($_POST) . "</pre><br>";
-if(isset($_POST["add"]) && isset($_GET['alg'])) {
+if(isset($_POST['add']) && isset($_GET['alg'])) {
 	addAlg();
 }
 if(isset($_POST["delete"])) {
@@ -52,12 +52,12 @@ function delete() {
 }
 // ADD AN ALGORITHM TO THE DATABASE
 function addAlg() {
-		echo( $_POST["alg"]);
+		echo( $_POST["add"]);
 		echo( $_GET["alg"]);
-	if(!empty($_POST["alg"]) && !empty($_GET["alg"])) {
-		$alg = $_POST["alg"];
+	if(!empty($_POST["add"]) && !empty($_GET["alg"])) {
+		$alg = $_POST["add"];
 		$baseAlg = $GET["alg"];
-		$length = count(str_word_count($_POST["alg"], 1));
+		$length = count(str_word_count($alg, 1));
 		global $algDatabase, $db;
 		$stmt =$db->prepare("INSERT into $algDatabase (`alg`,`base_alg`,`alg_type`,`move_number`) VALUES (:alg, :base_alg,,:type :length)");
 		$run = $stmt->execute(array(
