@@ -38,7 +38,6 @@
 }
 //	HANDLES THE DATA SUMBITED TO THE BACKEND
 function handleData() {
-	echo "<br><pre>" . var_export($_POST) . "</pre><br>";
 	if(isset($_POST['newAlg']) && isset($_GET['alg'])) {
 		addAlg();
 	}
@@ -54,8 +53,6 @@ function delete() {
 }
 // ADD AN ALGORITHM TO THE DATABASE
 function addAlg() {
-		echo( $_POST["newAlg"]);
-		echo( $_GET["alg"]);
 	if(!empty($_POST["newAlg"]) && !empty($_GET["alg"])) {
 		$alg = $_POST["newAlg"];
 		$baseAlg = $_GET["alg"];
@@ -118,7 +115,6 @@ function addAlg() {
 					type: "submit",
 					click: function () { 
 						document.forms[1].delete.value = $(this).attr("id").split("_")[1];
-						alert(document.forms[1].delete.value);
 					}
 				}));
 			}
@@ -130,13 +126,7 @@ function addAlg() {
 					id:"add",
 					type: "submit",
 					click: function () { 
-						let temp = prompt();
-						document.forms[1].newAlg.value = temp;
-						let lst = document.forms[1].newAlg.value.split(" ");
-						let accum = "";
-						for(let i = 0; i < lst.length; i++)
-							accum+=(lst[i]) + "|";
-						alert(temp);
+						document.forms[1].newAlg.value = prompt();
 					}
 				}));
 			$('#selectedBaseAlg').text(arr[0]);
