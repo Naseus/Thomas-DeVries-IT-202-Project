@@ -37,7 +37,7 @@
 	echo $rtn;
 }
 //	HANDLES THE DATA SUMBITED TO THE BACKEND
-function handleData() {}
+function handleData() {
 	echo "<br><pre>" . var_export($_POST) . "</pre><br>";
 	if(isset($_POST['add']) && isset($_GET['alg'])) {
 		addAlg();
