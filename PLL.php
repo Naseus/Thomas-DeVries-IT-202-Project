@@ -39,7 +39,7 @@
 //	HANDLES THE DATA SUMBITED TO THE BACKEND
 function handleData() {
 	echo "<br><pre>" . var_export($_POST) . "</pre><br>";
-	if(isset($_POST['add']) && isset($_GET['alg'])) {
+	if(isset($_POST['newAlg']) && isset($_GET['alg'])) {
 		addAlg();
 	}
 	if(isset($_POST["delete"])) {
@@ -54,10 +54,10 @@ function delete() {
 }
 // ADD AN ALGORITHM TO THE DATABASE
 function addAlg() {
-		echo( $_POST["add"]);
+		echo( $_POST["newAlg"]);
 		echo( $_GET["alg"]);
-	if(!empty($_POST["add"]) && !empty($_GET["alg"])) {
-		$alg = $_POST["add"];
+	if(!empty($_POST["newAlg"]) && !empty($_GET["alg"])) {
+		$alg = $_POST["newAlg"];
 		$baseAlg = $GET["alg"];
 		$length = count(str_word_count($alg, 1));
 		global $algDatabase, $db;
@@ -129,8 +129,8 @@ function addAlg() {
 					type: "submit",
 					click: function () { 
 						let temp = prompt();
-						document.forms[1].add.value = temp;
-						let lst = document.forms[1].add.value.split(" ");
+						document.forms[1].newAlg.value = temp;
+						let lst = document.forms[1].newAlg.value.split(" ");
 						let accum = "";
 						for(let i = 0; i < lst.length; i++)
 							accum+=(lst[i]) + "|";
@@ -174,7 +174,7 @@ function addAlg() {
 		<!--  FORM FOR TABLE -->
 			<form id = "algData" method = "POST">
 				<input name = 'delete' type = "hidden"/>
-				<input name = 'add' type = "hidden"/>
+				<input name = 'newAlg' type = "hidden"/>
 			</form>
 		<br>
 		<a href = 'PLL.php'>Back</a>
