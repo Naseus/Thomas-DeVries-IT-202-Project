@@ -3,10 +3,6 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 	session_start();
-	if(!isset($_SESSION['user'])){
-		header("Location: login.php");
-		exit();
-	}
 	try {
 		require("config.php");
 			$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
@@ -51,8 +47,13 @@ function delete() {
 	$stmt = $db -> prepare("DELETE FROM $algDatabase WHERE alg = :alg");
 	$user = $stmt->execute(array(":alg" => $_POST["delete"]));
 }
+
 // ADD AN ALGORITHM TO THE DATABASE
 function addAlg() {
+	if(!isset($_SESSION["user"])) {
+		header("login.php");
+		exit();
+	}
 	if(!empty($_POST["newAlg"]) && !empty($_GET["alg"])) {
 		$alg = $_POST["newAlg"];
 		$baseAlg = $_GET["alg"];
@@ -202,6 +203,7 @@ function addAlg() {
 		<br>
 		<div id = "selectedAlg">
 			<img id ="algPicture" alt = "alg">
+			<br>
 			<span id = 'selectedBaseAlg' ></span>
 		<!--  FORM FOR TABLE -->
 			<form id = "algData" method = "POST">

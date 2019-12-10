@@ -86,6 +86,8 @@ function handleUsers() {
 		<input type="submit" value="Login"/>
 		<span id = 'validation' style = 'display:none;'></span>
 	</form>
+	<br>
+	<a href = "registration.php">register here</a>
 </body>
 </html>
 <?php echo "<br><pre>" . "response: ". handleUsers() . "</pre><br>"?>
