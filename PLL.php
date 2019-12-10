@@ -130,6 +130,9 @@ function addAlg() {
 					}
 				}));
 			$('#selectedBaseAlg').text(arr[0]);
+			let picId = "PLL/" + arr[0] + ".png";
+			$('#algPicture').attr("scr") = picId;
+
 		});
 	function submitAlg(x) {
 		$("#setAlg").submit(function() {
@@ -198,9 +201,8 @@ function addAlg() {
 		</div>
 		<br>
 		<div id = "selectedAlg">
-			<img/>
+			<img id ="algPicture">
 			<span id = 'selectedBaseAlg' ></span>
-			<!--span id = 'timer' ></span-->
 		<!--  FORM FOR TABLE -->
 			<form id = "algData" method = "POST">
 				<input name = 'delete' type = "hidden"/>
