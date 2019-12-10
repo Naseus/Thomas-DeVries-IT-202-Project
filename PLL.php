@@ -130,7 +130,7 @@ function addAlg() {
 					}
 				}));
 			$('#selectedBaseAlg').text(arr[0]);
-			let picId = "PLL/" + arr[0] + ".png";
+			let picId = "./PLL/" + arr[0] + ".png";
 			$('#algPicture').attr("scr") = picId;
 
 		});
@@ -201,7 +201,7 @@ function addAlg() {
 		</div>
 		<br>
 		<div id = "selectedAlg">
-			<img id ="algPicture">
+			<img id ="algPicture" alt = "alg">
 			<span id = 'selectedBaseAlg' ></span>
 		<!--  FORM FOR TABLE -->
 			<form id = "algData" method = "POST">
