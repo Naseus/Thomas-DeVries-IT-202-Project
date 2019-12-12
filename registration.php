@@ -64,6 +64,9 @@
 			<br>
 			<input name = "submit" type = "submit" value="Enter" />		
 		</form>
+		<br>
+		<br>
+		<a href = 'login.php'>Have an account already? Login here.</a>
 	</body>
 </html>
 

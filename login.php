@@ -90,4 +90,4 @@ function handleUsers() {
 	<a href = "registration.php">register here</a>
 </body>
 </html>
-<?php echo "<br><pre>" . "response: ". handleUsers() . "</pre><br>"?>
+<?php echo "<br><pre>" . handleUsers() . "</pre><br>"?>
