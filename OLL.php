@@ -139,7 +139,6 @@ function updateLearnedAlgs() {
 		let algData ="<?php getLabData() ?>";
 		if(algData == "###") {
 			$('#algList').css('display', 'block');
-			checkLearned();
 			$('#selectedAlg').css('display', 'none');
 			return;
 		}
@@ -219,6 +218,7 @@ function updateLearnedAlgs() {
 			$('#setAlg').append($('<br>'));
 
 		}
+	checkLearned();
 	}); 
 	// CHECK BOXES FOR KNOWN ALGS
 	function checkLearned() {
