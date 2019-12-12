@@ -216,3 +216,4 @@ function addAlg() {
 		</div>
 	</body>
 </html>
+<?php 	echo($_SESSION['user']); ?>
