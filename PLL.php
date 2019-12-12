@@ -54,9 +54,26 @@ function addAlg() {
 		header("location: login.php");
 		exit();
 	}
+	$notations = array("L", "R", "U", "D", "F", "B", "L\'", "R\'", "U\'", "D\'", "F\'", "B\'", "L2", "R2", "U2", "D2", "F2","B2",
+            "l", "r", "u", "d", "f", "b"], ["l\'", "r\'", "u\'", "d\'", "f\'", "b\'", "l2", "r2", "u2", "d2", "f2","b2", 
+            "M", "E", "S", "M\'", "E\'", "S\'", "M2", "E2", "S2", "X", "Y", "Z", "X\'", "Y\'", "Z\'");
+
 	if(!empty($_POST["newAlg"]) && !empty($_GET["alg"])) {
+		$lst = $_POST[""];
 		$alg = $_POST["newAlg"];
 		$baseAlg = $_GET["alg"];
+		$lst = explode(" ", string)
+
+		for($i = 0; $i < lst.length; $i++) {
+			for($j = 0; $j < notations.length; $j++) {
+				$break = true;
+				if($lst[$i] == $notations[j]) {
+					$break = false;
+				}
+			}
+			if(break)
+				return;
+		}
 		$length = count(str_word_count($alg, 1));
 		global $algDatabase, $db;
 		$stmt =$db->prepare("INSERT into $algDatabase (`alg`,`base_alg`,`alg_type`,`move_number`) VALUES (:alg, :base_alg,:type, :length)");
@@ -217,4 +234,3 @@ function addAlg() {
 		</div>
 	</body>
 </html>
-<?php 	echo($_SESSION['user']); ?>
