@@ -53,6 +53,7 @@ function addAlg() {
 	if(!isset($_SESSION["user"])) {
 		header("login.php");
 		exit();
+		echo($_SESSION['user']);
 	}
 	if(!empty($_POST["newAlg"]) && !empty($_GET["alg"])) {
 		$alg = $_POST["newAlg"];
