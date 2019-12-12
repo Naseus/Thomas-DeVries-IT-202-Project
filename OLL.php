@@ -200,8 +200,8 @@ function updateLearnedAlgs() {
 			});
 			$box = $('<input>', {
 				type = "checkbox",
-				name = i,
-				id = i + "_learned"
+				name = "" + i,
+				id = "" + i + "_learned"
 			});
 			$('#setAlg').append($box);
 			$('#setAlg').append($link);
