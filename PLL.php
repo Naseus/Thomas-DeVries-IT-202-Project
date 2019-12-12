@@ -66,7 +66,7 @@ function addAlg() {
 	for($i = 0; $i < count($lst); $i++) {
 		for($j = 0; $j < count($notations); $j++) {
         	$break = true;
-				if(strcmp($lst[$i],$notations[$j])) {
+				if(strcmp($lst[$i],$notations[$j]) == 0) {
 					$break = false;
                     break;
 				}
