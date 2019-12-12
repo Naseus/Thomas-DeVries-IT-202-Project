@@ -147,7 +147,7 @@ function addAlg() {
 					type: "submit",
 					click: function () { 
 						if(arr.length <= 1)
-							windows.location.href = "login.php";
+							window.location.href = "login.php";
 						document.forms[1].newAlg.value = prompt();
 					}
 				}));
