@@ -43,7 +43,7 @@ function learnedAlgs() {
 }
 //	HANDLES THE DATA SUMBITED TO THE BACKEND
 function handleData() {
-	if(isset($_GET['backsubmit'])) {
+	if(isset($_GET['backsubmit']) $$ ! empty($_GET['backsubmit'])) {
 		updateLearnedAlgs();
 		header("location: LastLayer.php");
 	}
