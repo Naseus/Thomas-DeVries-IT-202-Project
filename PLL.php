@@ -43,6 +43,10 @@ function learnedAlgs() {
 }
 //	HANDLES THE DATA SUMBITED TO THE BACKEND
 function handleData() {
+	if(isset($_POST['backsubmit'])) {
+		updateLearnedAlgs();
+		header("location: LastLayer.php");
+	}
 	if(isset($_POST['newAlg']) && isset($_GET['alg'])) {
 		addAlg();
 	}
@@ -204,7 +208,15 @@ function updateLearnedAlgs() {
 		});
 		$("#setAlg").submit();
 	}
+	//SET BACKSUBMIT AND SUBMIT
+	function saveAndExit() {
+		$("#setAlg").submit(function() {
+			this.backsubmit.value = "exit";
+		});
+		$("#setAlg").submit();	
+		}
 		</script>
+	}
 	</head>
 	<body>
 
@@ -212,6 +224,7 @@ function updateLearnedAlgs() {
 		<div id = algList>
 			<form id = 'setAlg' method = "GET">
 			<input name = 'alg' type = 'hidden'/>
+			<input name = 'backsubmit' type = 'hidden'/>
 			<input type = "checkbox" id = "0_learned" name = "0">
 			<a href="javascript: submitAlg(&quot;R2 u R&apos; U R&apos; U&apos; R u&apos; R2 y&apos; R&apos; U R&quot;);">Ga-Perm</a>
 			<br>			
@@ -278,7 +291,7 @@ function updateLearnedAlgs() {
 			</form>
 			<br>
 			<br>
-			<a href="LastLayer.php">Back</a>
+			<a href="javascript: saveAndExit();">Back</a>
 		</div>
 		<br>
 		<div id = "selectedAlg">
