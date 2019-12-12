@@ -199,9 +199,9 @@ function updateLearnedAlgs() {
     			href: 'javascript: submitAlg("' + algs[i] + '");'
 			});
 			$box = $('<input>', {
-				type = "checkbox",
-				name = "" + i,
-				id = "" + i + "_learned"
+				type: "checkbox",
+				name: "" + i,
+				id: "" + i + "_learned"
 			});
 			$('#setAlg').append($box);
 			$('#setAlg').append($link);
