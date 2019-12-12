@@ -54,9 +54,9 @@ function addAlg() {
 		header("location: login.php");
 		exit();
 	}
-	$notations = array("L", "R", "U", "D", "F", "B", "L\'", "R\'", "U\'", "D\'", "F\'", "B\'", "L2", "R2", "U2", "D2", "F2","B2",
-            "l", "r", "u", "d", "f", "b", "l\'", "r\'", "u\'", "d\'", "f\'", "b\'", "l2", "r2", "u2", "d2", "f2","b2", 
-            "M", "E", "S", "M\'", "E\'", "S\'", "M2", "E2", "S2", "X", "Y", "Z", "X\'", "Y\'", "Z\'");
+	$notations = array("L", "R", "U", "D", "F", "B", "L'", "R'", "U'", "D'", "F'", "B'", "L2", "R2", "U2", "D2", "F2","B2",
+            "l", "r", "u", "d", "f", "b", "l'", "r'", "u'", "d'", "f'", "b'", "l2", "r2", "u2", "d2", "f2","b2", 
+            "M", "E", "S", "M'", "E'", "S'", "M2", "E2", "S2", "X", "Y", "Z", "X'", "Y'", "Z'");
 
 	if(!empty($_POST["newAlg"]) && !empty($_GET["alg"])) {
 		$alg = $_POST["newAlg"];
@@ -94,7 +94,6 @@ function addAlg() {
 			src="https://code.jquery.com/jquery-3.4.1.js"
   			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   			crossorigin="anonymous">
-  			<?php handleData();?>
 		</script>
 		<script>
 	//CREATE PAGE
@@ -160,6 +159,7 @@ function addAlg() {
 		});
 		$("#setAlg").submit();
 	}
+	<?php handleData();?>
 		</script>
 	</head>
 	<body>
