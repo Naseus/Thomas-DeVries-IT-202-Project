@@ -192,10 +192,12 @@ function updateLearnedAlgs() {
 		});
 		// GENERATE THE LIST OF ALGS
 	$(document).ready(function() {
-		algs = ["R U2 R2' F R F' U2' R' F R F'", "F R U R' U' F' f R U R' U' f", "f R U R' U' f' U' F R U R' U' F'", "f R U R' U' f' U F R U R' U' F'", "l' U2 L U L' U l", "r U2' R' U' R U' r'", "r U R' U] [R U2' r'", "R U2' R' U2 R' F R F'"];
+		algs = ["R U2 R2' F R F' U2' R' F R F'", "F R U R' U' F' f R U R' U' f", "f R U R' U' f' U' F R U R' U' F'", "f R U R' U' f' U F R U R' U' F'", "l' U2 L U L' U l",
+				 "r U2' R' U' R U' r'", "r U R' U R U2' r'", "R U2' R' U2 R' F R F'", "R U R' U' R' F R2 U R' U' F'", "R U R' y R' F R U' R' F' R", 
+				 "F' L' U' L U F y F R U R' U' F'", "F R U R' U' F' U F R U R' U' F'"];
 		for(let i = 0; i < algs.length; i ++) {
 			$link = $('<a>',{
-    			text: "" + i,
+    			text: "" + (i + 1),
     			href: 'javascript: submitAlg("' + algs[i] + '");'
 			});
 			$box = $('<input>', {
