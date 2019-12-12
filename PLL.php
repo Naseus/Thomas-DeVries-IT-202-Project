@@ -59,10 +59,9 @@ function addAlg() {
             "M", "E", "S", "M\'", "E\'", "S\'", "M2", "E2", "S2", "X", "Y", "Z", "X\'", "Y\'", "Z\'");
 
 	if(!empty($_POST["newAlg"]) && !empty($_GET["alg"])) {
-		$lst = $_POST[""];
-		$alg = $_POST["newAlg"];
+]		$alg = $_POST["newAlg"];
 		$baseAlg = $_GET["alg"];
-		$lst = explode(" ", string);
+		$lst = explode(" ", $alg);
 	// Backend validation ADD FRONT END
 	for($i = 0; $i < count($lst); $i++) {
 		for($j = 0; $j < count($notations); $j++) {
@@ -73,7 +72,7 @@ function addAlg() {
 				}
 		}
 		if($break) {
-            return;
+            return "alert('Invalid notation');";
             }
 	}
 		$length = count(str_word_count($alg, 1));
@@ -89,14 +88,13 @@ function addAlg() {
 }
 ?>
 
-<?php handleData();?>
-
 <html>
 	<head>
 		<script
 			src="https://code.jquery.com/jquery-3.4.1.js"
   			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   			crossorigin="anonymous">
+  			<?php handleData();?>
 		</script>
 		<script>
 	//CREATE PAGE
