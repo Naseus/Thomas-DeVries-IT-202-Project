@@ -165,7 +165,7 @@ function addAlg() {
 	function checkLearned() {
 		let learned = "<?php learnedAlgs();?>".split("");
 		for(var i = 0; i < learned.length; i++) {
-			let $thisBox = $(i + "_learned");
+			let $thisBox = $( "#" + i + "_learned");
 			console.log($thisBox);
 			console.log(learned[i]);
 			if(learned[i] == 1) 
