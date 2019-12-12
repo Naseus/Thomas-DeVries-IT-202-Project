@@ -64,16 +64,20 @@ function addAlg() {
 		$baseAlg = $_GET["alg"];
 		$lst = explode(" ", string)
 
-		for($i = 0; $i < lst.length; $i++) {
-			for($j = 0; $j < notations.length; $j++) {
-				$break = true;
-				if($lst[$i] == $notations[j]) {
+	for($i = 0; $i < count($lst); $i++) {
+		for($j = 0; $j < count($notations); $j++) {
+        	$break = true;
+				if(strcmp($lst[$i],$notations[$j])) {
 					$break = false;
+                    break;
 				}
-			}
-			if(break)
-				return;
+                echo $lst[$i];
+                echo $notations[$j];
 		}
+		if($break) {
+            return;
+            }
+	}
 		$length = count(str_word_count($alg, 1));
 		global $algDatabase, $db;
 		$stmt =$db->prepare("INSERT into $algDatabase (`alg`,`base_alg`,`alg_type`,`move_number`) VALUES (:alg, :base_alg,:type, :length)");
