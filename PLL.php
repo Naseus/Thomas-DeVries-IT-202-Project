@@ -32,6 +32,13 @@
 	}
 	echo $rtn;
 }
+// GETS THE ALGS THAT WERE CHECKED AS LEARNED
+function learnedAlgs() {
+	if(isset($_SESSION["user"]) && !(empty($_SESSION["user"]))) {
+		global $userData;
+		echo $userData["PLL_learned"];
+	}
+}
 //	HANDLES THE DATA SUMBITED TO THE BACKEND
 function handleData() {
 	if(isset($_POST['newAlg']) && isset($_GET['alg'])) {
@@ -103,6 +110,7 @@ function addAlg() {
 		let algData ="<?php getLabData() ?>";
 		if(algData == "###") {
 			$('#algList').css('display', 'block');
+			checkLearned();
 			$('#selectedAlg').css('display', 'none');
 			return;
 		}
@@ -150,9 +158,20 @@ function addAlg() {
 				}));
 			$('#selectedBaseAlg').text(arr[0]);
 			let picId = "./PLL/" + arr[0] + ".png";
-			$('#algPicture').attr("scr") = picId;
+			console.log(picId);
+			$('#algPicture').attr({"scr", picId});
 
 		});
+	// CHECK BOXES FOR KNOWN ALGS
+	function checkLearned() {
+		let learned = "<?php learnedAlgs();?>".split("");
+		for(var i = 0; i < learned.length; i++) {
+			let $thisBox = $(i + "_learned")
+			if(learned[i] == 1) 
+				$thisBox.prop('checked', true);
+		}
+	}
+	// HANDLES ALGS BEING PASSED TO THE GET
 	function submitAlg(x) {
 		$("#setAlg").submit(function() {
 			this.alg.value = x;
@@ -162,58 +181,75 @@ function addAlg() {
 		</script>
 	</head>
 	<body>
-		<form id = 'setAlg' method = "GET">
-			<input name = 'alg' type = 'hidden'/>
-		</form>
+
 		<!-- div WITH LIST OF ALGORITHMS -->
 		<div id = algList>
+			<form id = 'setAlg' method = "GET">
+			<input name = 'alg' type = 'hidden'/>
+			<input type = "checkbox" id = "0_learned">
 			<a href="javascript: submitAlg(&quot;R2 u R&apos; U R&apos; U&apos; R u&apos; R2 y&apos; R&apos; U R&quot;);">Ga-Perm</a>
-			<br>
+			<br>			
+			<input type = "checkbox" id = "1_learned">
 			<a href="javascript: submitAlg(&quot;R&apos; U&apos; R U D&apos; R2 U R&apos; U R U&apos; R U&apos; R2 D&quot;);">Gb-Perm</a>
 			<br>
+			<input type = "checkbox" id = "2_learned">
 			<a href="javascript: submitAlg(&quot;R2 u&apos; R U&apos; R U R&apos; u R2 y R U&apos; R&apos;&quot;);">Gc-Perm</a>
 			<br>
+			<input type = "checkbox" id = "3_learned">
 			<a href="javascript: submitAlg(&quot;R U R&apos; y&apos; R2 u&apos; R U&apos; R&apos; U R&apos; u R2&quot;);">Gd-Perm</a>
 			
 			<br>
+			<input type = "checkbox" id = "4_learned">
 			<a href="javascript: submitAlg(&quot;R U&apos; R U R U R U&apos; R&apos; U&apos; R2&quot;);">Ua-Perm</a>
 			<br>
+			<input type = "checkbox" id = "5_learned">
 			<a href="javascript: submitAlg(&quot;R2 U R U R&apos; U&apos; R&apos; U&apos; R&apos; U R&apos;&quot;);">Ub-Perm</a>
 			<br>
+			<input type = "checkbox" id = "6_learned">
 			<a href="javascript: submitAlg(&quot;M2 U M2 U M&apos; U2 M2 U2 M&apos; U2&quot;);">Z-Perm</a>
 			<br>
+			<input type = "checkbox" id = "7_learned">
 			<a href="javascript: submitAlg(&quot;M2 U M2 U2 M2 U M2&quot;);">H-Perm</a>
-			
-
 			<br>
+			<input type = "checkbox" id = "8_learned">
 			<a href="javascript: submitAlg(&quot;l&apos; U R&apos; D2 R U&apos; R&apos; D2 R2&quot;);">Aa-Perm</a>
 			<br>
+			<input type = "checkbox" id = "9_learned">
 			<a href="javascript: submitAlg(&quot;l U&apos; R D2 R&apos; U R D2 R2&quot;);">Ab-Perm</a>
 			<br>
+			<input type = "checkbox" id = "10_learned">
 			<a href="javascript: submitAlg(&quot;x&apos; R U&apos; R&apos; D R U R&apos; D&apos; R U R&apos; D R U&apos; R&apos; D&apos;&quot;);">E-Perm</a>
 			<br>
-			
-
+			<input type = "checkbox" id = "11_learned">
 			<a href="javascript: submitAlg(&quot;R U R&apos; U&apos; R&apos; F R2 U&apos; R&apos; U&apos; R U R&apos; F&apos;&quot;);">T-Perm</a>
 			<br>
+			<input type = "checkbox" id = "12_learned">
 			<a href="javascript: submitAlg(&quot;R&apos; U2 R&apos; d&apos; R&apos; F&apos; R2 U&apos; R&apos; U R&apos; F R U&apos; F&quot;);">F-Perm</a>
 			<br>
+			<input type = "checkbox" id = "13_learned">
 			<a href="javascript: submitAlg(&quot;R&apos; U L&apos; U2 R U&apos; R&apos; U2 L R U&apos;&quot;);">Ja-Perm</a>
 			<br>
+			<input type = "checkbox" id = "14_learned">
 			<a href="javascript: submitAlg(&quot;R U R&apos; F&apos; R U R&apos; U&apos; R&apos; F R2 U&apos; R&apos; U&apos;&quot;);">Jb-Perm</a>
 			<br>
+			<input type = "checkbox" id = "15_learned">
 			<a href="javascript: submitAlg(&quot;L U2&apos; L&apos; U2&apos; L F&apos; L&apos; U&apos; L U L F L2&apos; U&quot;);">Ra-Perm</a>
 			<br>
+			<input type = "checkbox" id = "16_learned">
 			<a href="javascript: submitAlg(&quot;R&apos; U2 R U2 R&apos; F R U R&apos; U&apos; R&apos; F&apos; R2 U&apos;&quot;);">Rb-Perm</a>
 			<br>
+			<input type = "checkbox" id = "17_learned">
 			<a href="javascript: submitAlg(&quot;R&apos; U R&apos; d&apos; R&apos; F&apos; R2 U&apos; R&apos; U R&apos; F R F&quot;);">V-Perm</a>
 			<br>
+			<input type = "checkbox" id = "18_learned">
 			<a href="javascript: submitAlg(&quot;F R U&apos; R&apos; U&apos; R U R&apos; F&apos; R U R&apos; U&apos; R&apos; F R F&apos;&quot;);">Y-Perm</a>
 			<br>
+			<input type = "checkbox" id = "19_learned">
 			<a href="javascript: submitAlg(&quot;L U&apos; R U2 L&apos; U R&apos; L U&apos; R U2 L&apos; U R&apos; U&quot;);">Na-Perm</a>
 			<br>
+			<input type = "checkbox" id = "20_learned">
 			<a href="javascript: submitAlg(&quot;R&apos; U L&apos; U2 R U&apos; L R&apos; U L&apos; U2 R U&apos; L U&apos;&quot;);">Nb-Perm</a>
-		
+			</form>
 			<br>
 			<br>
 			<a href="LastLayer.php">Back</a>
