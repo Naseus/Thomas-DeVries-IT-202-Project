@@ -14,13 +14,11 @@
 	function learnedAlg($type) {
 		if(isset($_SESSION["user"]) && !(empty($_SESSION["user"]))) {
 			global $userData;
-			echo count(explode("1",$userData[$type + "_learned"])) - 1;
+			echo count(explode("1", $userData[$type . "_learned"])) - 1;
 		} else {
 			echo 0;
 		}
 	}
-	echo $userData["OLL_learned"];
-	echo $userData["PLL_learned"];
 
 ?>
 <html>
@@ -44,8 +42,6 @@
 		<br>
 		<progress id="pll" max="21" value="0"></progress>
 		<a href="PLL.php">PLL</a>
-		<?php learnedAlg("OLL")?>
-		<?php learnedAlg("PLL")?>
 		<br>
 		<br>
 		<a href="landing.php">Back</a>
