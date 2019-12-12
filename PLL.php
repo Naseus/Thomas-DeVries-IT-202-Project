@@ -49,7 +49,7 @@ function handleData() {
 	if(isset($_POST["delete"])) {
 		delete();
 	}
-	if(isset($_GET['alg'])){}
+	if(isset($_GET['alg'])){
 	updateLearnedAlgs();
 	}
 }
