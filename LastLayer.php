@@ -38,7 +38,7 @@
 	<body>
 		<br>
 		<progress id="oll" max="57" value="0"></progress>
-		<a href="OLL.php">OLL Lab</a>
+		<a href="OLL.php">OLL</a>
 		<br>
 		<progress id="pll" max="21" value="0"></progress>
 		<a href="PLL.php">PLL</a>
