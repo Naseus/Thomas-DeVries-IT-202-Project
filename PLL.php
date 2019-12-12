@@ -72,7 +72,7 @@ function addAlg() {
 				}
 		}
 		if($break) {
-            return "alert('Invalid notation');";
+            return;
             }
 	}
 		$length = count(str_word_count($alg, 1));
@@ -87,7 +87,7 @@ function addAlg() {
 	}
 }
 ?>
-
+	<?php handleData();?>
 <html>
 	<head>
 		<script
@@ -159,7 +159,6 @@ function addAlg() {
 		});
 		$("#setAlg").submit();
 	}
-	<?php handleData();?>
 		</script>
 	</head>
 	<body>
