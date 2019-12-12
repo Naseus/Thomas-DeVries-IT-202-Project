@@ -59,7 +59,7 @@ function addAlg() {
             "M", "E", "S", "M\'", "E\'", "S\'", "M2", "E2", "S2", "X", "Y", "Z", "X\'", "Y\'", "Z\'");
 
 	if(!empty($_POST["newAlg"]) && !empty($_GET["alg"])) {
-]		$alg = $_POST["newAlg"];
+		$alg = $_POST["newAlg"];
 		$baseAlg = $_GET["alg"];
 		$lst = explode(" ", $alg);
 	// Backend validation ADD FRONT END
