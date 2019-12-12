@@ -27,8 +27,8 @@
 		</script>
 		<script>
 			$(document).ready(function() {
-				$('#oll').attr({"value: <?php learnedAlg("OLL");?>"});
-				$('#pll').attr({"value: <?php learnedAlg("PLL");?>"});
+				$('#oll').attr({"value": <?php learnedAlg("OLL");?>});
+				$('#pll').attr({"value": <?php learnedAlg("PLL");?>});
 			});
 		</script>
 	</head>
