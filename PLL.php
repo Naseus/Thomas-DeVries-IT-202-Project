@@ -62,8 +62,8 @@ function addAlg() {
 		$lst = $_POST[""];
 		$alg = $_POST["newAlg"];
 		$baseAlg = $_GET["alg"];
-		$lst = explode(" ", string)
-
+		$lst = explode(" ", string);
+	// Backend validation ADD FRONT END
 	for($i = 0; $i < count($lst); $i++) {
 		for($j = 0; $j < count($notations); $j++) {
         	$break = true;
@@ -71,8 +71,6 @@ function addAlg() {
 					$break = false;
                     break;
 				}
-                echo $lst[$i];
-                echo $notations[$j];
 		}
 		if($break) {
             return;
