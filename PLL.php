@@ -50,7 +50,7 @@ function delete() {
 
 // ADD AN ALGORITHM TO THE DATABASE
 function addAlg() {
-	if(!isset($_SESSION["user"])) {
+	if(!isset($_SESSION["user"]) || empty($_SESSION["user"])) {
 		header("login.php");
 		exit();
 		echo($_SESSION['user']);
