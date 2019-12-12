@@ -180,7 +180,7 @@ function updateLearnedAlgs() {
 			$('#selectedBaseAlg').text(arr[0]);
 			let picId = "PLL/" + arr[0] + ".png";
 			console.log(picId);
-			$('#algPicture').attr({"scr": picId});
+			$('#algPicture').attr({"src": picId});
 		});
 	// CHECK BOXES FOR KNOWN ALGS
 	function checkLearned() {
