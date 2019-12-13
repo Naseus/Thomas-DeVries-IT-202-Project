@@ -21,7 +21,8 @@
 		if(isset($_GET['alg']) && !empty($_GET['alg'])) {
 			$rtn = $_GET['alg'] . "!";
 		}
-		return "###";
+		echo "###";
+		return;
 	}
 	if(isset($_GET['alg']) && !empty($_GET['alg'])) {
 		$rtn = $_GET['alg'] . "!";
