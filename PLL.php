@@ -17,6 +17,9 @@
 	//Creates a string for the frontend
 	function getLabData() {
 	$rtn = "###";
+	if(!isset($_SESSION['user']) || empty($_SESSION['user'])) {
+		return "###";
+	}
 	if(isset($_GET['alg']) && !empty($_GET['alg'])) {
 		$rtn = $_GET['alg'] . "!";
 		try {
