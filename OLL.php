@@ -185,7 +185,7 @@ function updateLearnedAlgs() {
 					}
 				}));
 			$('#selectedBaseAlg').text(arr[0]);
-			let picId = "PLL/" + arr[0] + ".png";
+			let picId = "OLL/" + arr[0] + ".png";
 			console.log(picId);
 			$('#algPicture').attr({"src": picId});
 		});
